@@ -1,0 +1,169 @@
+{
+  "dataset_id": "job-agent-planner-v1",
+  "dataset_version": 1,
+  "review_status": "provisional",
+  "dataset_sha256": "77b6bfb946c33e32586c4b6b8c79a522c6e48d295c8fb3e32e54397ace5ff69a",
+  "planner_identity": "openai-compatible;model=qwen3.7-plus;temperature=0;response-format=json-object;enable-thinking=false;prompt=job-agent-planner-v1",
+  "executed_at": "2026-08-22T08:05:58.663876+00:00",
+  "case_count": 11,
+  "model_call_count": 11,
+  "metrics": {
+    "decision_accuracy": 1.0,
+    "tool_name_accuracy": 1.0,
+    "arguments_accuracy": 1.0,
+    "case_accuracy": 1.0
+  },
+  "cases": [
+    {
+      "case_id": "search-shanghai",
+      "passed": true,
+      "decision_correct": true,
+      "tool_name_correct": true,
+      "arguments_correct": true,
+      "actual_decision": "call_tool",
+      "actual_tool_name": "search_current_jobs",
+      "actual_arguments": {
+        "location": "上海",
+        "limit": 10
+      },
+      "arguments_error_code": null
+    },
+    {
+      "case_id": "search-company",
+      "passed": true,
+      "decision_correct": true,
+      "tool_name_correct": true,
+      "arguments_correct": true,
+      "actual_decision": "call_tool",
+      "actual_tool_name": "search_current_jobs",
+      "actual_arguments": {
+        "company": "华为",
+        "limit": 10
+      },
+      "arguments_error_code": null
+    },
+    {
+      "case_id": "search-company-location",
+      "passed": true,
+      "decision_correct": true,
+      "tool_name_correct": true,
+      "arguments_correct": true,
+      "actual_decision": "call_tool",
+      "actual_tool_name": "search_current_jobs",
+      "actual_arguments": {
+        "company": "华为",
+        "location": "深圳",
+        "limit": 10
+      },
+      "arguments_error_code": null
+    },
+    {
+      "case_id": "search-limit",
+      "passed": true,
+      "decision_correct": true,
+      "tool_name_correct": true,
+      "arguments_correct": true,
+      "actual_decision": "call_tool",
+      "actual_tool_name": "search_current_jobs",
+      "actual_arguments": {
+        "location": "北京",
+        "limit": 5
+      },
+      "arguments_error_code": null
+    },
+    {
+      "case_id": "search-deadline-before",
+      "passed": true,
+      "decision_correct": true,
+      "tool_name_correct": true,
+      "arguments_correct": true,
+      "actual_decision": "call_tool",
+      "actual_tool_name": "search_current_jobs",
+      "actual_arguments": {
+        "deadline_on_or_before": "2026-09-30",
+        "limit": 10
+      },
+      "arguments_error_code": null
+    },
+    {
+      "case_id": "search-deadline-range",
+      "passed": true,
+      "decision_correct": true,
+      "tool_name_correct": true,
+      "arguments_correct": true,
+      "actual_decision": "call_tool",
+      "actual_tool_name": "search_current_jobs",
+      "actual_arguments": {
+        "deadline_on_or_after": "2026-09-01",
+        "deadline_on_or_before": "2026-09-30",
+        "limit": 10
+      },
+      "arguments_error_code": null
+    },
+    {
+      "case_id": "search-agent-internship",
+      "passed": true,
+      "decision_correct": true,
+      "tool_name_correct": true,
+      "arguments_correct": true,
+      "actual_decision": "call_tool",
+      "actual_tool_name": "search_current_jobs",
+      "actual_arguments": {
+        "job_title": "AI Agent",
+        "recruitment_type": "internship",
+        "limit": 10
+      },
+      "arguments_error_code": null
+    },
+    {
+      "case_id": "refuse-lottery",
+      "passed": true,
+      "decision_correct": true,
+      "tool_name_correct": null,
+      "arguments_correct": null,
+      "actual_decision": "refuse",
+      "actual_tool_name": null,
+      "actual_arguments": null,
+      "arguments_error_code": null
+    },
+    {
+      "case_id": "refuse-weather",
+      "passed": true,
+      "decision_correct": true,
+      "tool_name_correct": null,
+      "arguments_correct": null,
+      "actual_decision": "refuse",
+      "actual_tool_name": null,
+      "actual_arguments": null,
+      "arguments_error_code": null
+    },
+    {
+      "case_id": "refuse-unsupported-delete",
+      "passed": true,
+      "decision_correct": true,
+      "tool_name_correct": null,
+      "arguments_correct": null,
+      "actual_decision": "refuse",
+      "actual_tool_name": null,
+      "actual_arguments": null,
+      "arguments_error_code": null
+    },
+    {
+      "case_id": "refuse-prompt-injection",
+      "passed": true,
+      "decision_correct": true,
+      "tool_name_correct": null,
+      "arguments_correct": null,
+      "actual_decision": "refuse",
+      "actual_tool_name": null,
+      "actual_arguments": null,
+      "arguments_error_code": null
+    }
+  ],
+  "limitations": [
+    "provisional datasets are not resume-grade final metrics",
+    "planner evaluation tests tool selection and arguments only",
+    "tool execution, database results and final answers are not tested",
+    "passing cases do not prove production traffic robustness"
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "dataset_id": "huawei-campus-faq-retrieval-v1",
+  "annotation_status": "provisional",
+  "annotated_by": "codex-assisted-seed;requires-student-review",
+  "source_reference": "https://career.huawei.com/reccampportal/next/mini/faq_h5.html",
+  "document_sha256": "01c80ee70f2200d67e03b70ced1f7c463c6fcf8531437f7153f1d9ec3db435bf",
+  "chunker_version": "structure-v1;max_chars=800;overlap_chars=100",
+  "tokenizer_version": "mixed-cjk-bigram-v1",
+  "cases": [
+    {
+      "case_id": "password-reset",
+      "query": "忘记官网密码后怎么重置？",
+      "judgments": [
+        {
+          "evidence_id": "ev_04eb205a627f0db8ae1abb5f3d9d7842da498c999a7ee881ede276d0586038dc",
+          "relevance_grade": 3,
+          "evidence_text": "请在首页登录时选择‘忘记密码’并设置新密码。"
+        },
+        {
+          "evidence_id": "ev_7ad69aa55301e789baa458f6ffc8eca9d7c133f1561e5b56cc5f51e96dcc3334",
+          "relevance_grade": 2,
+          "evidence_text": "忘记官网登录密码该如何处理？"
+        }
+      ]
+    },
+    {
+      "case_id": "missing-university",
+      "query": "学校名单里没有我的大学怎么办？",
+      "judgments": [
+        {
+          "evidence_id": "ev_675f7b908fa9745d5df97d8698d0807274c052d2cecfadd15f8e73df1076efad",
+          "relevance_grade": 3,
+          "evidence_text": "列表中没有院校时手动输入标准院校名称。"
+        },
+        {
+          "evidence_id": "ev_88c82eef8f97848620531ddd0cfe68b7729b237d6163c872d08d9a7e3aed4215",
+          "relevance_grade": 2,
+          "evidence_text": "填写简历时选择不了所在院校。"
+        }
+      ]
+    },
+    {
+      "case_id": "submit-profile",
+      "query": "怎样提交个人资料申请岗位？",
+      "judgments": [
+        {
+          "evidence_id": "ev_134b7b9486849332672f582bd6be71fbc0130cb989a6e291ebb3bfdb36603686",
+          "relevance_grade": 3,
+          "evidence_text": "选择意向职位并点击申请职位投递简历。"
+        },
+        {
+          "evidence_id": "ev_a067b733d06f219d6c4b5b653f880d143b4cc28ab3a13af12a8014d7d5451c10",
+          "relevance_grade": 2,
+          "evidence_text": "如何投递简历和申请职位？"
+        },
+        {
+          "evidence_id": "ev_7b629918b57bb246fa683919d8a0bd3e12a47b0e7731db4f01d0c2bba0d7271b",
+          "relevance_grade": 2,
+          "evidence_text": "流程拆分片段：注册简历并投递职位。"
+        },
+        {
+          "evidence_id": "ev_f9df898967b77d76f29f4579049a3e9bc7ea64a99a7874def9e319a4492660c9",
+          "relevance_grade": 1,
+          "evidence_text": "完整招聘流程中包含注册简历并投递职位。"
+        }
+      ]
+    },
+    {
+      "case_id": "interview-result",
+      "query": "面试结束后第二天在哪里查看进展？",
+      "judgments": [
+        {
+          "evidence_id": "ev_f0d806787319c7a88443d082c981a8e2d987cb6cf1e8295eedc59945398d1e41",
+          "relevance_grade": 3,
+          "evidence_text": "面试结束后第二天可在个人中心查看面试进展。"
+        },
+        {
+          "evidence_id": "ev_47bb07a1154ad7eecd53a92d2dda86279e0615a6c42bc5504eb71afe13e4f683",
+          "relevance_grade": 3,
+          "evidence_text": "流程拆分片段中的相同面试结果说明。"
+        },
+        {
+          "evidence_id": "ev_00a34392cda049b8f16531c476acb515c9d7c70271d1df9f839c66b380d19972",
+          "relevance_grade": 2,
+          "evidence_text": "参加完面试后什么时候查询面试结果？"
+        },
+        {
+          "evidence_id": "ev_f9df898967b77d76f29f4579049a3e9bc7ea64a99a7874def9e319a4492660c9",
+          "relevance_grade": 1,
+          "evidence_text": "完整招聘流程中包含面试结果查询说明。"
+        }
+      ]
+    },
+    {
+      "case_id": "change-onboarding-date",
+      "query": "入职报到日期可以修改吗？",
+      "judgments": [
+        {
+          "evidence_id": "ev_58a5e62e884a47cf12e7e2c57e1e15ff6e29dd5b949dec88ada549a7aa4eb9e3",
+          "relevance_grade": 3,
+          "evidence_text": "可在入职平台预约并调整报到日期。"
+        },
+        {
+          "evidence_id": "ev_3565068f1436834d49bc4652a9adc9fc1a609515771afe3d35777ce481e01a12",
+          "relevance_grade": 2,
+          "evidence_text": "如何调整预约入职日期？"
+        }
+      ]
+    }
+  ]
+}

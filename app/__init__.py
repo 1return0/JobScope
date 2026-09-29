@@ -1,0 +1,2 @@
+"""JobScope application package."""
+

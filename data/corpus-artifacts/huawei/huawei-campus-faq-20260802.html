@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="refresh" content="0;https://career.huawei.com/reccampportal/portal5/faq.html">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>华为校园招聘</title>
+  <link href="../public/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../public/css/main-h5.css?v=20180628" rel="stylesheet">
+  <!--[if lt IE 9]>
+  <script src="../public/js/html5shiv.min.js"></script>
+  <script src="../public/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body data-spy="scroll" data-offset="0" data-target="#faqNavbar" style="position:relative;">
+<!-- 导航 -->
+<nav class="navbar navbar-fixed-top zp-nav">
+  <div class="zp-nav-content clearfix">
+    <script id="navList" type="text/x-handlebars-template">
+      <div class="zp-logo">
+        <!-- <i class="zp-icon icon-zp-logo"></i> -->
+        <img src="../public/images/mini-logo.png" alt="" style="width: 140px; margin-top: 10px;">
+      </div>
+      <a href="javascript:" class="zp-icon icon-zp-navlist pull-right zp-navlist" onclick="navSwc()"></a>
+      <div class="zp-nav-main" style="display:none;">
+        <ul>
+          {{#if lang}}
+          {{#each nav}}
+          <li class="{{#if focus}}on{{/if}}"><i class="glyphicon glyphicon-menu-right pull-right"></i><a style="display:block;" href="{{src}}">{{txt}}</a></li>
+          {{/each}}
+          {{else}}
+          {{#each nav}}
+          <li class="{{#if focus}}on{{/if}}"><i class="glyphicon glyphicon-menu-right pull-right"></i><a style="display:block;" href="{{src}}?lang=EN">{{txtEN}}</a></li>
+          {{/each}}
+          {{/if}}
+        </ul>
+        <!-- <div class="zp-lang-tool clearfix">
+          <span class="pull-left zp-lang-txt">{{#if lang}}{{langBtn}}{{else}}{{langBtnEN}}{{/if}}</span>
+          <i class="zp-icon icon-zp-lang pull-left" style="margin-top:9px;"></i>
+          <a class="btn btn-link zp-lang-btn pull-left" href="javascript:" role="button" onclick="swichLang()">
+            Change Language <i class="glyphicon glyphicon-menu-down" style="font-size:12px;"></i>
+          </a>
+        </div> -->
+      </div>
+    </script>
+  </div>
+</nav>
+
+<!-- banner -->
+<div class="zp-faq-bg1">
+  <div class="container">
+    <div class="row">
+      <div class="zp-faq-bk01">
+        <p class="zp-faq-bk01-t">校招流程</p>
+        <!-- <div class="clearfix">
+            <div class="col-xs-6">
+              <a class="zp-banner-video-btn col-xs-12" href="javascript:" onclick="swichTab('#yfl',$(this))" style="margin:0; padding:0;">
+                研发类
+              </a>
+            </div>
+            <div class="col-xs-6">
+              <a class="zp-banner-video-o-btn col-xs-12" href="javascript:" onclick="swichTab('#fyfl',$(this))" style="margin:0; padding:0;">
+                非研发类
+              </a>
+            </div>
+          </div> -->
+        <!-- <div class="zp-faq-bk01-btn">
+
+            <a class="zp-banner-video-btn" href="javascript:" onclick="swichTab('#yfl',$(this))">研发类</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a class="zp-banner-video-o-btn" href="###" onclick="swichTab('#fyfl',$(this))">非研发类</a>
+          </div> -->
+        <div class="zp-faq-bk01-co" style="margin-top:20px;">
+
+          <div class="faqLc" id="yfl" style="cursor: pointer;" data-toggle="modal" data-target="#msmodal">
+            <img src="../public/images/h5/faq-lc-fyf.png" class="img-responsive">
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="zp-faq-bk02">
+      <p class="zp-faq-bk02-t">各阶段常见问题</p>
+    </div>
+    <div class="clearfix" id="faqNavbar" style="height:52px;">
+      <ul class="nav navbar-nav faq-tab">
+        <li>
+          <a href="#faqJl">简历</a>
+        </li>
+        <li>
+          <a href="#faqMs">面试</a>
+        </li>
+        <li>
+          <a href="#faqRz">录用入职</a>
+        </li>
+        <li>
+          <a href="#faqXjh">开放日</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="faq-tab-co">
+
+      <div class="faq-tab-co-t">
+        <div class="faq-tab-co-tag" id="faqJl"></div>
+        简历相关问题
+      </div>
+
+      <div class="faq-tab-co-c">
+        <i class="zp-icon icon-zp-faq"></i>
+        <p class="faq-tab-co-c-t">忘记官网登录密码该如何处理？</p>
+        <p class="faq-tab-co-c-c">
+          请在首页登录时选择“忘记密码”，可通过“账号”、“邮箱”、“手机号”设置新密码。
+          <br />
+          <img src="../public/images/faq/1.png" alt="" class="img-responsive">
+        </p>
+      </div>
+
+      <div class="faq-tab-co-c">
+        <i class="zp-icon icon-zp-faq"></i>
+        <p class="faq-tab-co-c-t">邮箱、账号、手机号都忘记了或者停用了，该如何注册简历？</p>
+        <p class="faq-tab-co-c-c">
+          请重新注册账号，并在“个人中心”创建简历。
+          <br /> 如果创建简历时，系统提示简历重复，请根据提示，通过简历邮箱或者手机号验证，找回原简历；
+          如果邮箱、手机号都忘记或者停用了，请提供本人与身份证合拍的照片、新的有效邮箱至talent@huawei.com，由工作人员核实身份后尽快为您处理。
+        </p>
+      </div>
+
+      <div class="faq-tab-co-c">
+        <i class="zp-icon icon-zp-faq"></i>
+        <p class="faq-tab-co-c-t">简历中的联系邮箱/手机号码是否可以修改？</p>
+        <p class="faq-tab-co-c-c">
+          您可登录华为招聘官网“个人中心”修改简历中的联系邮箱和手机号码。为保持沟通顺畅，建议您使用长期有效的邮箱和手机号码。（您仅可修改简历中的联系邮箱/手机号码，作为登录用户名的邮箱/手机号码不可更改）
+        </p>
+      </div>
+
+      <div class="faq-tab-co-c">
+        <i class="zp-icon icon-zp-faq"></i>
+        <p class="faq-tab-co-c-t">如何投递简历和申请职位？</p>
+        <p class="faq-tab-co-c-c">
+          您可登录华为校园招聘官网的“招聘职位”模块，选择您的意向职位（研发类需选择“感兴趣的部门”），点击“申请职位”投递简历。
+          <br />
+          <img src="../public/images/faq/2.png" alt="" class="img-responsive">
+        </p>
+      </div>
+
+      <div class="faq-tab-co-c">
+        <i class="zp-icon icon-zp-faq"></i>
+        <p class="faq-tab-co-c-t">如何修改已经申请的职位？如何调整申请职位的第一志愿？ </p>
+        <p class="faq-tab-co-c-c">
+          您可在简历通过筛选之前，在“个人中心-应聘进展”中调整第一志愿职位，或撤销原申请职位，再到“招聘职位”模块重新申请职位。
+          <br />
+        </p>
+      </div>
+
+      <div class="faq-tab-co-c">
+        <i class="zp-icon icon-zp-faq"></i>
+        <p class="faq-tab-co-c-t">填写简历时选择不了我所在的院校，该如何处理？</p>
+        <p class="faq-tab-co-c-c">
+          “院校”信息支持联想输入，请在联想列表中选择您的院校；如下拉列表中暂无您的院校，请手动输入标准院校名称进行保存，避免使用院校的缩写或简称。
+        </p>
+      </div>
+
+      <div class="faq-tab-co-c">
+        <i class="zp-icon icon-zp-faq"></i>
+        <p class="faq-tab-co-c-t">简历完成度一直未达到100%，是否会影响简历筛选？</p>
+        <p class="faq-tab-co-c-c">
+          简历完整性反映您简历信息填写的完整程度，在应聘环节仅供参考。建议您尽量填写完整，会提高您简历通过筛选的概率。
+        </p>
+      </div>
+
+      <div class="faq-tab-co-c">
+        <i class="zp-icon icon-zp-faq"></i>
+        <p class="faq-tab-co-c-t">如何查询简历编号？</p>
+        <p class="faq-tab-co-c-c">
+          您可在“个人中心”—“简历管理”查询您的简历编号。
+        </p>
+      </div>
+
+      <div class="faq-tab-co-c">
+        <i class="zp-icon icon-zp-faq"></i>
+        <p class="faq-tab-co-c-t">在选择应聘类型时，我误选了社会招聘，该如何改为校园招聘？</p>
+        <p class="faq-tab-co-c-c">
+          您可在华为招聘官网的“个人中心”-“简历管理”中，点击右上角“简历管理”切换您的应聘类型。
+        </p>
+      </div>
+
+      <div class="faq-tab-co-c">
+        <i class="zp-icon icon-zp-faq"></i>
+        <p class="faq-tab-co-c-t">在简历注册时遇到其他问题，该如何处理？</p>
+        <p class="faq-tab-co-c-c">
+          如果您还遇到其他简历注册问题，请将您的登录账号、简历编号及身份证号码发至talent@huawei.com邮箱，并提供具体问题描述、系统报错信息截图，我们将尽快为您处理。
+        </p>
+      </div>
+
+      <div class="faq-tab-co-t">
+        <div class="faq-tab-co-tag" id="faqMs"></div>
+        面试相关问题
+      </div>
+
+      <div class="faq-tab-co-c">
+        <i class="zp-icon icon-zp-faq"></i>
+        <p class="faq-tab-co-c-t">请问2020届应届生招聘范围是什么？</p>
+        <p class="faq-tab-co-c-c">
+          华为2020届应届生招聘对象为：2020年期间毕业的国内高校应届生，以及2019年-2020年期间在海外高校获得学位的留学生。
+        </p>
+      </div>
+
+      <div class="faq-tab-co-c">
+        <i class="zp-icon icon-zp-faq"></i>
+        <p class="faq-tab-co-c-t">华为的招聘流程是什么？</p>
+        <p class="faq-tab-co-c-c">
+          1）首先，请在华为招聘校招官网注册简历并投递职位。如果简历通过筛选，您将在招聘会前收到面试邀约；<br />
+          2）面试考核一般包括综合测评、专业面试、业务主管面试，研发类岗位增设上机考试环节，部分非研发类岗位增设集体面试、语言测评环节。<br />
+          3）参加面试的同学将在招聘会后收到面试结果通知，也可以在面试结束后第二天登录华为招聘官网，在个人中心查看面试进展。<br />
+          <img src="http://career.huawei.com/reccampportal/servlet/portal/attachment?dlType=ImageAttachment&attachmentType=PortalPicAttachment&attachmentId=13457515"
+               class="img-responsive">
+        </p>
+      </div>
+
+      <div class="faq-tab-co-c">
+        <i class="zp-icon icon-zp-faq"></i>
+        <p class="faq-tab-co-c-t">我已经参加完面试，请问什么时候可以查询面试结果？</p>
+        <p class="faq-tab-co-c-c">
+          参加面试的同学将在招聘会后收到面试结果通知，也可以在面试结束后第二天登录华为招聘官网，在个人中心查看面试进展。
+        </p>
+      </div>
+
+      <div class="faq-tab-co-c">
+        <i class="zp-icon icon-zp-faq"></i>
+        <p class="faq-tab-co-c-t">投递简历后多久会有面试通知？</p>
+        <p class="faq-tab-co-c-c">
+          我们会根据各地区招聘会的时间安排简历筛选，如您的简历通过筛选，我们会通过短信、电话或邮件通知您，请您保持简历中的联系方式畅通。
+        </p>
+      </div>
+
+      <div class="faq-tab-co-c">
+        <i class="zp-icon icon-zp-faq"></i>
+        <p class="faq-tab-co-c-t">留学生如何参加校园招聘？</p>
+        <p class="faq-tab-co-c-c">
+          请注册简历并投递您感兴趣的职位，我们将根据您简历中的“期望面试地点”进行简历筛选和面试邀约。同时，欢迎您通过华为招聘官网或官方微信，关注留学生招聘最新动态。
+        </p>
+      </div>
+
+      <div class="faq-tab-co-c">
+        <i class="zp-icon icon-zp-faq"></i>
+        <p class="faq-tab-co-c-t">请问参加过实习生面试或者参加过实习，还可以参加当年的应届生招聘吗？</p>
+        <p class="faq-tab-co-c-c">
+          可以参加，欢迎您尽早投递感兴趣的应届生职位。
+        </p>
+      </div>
+
+      <div class="faq-tab-co-c">
+        <i class="zp-icon icon-zp-faq"></i>
+        <p class="faq-tab-co-c-t">面试地点如何确定？</p>
+        <p class="faq-tab-co-c-c">
+          我们将根据您的毕业院校所在地来确定您的面试地点（就近安排），具体以收到的面试通知为准。
+        </p>
+      </div>
+
+      <div class="faq-tab-co-c">
+        <i class="zp-icon icon-zp-faq"></i>
+        <p class="faq-tab-co-c-t">我错过了来自华为的电话，回拨显示为公司总机，如何处理？</p>
+        <p class="faq-tab-co-c-c">
+          请保持您的联系方式畅通，后续如有需要，工作人员会再次与您联系。您也可以电话咨询校招热线：0755-22731198，或将问题发至咨询邮箱：talent@huawei.com。
+        </p>
+        <div class="table-responsive">
+          <table class="table table-condensed table-bordered">
+            <tr>
+              <th>学校所在区域</th>
+              <!-- <th>咨询电话</th> -->
+              <th>E-mail</th>
+            </tr>
+            <tr>
+              <td>京津东北(北京、
+                <br />天津、哈尔滨、长春、
+                <br />沈阳、大连、河北)
+              </td><!-- <td>15618359972</td> -->
+              <td>
+                <a href="mailto:zhaopin@huawei.com">zhaopin@huawei.com</a>
+              </td>
+            </tr>
+            <tr>
+              <td>上合(上海、合肥)</td>
+              <!-- <td>15701671091</td> -->
+              <td>
+                <a href="mailto:shxiaozhao@huawei.com">shxiaozhao@huawei.com</a>
+              </td>
+            </tr>
+            <tr>
+              <td>江苏、山东、南京</td>
+              <!-- <td>13396582713</td> -->
+              <td>
+                <a href="mailto:zhaopinnj@huawei.com">zhaopinnj@huawei.com</a>
+              </td>
+            </tr>
+            <tr>
+              <td>西安（西安、兰州)</td>
+              <!-- <td>025-56621991</td> -->
+              <td>
+                <a href="mailto:xazhaopin@huawei.com">xazhaopin@huawei.com</a>
+              </td>
+            </tr>
+            <tr>
+              <td>武汉、长沙</td>
+              <!-- <td>18502727185</td> -->
+              <td>
+                <a href="mailto:whzhaopin@huawei.com">whzhaopin@huawei.com</a>
+              </td>
+            </tr>
+            <tr>
+              <td>成都、重庆、贵州</td>
+              <!-- <td>028-64691529</td> -->
+              <td>
+                <a href="mailto:cyzp@huawei.com">cyzp@huawei.com</a>
+              </td>
+            </tr>
+            <tr>
+              <td>杭州、厦门、江西</td>
+              <!-- <td>18682051969</td> -->
+              <td>
+                <a href="mailto:hzzp@huawei.com">hzzp@huawei.com</a>
+              </td>
+            </tr>
+            <tr>
+              <td>粤港澳（广州、香港、
+                <br />深圳、澳门）</td>
+              <!-- <td>029-86488899</td> -->
+              <td>
+                <a href="mailto:yuegangao@huawei.com">yuegangao@huawei.com</a>
+              </td>
+            </tr>
+            <tr>
+              <td>苏州</td>
+              <!-- <td>18682051969</td> -->
+              <td>
+                <a href="mailto:suzhouzp@huawei.com">suzhouzp@huawei.com</a>
+              </td>
+            </tr>
+            <tr>
+              <td>海外留学生</td>
+              <!-- <td>18682051969</td> -->
+              <td>
+                <a href="mailto:careertalent@huawei.com">careertalent@huawei.com</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <!-- <p class="faq-tab-co-c-c">校招联系电话：0755-22731198
+        </p> -->
+      </div>
+
+
+      <div class="faq-tab-co-t">
+        <div class="faq-tab-co-tag" id="faqRz"></div>
+        录用、入职相关问题
+      </div>
+
+      <div class="faq-tab-co-c">
+        <i class="zp-icon icon-zp-faq"></i>
+        <p class="faq-tab-co-c-t">已经签约的学生什么时候可以来公司入职？如何调整预约入职日期？</p>
+        <p class="faq-tab-co-c-c">
+          接受Offer后，您会收到《华为公司入职预约指引》邮件。您需在取得学位证、毕业证之后方可来公司入职，留学生入职时需提供毕业证、大使馆出具并加盖公章的留学回国人员证明（或国外学历验证证明），具体材料请以收到的预约指引邮件为准。
+          收到预约指引邮件后，可登录入职平台预约报到日期，后续若需更改报到日期，也可登录入职平台进行调整。
+          入职服务平台链接：http://hr-welcometo.huawei.com/wcaportal（推荐使用Google Chrome浏览器）
+        </p>
+      </div>
+      <div class="faq-tab-co-c">
+        <i class="zp-icon icon-zp-faq"></i>
+        <p class="faq-tab-co-c-t">想预约XX月XX日来报到，系统显示该日期已预约满，该如何处理？</p>
+        <p class="faq-tab-co-c-c">
+          入职平台各时间段的可预约名额会根据实际预约情况进行调整。若出现入职高峰期培训预约满员的情况，会视情况增加预约名额，所以暂无合适培训班次的同学，请注意实时关注入职服务平台资源，建议您提早预约培训班次。
+        </p>
+      </div>
+
+      <div class="faq-tab-co-c">
+        <i class="zp-icon icon-zp-faq"></i>
+        <p class="faq-tab-co-c-t">入职需要什么材料？如何处理落户和档案？</p>
+        <p class="faq-tab-co-c-c">
+          请参照收到的入职指引邮件《华为公司入职预约指引》中的相关指导准备入职需要的材料。更多新员工入职相关问题，欢迎您联系HRhotline@huawei.com邮箱进行具体咨询。
+        </p>
+      </div>
+
+
+
+      <div class="faq-tab-co-t">
+        <div class="faq-tab-co-tag" id="faqXjh"></div>
+        开放日相关
+      </div>
+
+      <div class="faq-tab-co-c">
+        <i class="zp-icon icon-zp-faq"></i>
+        <p class="faq-tab-co-c-t">如何报名参加华为开放日？</p>
+        <p class="faq-tab-co-c-c">
+          请登录如下网址，扫描您感兴趣区域的二维码，回复“开放日”以及通过最新推送，了解华为开放日报名资讯。
+          <br />
+          <a href="https://mp.weixin.qq.com/s/66NApU32gshgF8HX7g3DAw" target="_blank">https://mp.weixin.qq.com/s/66NApU32gshgF8HX7g3DAw</a>
+        </p>
+      </div>
+
+      <div class="faq-tab-co-c">
+        <i class="zp-icon icon-zp-faq"></i>
+        <p class="faq-tab-co-c-t">报名华为开放日后多久会有通知？</p>
+        <p class="faq-tab-co-c-c">
+          如您报名通过，工作人员将于开放日举办前一周发送具体时间及行程安排通知，请您耐心等待。
+        </p>
+      </div>
+
+      <div class="faq-tab-co-c">
+        <i class="zp-icon icon-zp-faq"></i>
+        <p class="faq-tab-co-c-t">我不是应届生，能否报名参加华为开放日？媒体类参观在哪里申请？</p>
+        <p class="faq-tab-co-c-c">
+          华为开放日目前只面向高校师生开放，其他媒体朋友请点击下方链接联系。
+          <br />
+          <a href="http://www.huawei.com/cn/contact-us?tab=media" target="_blank">http://www.huawei.com/cn/contact-us?tab=media</a>
+        </p>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+<footer class="footer zp-footer clearfix">
+  <script id="footCo" type="text/x-handlebars-template">
+
+    <div class="text-center">
+      <img src="../public/images/hw-code.jpg" width="100" height="100">
+      <p class="footer-left-txt text-center">
+        {{#if lang}}
+        {{{leftTxt}}}
+        {{else}}
+        {{{leftTxtEN}}}
+        {{/if}}
+      </p>
+    </div>
+
+    <p class="text-center" style="padding:0 35px;">
+      {{#if lang}}
+      <a class="footer-link-u" href="https://uniportal.huawei.com/uniportal/?redirect=http%3A%2F%2Fcareer.huawei.com%2Freccampportal" target="_blank">{{logTxt}}</a>&nbsp;&nbsp;|
+      &nbsp;&nbsp;<a class="footer-link" href="####" data-toggle="modal" data-target="#contactHr">{{contacthrTxt}}</a>&nbsp;&nbsp;|
+      &nbsp;&nbsp;<a class="footer-link" href="http://career.huawei.com/" target="_blank">{{indexTxt}}</a>&nbsp;&nbsp;|
+      &nbsp;&nbsp;<a class="footer-link" href="https://www.huawei.com/cn/legal" target="_blank">{{lawTxt}}</a>&nbsp;&nbsp;|
+      &nbsp;&nbsp;<a class="footer-link" href="https://www.huawei.com/cn/privacy-policy" target="_blank">{{policyTxt}}</a>&nbsp;&nbsp;
+      {{else}}
+      <a class="footer-link-u" href="https://uniportal.huawei.com/uniportal/?redirect=http%3A%2F%2Fcareer.huawei.com%2Freccampportal" target="_blank">{{logTxtEN}}</a>&nbsp;&nbsp;|
+      &nbsp;&nbsp;<a class="footer-link" href="####" data-toggle="modal" data-target="#contactHr">{{contacthrTxtEN}}</a>&nbsp;&nbsp;|
+      &nbsp;&nbsp;<a class="footer-link" href="http://career.huawei.com/" target="_blank">{{indexTxtEN}}</a>&nbsp;&nbsp;|
+      &nbsp;&nbsp;<a class="footer-link" href="https://www.huawei.com/cn/legal" target="_blank">{{lawTxtEN}}</a>&nbsp;&nbsp;|
+      &nbsp;&nbsp;<a class="footer-link" href="https://www.huawei.com/cn/privacy-policy" target="_blank">{{policyTxtEN}}</a>&nbsp;&nbsp;
+      {{/if}}
+    </p>
+    <p class="text-center" style="color:#555; margin-top:58px;">
+      {{#if lang}}
+      {{copyRight}}
+      {{else}}
+      {{copyRightEN}}
+      {{/if}}
+    </p>
+
+  </script>
+</footer>
+
+<div class="modal fade" id="contactHr" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <span class="modal-title">联系HR</span>
+      </div>
+      <div class="modal-body">
+        <p>招聘专线：</p>
+        <div class="table-responsive">
+          <table class="table table-condensed table-bordered">
+            <tr>
+              <th>学校所在区域</th>
+              <!-- <th>咨询电话</th> -->
+              <th>E-mail</th>
+            </tr>
+            <tr>
+              <td>京津东北(北京、
+                <br />天津、哈尔滨、长春、
+                <br />沈阳、大连、河北)
+              </td><!-- <td>15618359972</td> -->
+              <td>
+                <a href="mailto:zhaopin@huawei.com">zhaopin@huawei.com</a>
+              </td>
+            </tr>
+            <tr>
+              <td>上合(上海、合肥)</td>
+              <!-- <td>15701671091</td> -->
+              <td>
+                <a href="mailto:shxiaozhao@huawei.com">shxiaozhao@huawei.com</a>
+              </td>
+            </tr>
+            <tr>
+              <td>江苏、山东、南京</td>
+              <!-- <td>13396582713</td> -->
+              <td>
+                <a href="mailto:zhaopinnj@huawei.com">zhaopinnj@huawei.com</a>
+              </td>
+            </tr>
+            <tr>
+              <td>西安（西安、兰州)</td>
+              <!-- <td>025-56621991</td> -->
+              <td>
+                <a href="mailto:xazhaopin@huawei.com">xazhaopin@huawei.com</a>
+              </td>
+            </tr>
+            <tr>
+              <td>武汉、长沙</td>
+              <!-- <td>18502727185</td> -->
+              <td>
+                <a href="mailto:whzhaopin@huawei.com">whzhaopin@huawei.com</a>
+              </td>
+            </tr>
+            <tr>
+              <td>成都、重庆、贵州</td>
+              <!-- <td>028-64691529</td> -->
+              <td>
+                <a href="mailto:cyzp@huawei.com">cyzp@huawei.com</a>
+              </td>
+            </tr>
+            <tr>
+              <td>杭州、厦门、江西</td>
+              <!-- <td>18682051969</td> -->
+              <td>
+                <a href="mailto:hzzp@huawei.com">hzzp@huawei.com</a>
+              </td>
+            </tr>
+            <tr>
+              <td>粤港澳（广州、香港、
+                <br />深圳、澳门）</td>
+              <!-- <td>029-86488899</td> -->
+              <td>
+                <a href="mailto:yuegangao@huawei.com">yuegangao@huawei.com</a>
+              </td>
+            </tr>
+            <tr>
+              <td>苏州</td>
+              <!-- <td>18682051969</td> -->
+              <td>
+                <a href="mailto:suzhouzp@huawei.com">suzhouzp@huawei.com</a>
+              </td>
+            </tr>
+            <tr>
+              <td>海外留学生</td>
+              <!-- <td>18682051969</td> -->
+              <td>
+                <a href="mailto:careertalent@huawei.com">careertalent@huawei.com</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <p class="text-center">邮件咨询：
+          <a href="mailto:talent@huawei.com">talent@huawei.com</a>
+        </p>
+        <p class="text-center">微信咨询：“华为招聘”（huaweizhaopin）微信后台留言
+          <br />
+          <img src="../public/images/hw-code.jpg" width="160" height="160">
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="msmodal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <span class="modal-title">面试流程</span>
+      </div>
+      <div class="modal-body">
+        <p>1）首先，请在华为招聘校招官网注册简历并投递职位。如果简历通过筛选，您将在招聘会前收到面试邀约；</p>
+        <p>2）面试考核一般包括综合测评、专业面试、业务主管面试，研发类岗位增设上机考试环节，部分非研发类岗位增设集体面试、语言测评环节。</p>
+        <p>3）参加面试的同学将在招聘会后收到面试结果通知，也可以在面试结束后第二天登录华为招聘官网，在个人中心查看面试进展。</p>
+        <img src="http://career.huawei.com/reccampportal/servlet/portal/attachment?dlType=ImageAttachment&attachmentType=PortalPicAttachment&attachmentId=13457515"
+             width="100%">
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="../public/js/jquery-3.7.1.min.js?v=20251024"></script>
+<script src="../public/js/bootstrap.min.js"></script>
+<script src="../public/js/handlebars-v4.0.8.js"></script>
+<script src="../data/data.json?v=20180628"></script>
+<script src="../public/js/hwzp.js?v=20180628"></script>
+
+<script type="text/javascript">
+  // 设置当前页面导航状态
+  var navdatamb = {
+  "langBtn": "中文",
+  "langBtnEN": "Global",
+  "nav": [
+  {
+  "pid": "010",
+  "txt": "校招首页",
+  "txtEN": "校招首页EN",
+  "src": "index_h5.html"
+  },
+  {
+  "pid": "011",
+  "txt": "认识华为",
+  "txtEN": "认识华为EN",
+  "src": "about_h5.html"
+  },
+  {
+  "pid": "016",
+  "txt": "空中宣讲",
+  "txtEN": "空中宣讲EN",
+  "src": "airPreach.html"
+  },
+  {
+  "pid": "012",
+  "txt": "行程与动态",
+  "txtEN": "行程与动态EN",
+  "src": "news_h5.html"
+  },
+  {
+  "pid": "013",
+  "txt": "工作在华为",
+  "txtEN": "工作在华为EN",
+  "src": "work_h5.html"
+  },
+  {
+  "pid": "014",
+  "txt": "FAQ",
+  "txtEN": "FAQEN",
+  "src": "faq_h5.html"
+  },
+  {
+  "pid": "015",
+  "txt": "招聘岗位",
+  "txtEN": "招聘岗位EN",
+  "src": "http://huawei.tupu360.com/position/list?type=CAMPUSRECRUITMENT&positionSubType=%e5%ba%94%e5%b1%8a%e7%94%9f&enter=menu&lang=zh_CN"
+  }
+  ]
+  };
+  navdatamb.nav[5].focus = "on";
+
+  // 分模块执行渲染
+  // 渲染导航与底部
+  setHtml("#navList", ".zp-nav-content", navdatamb);
+  setHtml("#footCo", ".zp-footer", footData);
+  // 渲染页面
+  // setHtml("#cagList",".zp-about-html",aboutCag);
+  // setHtml("#playVideo",".zp-banner-video-btn",videoPlay);
+  // setHtml("#showData",".zp-about-datas",showData);
+  // setHtml("#aboutTxt",".zp-about-b",aboutTxtData);
+  // setHtml("#aboutList",".zp-work-html",aboutList);
+
+  function autoFixed() {
+  var eleOft = $("#faqNavbar").offset().top - 52;
+  var windowSc = $(window).scrollTop();
+  if (windowSc > eleOft) {
+  if (!$("#faqNavbar > ul").hasClass("faq-tab-fx")) {
+  $("#faqNavbar > ul").addClass("faq-tab-fx");
+  }
+  } else {
+  if ($("#faqNavbar > ul").hasClass("faq-tab-fx")) {
+  $("#faqNavbar > ul").removeClass("faq-tab-fx");
+  }
+  }
+  } autoFixed();
+
+  $(window).scroll(function () {
+  autoFixed();
+  });
+
+  $('body').scrollspy({ target: '#faqNavbar' })
+
+</script>
+</body>
+
+</html>

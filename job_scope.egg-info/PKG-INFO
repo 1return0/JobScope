@@ -1,0 +1,34 @@
+Metadata-Version: 2.4
+Name: job-scope
+Version: 0.1.0
+Summary: Multi-format and evidence-grounded campus recruitment intelligence RAG
+Requires-Python: >=3.12
+Requires-Dist: alembic<2,>=1.14
+Requires-Dist: fastapi<1,>=0.115
+Requires-Dist: langgraph<2,>=1.0
+Requires-Dist: openpyxl<4,>=3.1
+Requires-Dist: pypdf<7,>=6
+Requires-Dist: pydantic<3,>=2.8
+Requires-Dist: psycopg[binary]<4,>=3.2
+Requires-Dist: python-docx<2,>=1.2
+Requires-Dist: python-pptx<2,>=1.0
+Requires-Dist: python-multipart<1,>=0.0.9
+Requires-Dist: python-dotenv<2,>=1.0
+Requires-Dist: sqlalchemy<3,>=2.0
+Requires-Dist: uvicorn[standard]<1,>=0.30
+Provides-Extra: dev
+Requires-Dist: httpx<1,>=0.27; extra == "dev"
+Requires-Dist: pytest<9,>=8; extra == "dev"
+Provides-Extra: embedding
+Requires-Dist: sentence-transformers<6,>=5; extra == "embedding"
+Requires-Dist: torch<2.13,>=2.12; extra == "embedding"
+Requires-Dist: transformers<6,>=4.51; extra == "embedding"
+Provides-Extra: generation
+Requires-Dist: openai<3,>=2.6; extra == "generation"
+Provides-Extra: ocr
+Requires-Dist: pillow<13,>=11; extra == "ocr"
+Requires-Dist: paddleocr<4,>=3.7; extra == "ocr"
+Requires-Dist: pypdfium2<6,>=5.12; extra == "ocr"
+Requires-Dist: torch<2.13,>=2.12; extra == "ocr"
+Requires-Dist: torchvision<0.28,>=0.27; extra == "ocr"
+Requires-Dist: transformers<6,>=5.10; extra == "ocr"

@@ -1,0 +1,42 @@
+{
+  "dataset_id": "jobscope-ocr-v1",
+  "dataset_version": 1,
+  "review_status": "provisional",
+  "cases": [
+    {
+      "case_id": "synthetic-clean-en-single-column",
+      "artifact_reference": "data/ocr-smoke/synthetic-scan.pdf",
+      "artifact_sha256": "84f5d29ca8ff4b7b46f89a51ea128c84fefd292780e1cb8be4c0645409f6c1a6",
+      "expected_text_reference": "data/ocr-smoke/synthetic-scan.expected.txt",
+      "expected_text_sha256": "8d6fd41dfd6a81e09d1ff902944b1081887c3c69a1c72acd2e94c6e5b66d559d",
+      "tags": [
+        "synthetic",
+        "english",
+        "single-column",
+        "clean"
+      ],
+      "fields": [
+        {
+          "field_name": "job_title",
+          "expected_value": "AI Agent Intern",
+          "critical": true
+        },
+        {
+          "field_name": "location",
+          "expected_value": "Shanghai",
+          "critical": true
+        },
+        {
+          "field_name": "major_requirement",
+          "expected_value": "No restriction",
+          "critical": true
+        },
+        {
+          "field_name": "deadline",
+          "expected_value": "2026-09-30",
+          "critical": true
+        }
+      ]
+    }
+  ]
+}

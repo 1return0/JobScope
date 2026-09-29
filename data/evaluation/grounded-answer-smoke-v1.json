@@ -1,0 +1,70 @@
+{
+  "dataset_id": "grounded-answer-smoke-v1",
+  "dataset_version": 1,
+  "review_status": "provisional",
+  "cases": [
+    {
+      "case_id": "answer-specialty",
+      "question": "这个岗位限制专业吗？",
+      "expected_status": "answered",
+      "retrieved_chunks": [
+        {
+          "evidence_id": "ev_1111111111111111111111111111111111111111111111111111111111111111",
+          "document_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "source_reference": "local-evaluation-fixture",
+          "source_fragment_ordinal": 0,
+          "chunk_ordinal": 0,
+          "chunker_version": "structure-v1",
+          "text": "该岗位专业不限，工作地点为上海。",
+          "location": {
+            "heading_path": ["岗位要求"]
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "answer-location",
+      "question": "这个岗位在哪里工作？",
+      "expected_status": "answered",
+      "retrieved_chunks": [
+        {
+          "evidence_id": "ev_2222222222222222222222222222222222222222222222222222222222222222",
+          "document_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "source_reference": "local-evaluation-fixture",
+          "source_fragment_ordinal": 1,
+          "chunk_ordinal": 0,
+          "chunker_version": "structure-v1",
+          "text": "工作地点为上海，岗位面向2027届毕业生。",
+          "location": {
+            "heading_path": ["岗位信息"]
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "refuse-unmentioned-deadline",
+      "question": "这个岗位的申请截止日期是哪一天？",
+      "expected_status": "insufficient_evidence",
+      "retrieved_chunks": [
+        {
+          "evidence_id": "ev_3333333333333333333333333333333333333333333333333333333333333333",
+          "document_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+          "source_reference": "local-evaluation-fixture",
+          "source_fragment_ordinal": 2,
+          "chunk_ordinal": 0,
+          "chunker_version": "structure-v1",
+          "text": "该岗位专业不限，工作地点为上海。",
+          "location": {
+            "heading_path": ["岗位要求"]
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "refuse-empty-retrieval",
+      "question": "这个岗位是否提供住宿？",
+      "expected_status": "insufficient_evidence",
+      "retrieved_chunks": []
+    }
+  ]
+}
