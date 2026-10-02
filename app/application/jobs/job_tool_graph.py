@@ -3,7 +3,15 @@ from __future__ import annotations
 from typing import Any, Iterable, Protocol, TypedDict
 
 from langgraph.graph import END, START, StateGraph
+from langgraph.runtime import Runtime
 from pydantic import BaseModel, ConfigDict, Field, ValidationError
+
+from app.application.jobs.agent_harness import (
+    JobAgentHarness,
+    JobAgentHarnessLimitExceededError,
+    bind_job_agent_harness,
+    invoke_harnessed_tool,
+)
 
 
 class AgentToolCall(BaseModel):
@@ -43,7 +51,11 @@ class JobToolExecutionNode:
             raise ValueError("at least one Agent tool is required")
         self._registry = registry
 
-    def __call__(self, state: JobToolGraphState) -> JobToolGraphState:
+    def __call__(
+        self,
+        state: JobToolGraphState,
+        runtime: Runtime[Any] | None = None,
+    ) -> JobToolGraphState:
         try:
             tool_call = AgentToolCall.model_validate(
                 state.get("tool_call")
@@ -69,7 +81,16 @@ class JobToolExecutionNode:
             }
 
         try:
-            output = tool.invoke(tool_call.arguments)
+            context = runtime.context if runtime is not None else {}
+            harness = context.get("harness") if context else None
+            if isinstance(harness, JobAgentHarness):
+                with bind_job_agent_harness(harness):
+                    output = invoke_harnessed_tool(
+                        tool_call.name,
+                        lambda: tool.invoke(tool_call.arguments),
+                    )
+            else:
+                output = tool.invoke(tool_call.arguments)
         except ValidationError:
             return {
                 "tool_result": None,
@@ -81,6 +102,8 @@ class JobToolExecutionNode:
                     ),
                 },
             }
+        except JobAgentHarnessLimitExceededError:
+            raise
         except RuntimeError:
             # Provider, capacity and prepared-service failures are operational
             # tool failures. Keep their internals out of the Agent response.

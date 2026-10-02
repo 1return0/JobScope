@@ -1,0 +1,1 @@
+"""User-memory application contracts."""

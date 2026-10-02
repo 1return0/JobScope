@@ -23,6 +23,9 @@ Recruitment files
 
 FastAPI application code is under `app/`; `frontend/` contains the Vue 3 client. The browser upload screen is an intentionally temporary parse/chunk preview and does not write to the Current Corpus. Persistent corpus preparation uses the verified manifest-based ingestion workflow under `scripts/corpus/`. Architecture and module navigation are documented in [`docs/project-structure.md`](docs/project-structure.md).
 
+The final capability boundaries, demo sequence, and verification commands are in
+[`docs/final-delivery.md`](docs/final-delivery.md).
+
 ## Run locally
 
 Use Python 3.12. Copy `.env.example` to `.env`, then configure a local PostgreSQL database and any model credentials you want to use. Do not commit `.env`.

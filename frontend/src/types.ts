@@ -133,6 +133,41 @@ export interface JobAgentResponse {
   tool_call: Record<string, unknown> | null;
   tool_result: Record<string, unknown> | null;
   tool_error: Record<string, unknown> | null;
+  harness: JobAgentHarness | null;
+}
+
+export interface JobAgentHarnessStep {
+  operation_kind: "model" | "tool";
+  operation_name: string;
+  status: "succeeded" | "failed" | "rejected";
+  elapsed_seconds: number;
+  failure_code: string | null;
+}
+
+export interface JobAgentHarness {
+  model_call_count: number;
+  tool_call_count: number;
+  elapsed_seconds: number;
+  steps: JobAgentHarnessStep[];
+}
+
+export interface JobAgentConversationTurn {
+  role: "user" | "assistant";
+  content: string;
+}
+
+export interface JobAgentConversationResponse {
+  thread_id: string;
+  turns: JobAgentConversationTurn[];
+}
+
+export type JobAgentPreferenceKey = "preferred_location" | "preferred_recruitment_type";
+
+export interface JobAgentPreference {
+  preference_key: JobAgentPreferenceKey;
+  preference_value: string;
+  revision: number;
+  consented_at: string;
 }
 
 export type SourceKind = "official_company" | "official_university" | "job_board";

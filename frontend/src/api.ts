@@ -7,6 +7,9 @@ import type {
   HealthResponse,
   HybridSearchResponse,
   JobAgentResponse,
+  JobAgentConversationResponse,
+  JobAgentPreference,
+  JobAgentPreferenceKey,
   ServiceMetaResponse,
   SourceAssessment,
   SourceCandidate,
@@ -27,7 +30,10 @@ async function request<T>(
   path: string,
   init: RequestInit = {},
 ): Promise<T> {
-  const response = await fetch(path, init);
+  const response = await fetch(path, {
+    ...init,
+    credentials: "include",
+  });
   const contentType = response.headers.get("content-type") ?? "";
   const payload = contentType.includes("application/json")
     ? await response.json()
@@ -47,6 +53,14 @@ async function request<T>(
 function postJson<T>(path: string, payload: unknown): Promise<T> {
   return request<T>(path, {
     method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+}
+
+function putJson<T>(path: string, payload: unknown): Promise<T> {
+  return request<T>(path, {
+    method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(payload),
   });
@@ -81,8 +95,20 @@ export const retrievalApi = {
 };
 
 export const agentApi = {
+  establishSession: () => postJson<{ expires_at: string }>("/v1/job-agent/sessions", {}),
   query: (userQuery: string) =>
     postJson<JobAgentResponse>("/v1/job-agent/query", { user_query: userQuery }),
+  conversation: () => request<JobAgentConversationResponse>("/v1/job-agent/conversation"),
+  clearConversation: () => request<void>("/v1/job-agent/conversation", { method: "DELETE" }),
+  preferences: () => request<{ preferences: JobAgentPreference[] }>("/v1/job-agent/memory/preferences"),
+  savePreference: (preferenceKey: JobAgentPreferenceKey, preferenceValue: string) =>
+    putJson<JobAgentPreference>("/v1/job-agent/memory/preferences", {
+      preference_key: preferenceKey,
+      preference_value: preferenceValue,
+      user_consented: true,
+    }),
+  clearPreference: (preferenceKey: JobAgentPreferenceKey) =>
+    request<void>(`/v1/job-agent/memory/preferences/${preferenceKey}`, { method: "DELETE" }),
 };
 
 export const sourceApi = {

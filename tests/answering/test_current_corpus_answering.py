@@ -92,6 +92,48 @@ class CurrentCorpusAnswerServiceTest(unittest.TestCase):
         )
         self.assertFalse(result.answer.model_called)
         self.assertEqual(0, model.call_count)
+        self.assertEqual(2, len(searcher.calls))
+        self.assertEqual(5, searcher.calls[0][1])
+        self.assertEqual(10, searcher.calls[1][1])
+        self.assertEqual(searcher.calls[0][0], searcher.calls[1][0])
+        self.assertEqual("replan_once", result.replan.decision)
+        self.assertIsNotNone(result.replan_audit)
+        self.assertEqual("insufficient_evidence", result.replan_audit.result_code)
+        self.assertEqual(0, result.replan_audit.replan_count)
+        self.assertEqual((), result.replan_audit.original_constraints)
+
+    def test_replan_audit_keeps_original_source_scope(self) -> None:
+        searcher = _ScopedRecordingSearcher(self._report())
+        service = CurrentCorpusAnswerService(
+            searcher,
+            GroundedAnswerService(_RecordingAnswerModel("must not be called")),
+        )
+
+        result = service.answer(
+            "where is the policy",
+            source_references=("campus-policy.pdf", "it-help.md"),
+        )
+
+        self.assertEqual(2, len(searcher.calls))
+        self.assertEqual(searcher.calls[0][2], searcher.calls[1][2])
+        self.assertEqual(
+            (("source_references", "campus-policy.pdf\nit-help.md"),),
+            result.replan_audit.original_constraints,
+        )
+
+    def test_depth_cap_stops_instead_of_repeating_identical_search(self) -> None:
+        searcher = _RecordingSearcher(self._report())
+        service = CurrentCorpusAnswerService(
+            searcher,
+            GroundedAnswerService(_RecordingAnswerModel("must not be called")),
+        )
+
+        result = service.answer("no evidence", top_k=10)
+
+        self.assertEqual([("no evidence", 10)], searcher.calls)
+        self.assertEqual("stop", result.replan.decision)
+        self.assertEqual("retrieval-depth-limit-reached", result.replan.reason_code)
+        self.assertEqual("replan_once", result.replan_audit.assessment.decision)
 
     @staticmethod
     def _chunk(suffix: str, text: str) -> EvidenceChunk:
@@ -130,6 +172,22 @@ class CurrentCorpusAnswerServiceTest(unittest.TestCase):
                 for index, chunk in enumerate(chunks, start=1)
             ),
         )
+
+
+class _ScopedRecordingSearcher(_RecordingSearcher):
+    def __init__(self, report: CurrentCorpusHybridSearchReport) -> None:
+        super().__init__(report)
+        self.calls: list[tuple[str, int, tuple[str, ...] | None]] = []
+
+    def search(
+        self,
+        query: str,
+        *,
+        top_k: int = 5,
+        source_references: tuple[str, ...] | None = None,
+    ) -> CurrentCorpusHybridSearchReport:
+        self.calls.append((query, top_k, source_references))
+        return self._report
 
 
 if __name__ == "__main__":

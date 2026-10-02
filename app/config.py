@@ -52,6 +52,13 @@ class Settings:
     answer_model_timeout_seconds: float = 30.0
     answer_model_max_completion_tokens: int = 1200
     job_agent_enabled: bool = False
+    job_agent_session_ttl_seconds: int = 7 * 24 * 60 * 60
+    job_agent_session_cookie_secure: bool = False
+    job_agent_harness_max_model_calls: int = 3
+    job_agent_harness_max_tool_calls: int = 4
+    job_agent_harness_max_elapsed_seconds: float = 30.0
+    job_agent_planner_max_attempts: int = 2
+    job_agent_planner_initial_backoff_seconds: float = 0.1
     cors_allowed_origins: tuple[str, ...] = (
         "http://127.0.0.1:5173",
         "http://localhost:5173",
@@ -196,6 +203,35 @@ def load_settings(*, dotenv_override: bool = False) -> Settings:
             .strip()
             .lower()
             in {"1", "true", "yes", "on"}
+        ),
+        job_agent_session_ttl_seconds=int(
+            os.getenv(
+                "JOBSCOPE_JOB_AGENT_SESSION_TTL_SECONDS",
+                str(7 * 24 * 60 * 60),
+            )
+        ),
+        job_agent_session_cookie_secure=(
+            os.getenv("JOBSCOPE_JOB_AGENT_SESSION_COOKIE_SECURE", "false")
+            .strip()
+            .lower()
+            in {"1", "true", "yes", "on"}
+        ),
+        job_agent_harness_max_model_calls=int(
+            os.getenv("JOBSCOPE_JOB_AGENT_HARNESS_MAX_MODEL_CALLS", "3")
+        ),
+        job_agent_harness_max_tool_calls=int(
+            os.getenv("JOBSCOPE_JOB_AGENT_HARNESS_MAX_TOOL_CALLS", "4")
+        ),
+        job_agent_harness_max_elapsed_seconds=float(
+            os.getenv("JOBSCOPE_JOB_AGENT_HARNESS_MAX_ELAPSED_SECONDS", "30")
+        ),
+        job_agent_planner_max_attempts=int(
+            os.getenv("JOBSCOPE_JOB_AGENT_PLANNER_MAX_ATTEMPTS", "2")
+        ),
+        job_agent_planner_initial_backoff_seconds=float(
+            os.getenv(
+                "JOBSCOPE_JOB_AGENT_PLANNER_INITIAL_BACKOFF_SECONDS", "0.1"
+            )
         ),
         cors_allowed_origins=cors_allowed_origins,
     )

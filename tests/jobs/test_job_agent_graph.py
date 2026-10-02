@@ -1,6 +1,7 @@
 import unittest
 from datetime import date
 
+from langgraph.checkpoint.memory import MemorySaver
 from pydantic import ValidationError
 
 from app.application.jobs.current_job_records import (
@@ -46,11 +47,13 @@ class _Planner:
         self._plan = plan
         self.calls = 0
         self.received_query: str | None = None
+        self.received_queries: list[str] = []
         self.received_tools = ()
 
     def plan(self, *, user_query, tools):
         self.calls += 1
         self.received_query = user_query
+        self.received_queries.append(user_query)
         self.received_tools = tools
         return self._plan
 
@@ -140,6 +143,57 @@ class JobAgentGraphTest(unittest.TestCase):
 
         self.assertEqual(0, planner.calls)
         self.assertEqual(0, reader.calls)
+
+    def test_same_trusted_thread_restores_bounded_query_context(self) -> None:
+        reader = _Reader()
+        planner = _Planner(_tool_plan())
+        graph = build_job_agent_graph(
+            planner,
+            [SearchCurrentJobsTool(reader)],
+            checkpointer=MemorySaver(),
+        )
+        config = {"configurable": {"thread_id": "trusted-owner-thread"}}
+
+        first = graph.invoke(
+            {"user_query": "找上海实习岗位", "owner_id": "owner-a"},
+            config=config,
+        )
+        second = graph.invoke(
+            {"user_query": "只看校招", "owner_id": "owner-a"},
+            config=config,
+        )
+
+        self.assertEqual("user", first["conversation_turns"][0]["role"])
+        self.assertEqual("assistant", first["conversation_turns"][1]["role"])
+        self.assertEqual(
+            "found: registered read-only tool execution was completed",
+            first["conversation_turns"][1]["content"],
+        )
+        self.assertNotIn(
+            "The question asks for current jobs",
+            first["conversation_turns"][1]["content"],
+        )
+        self.assertEqual(4, len(second["conversation_turns"]))
+        self.assertEqual("找上海实习岗位", planner.received_queries[0])
+        self.assertIn("找上海实习岗位", planner.received_queries[1])
+        self.assertIn("只看校招", planner.received_queries[1])
+
+    def test_planner_receives_consented_preferences_only_in_context(self) -> None:
+        planner = _Planner(_tool_plan())
+        graph = build_job_agent_graph(
+            planner,
+            [SearchCurrentJobsTool(_Reader())],
+        )
+
+        state = graph.invoke(
+            {"user_query": "find internships"},
+            context={"preferences": {"preferred_location": "Shanghai"}},
+        )
+
+        self.assertEqual("tool_selected", state["planning_status"])
+        self.assertIn("preferred_location: Shanghai", planner.received_query)
+        self.assertIn("Current user request:\nfind internships", planner.received_query)
+        self.assertNotIn("preferred_location", state)
 
 
 if __name__ == "__main__":
