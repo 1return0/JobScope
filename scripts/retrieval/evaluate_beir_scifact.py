@@ -100,6 +100,26 @@ def metrics(report):
     }
 
 
+def paired_mrr_interval(left, right, *, resamples: int = 20_000) -> dict[str, float | int]:
+    """Paired query bootstrap for the MRR@5 difference (fixed random seed)."""
+    differences = np.asarray([
+        (1 / a.first_relevant_rank if a.first_relevant_rank else 0.0)
+        - (1 / b.first_relevant_rank if b.first_relevant_rank else 0.0)
+        for a, b in zip(left.cases, right.cases, strict=True)
+    ])
+    rng = np.random.default_rng(20261012)
+    sampled = rng.integers(0, len(differences), size=(resamples, len(differences)))
+    means = differences[sampled].mean(axis=1)
+    lower, upper = np.quantile(means, [0.025, 0.975])
+    return {
+        "difference": round(float(differences.mean()), 6),
+        "lower": round(float(lower), 6),
+        "upper": round(float(upper), 6),
+        "resamples": resamples,
+        "seed": 20261012,
+    }
+
+
 def _cache_key(source_hashes: dict[str, str], *, precision: str) -> str:
     payload = json.dumps(
         {"source_sha256": source_hashes,
@@ -236,6 +256,10 @@ def main() -> None:
         "query_instruction": QWEN3_EMBEDDING_06B.query_instruction,
         "bm25": metrics(baseline), "dense": metrics(dense), "hybrid_rrf": metrics(hybrid),
         "hybrid_minus_bm25": {key: round(metrics(hybrid)[key] - metrics(baseline)[key], 6) for key in metrics(baseline)},
+        "paired_mrr_at_5_bootstrap_95ci": {
+            "hybrid_minus_bm25": paired_mrr_interval(hybrid, baseline),
+            "hybrid_minus_dense": paired_mrr_interval(hybrid, dense),
+        },
         "per_query": [
             {"query_id": case.case_id, "bm25_first_rank": b.first_relevant_rank,
              "dense_first_rank": d.first_relevant_rank, "hybrid_first_rank": h.first_relevant_rank}

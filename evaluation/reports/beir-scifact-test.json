@@ -38,6 +38,22 @@
     "mrr_at_5": 0.067723,
     "ndcg_at_5": 0.068828
   },
+  "paired_mrr_at_5_bootstrap_95ci": {
+    "hybrid_minus_bm25": {
+      "difference": 0.067722,
+      "lower": 0.040721,
+      "upper": 0.095222,
+      "resamples": 20000,
+      "seed": 20261012
+    },
+    "hybrid_minus_dense": {
+      "difference": 0.007389,
+      "lower": -0.025113,
+      "upper": 0.039167,
+      "resamples": 20000,
+      "seed": 20261012
+    }
+  },
   "per_query": [
     {
       "query_id": "1",
