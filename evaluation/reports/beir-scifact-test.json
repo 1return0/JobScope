@@ -1,0 +1,1843 @@
+{
+  "dataset": "BEIR SciFact test",
+  "source": "https://github.com/beir-cellar/beir/wiki/Datasets-available",
+  "qrels": "published BEIR test qrels; not JobScope-generated labels",
+  "domain_boundary": "English scientific claim retrieval, not Chinese recruitment QA or end-to-end Agent quality",
+  "document_unit": "one BEIR corpus record (title plus abstract); no JobScope parsing/chunking",
+  "documents": 5183,
+  "queries": 300,
+  "top_k": 5,
+  "source_sha256": {
+    "corpus.jsonl": "dec31c8182f3d744c7d2c09423756fd1d17cbef75808db13ba01cc0aab4d1ac6",
+    "queries.jsonl": "8ff84a7c903f722981cd8d595c022660140c51867b27608a6d4910db86080313",
+    "test.tsv": "0864bb985e0ca2367ba217977e72004d549054b2b06666ed9d4825ac7c21284c"
+  },
+  "embedding_model": "Qwen/Qwen3-Embedding-0.6B",
+  "embedding_revision": "97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3",
+  "embedding_identity": "emb_0c593ac3b88735e84aef661f2a6be69fac31ad9af183d408243c9678e6c62fc7",
+  "inference_precision": "fp16",
+  "embedding_cache_key": "a07f5c1575d2929886eb",
+  "query_instruction": "Instruct: Given a campus recruitment question, retrieve official evidence that answers the question.\nQuery: ",
+  "bm25": {
+    "recall_at_5": 0.694444,
+    "mrr_at_5": 0.597333,
+    "ndcg_at_5": 0.617099
+  },
+  "dense": {
+    "recall_at_5": 0.7905,
+    "mrr_at_5": 0.657667,
+    "ndcg_at_5": 0.683504
+  },
+  "hybrid_rrf": {
+    "recall_at_5": 0.773222,
+    "mrr_at_5": 0.665056,
+    "ndcg_at_5": 0.685927
+  },
+  "hybrid_minus_bm25": {
+    "recall_at_5": 0.078778,
+    "mrr_at_5": 0.067723,
+    "ndcg_at_5": 0.068828
+  },
+  "per_query": [
+    {
+      "query_id": "1",
+      "bm25_first_rank": null,
+      "dense_first_rank": null,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "100",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "1012",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "1014",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "1019",
+      "bm25_first_rank": 2,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "1020",
+      "bm25_first_rank": null,
+      "dense_first_rank": 2,
+      "hybrid_first_rank": 3
+    },
+    {
+      "query_id": "1021",
+      "bm25_first_rank": null,
+      "dense_first_rank": 2,
+      "hybrid_first_rank": 3
+    },
+    {
+      "query_id": "1024",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 3,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "1029",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "1041",
+      "bm25_first_rank": 2,
+      "dense_first_rank": 4,
+      "hybrid_first_rank": 5
+    },
+    {
+      "query_id": "1049",
+      "bm25_first_rank": null,
+      "dense_first_rank": null,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "1062",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "1086",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "1088",
+      "bm25_first_rank": null,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 3
+    },
+    {
+      "query_id": "1089",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "1099",
+      "bm25_first_rank": 3,
+      "dense_first_rank": 5,
+      "hybrid_first_rank": 3
+    },
+    {
+      "query_id": "1100",
+      "bm25_first_rank": 2,
+      "dense_first_rank": null,
+      "hybrid_first_rank": 3
+    },
+    {
+      "query_id": "1104",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "1107",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 2,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "1110",
+      "bm25_first_rank": null,
+      "dense_first_rank": null,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "1121",
+      "bm25_first_rank": 2,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "113",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "1130",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "1132",
+      "bm25_first_rank": null,
+      "dense_first_rank": null,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "1137",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 2,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "1140",
+      "bm25_first_rank": null,
+      "dense_first_rank": 2,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "1144",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "1146",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "115",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "1150",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "1163",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "1175",
+      "bm25_first_rank": null,
+      "dense_first_rank": null,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "1179",
+      "bm25_first_rank": null,
+      "dense_first_rank": null,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "118",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "1180",
+      "bm25_first_rank": 5,
+      "dense_first_rank": null,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "1185",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "1187",
+      "bm25_first_rank": 2,
+      "dense_first_rank": 2,
+      "hybrid_first_rank": 2
+    },
+    {
+      "query_id": "1191",
+      "bm25_first_rank": null,
+      "dense_first_rank": 4,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "1194",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "1196",
+      "bm25_first_rank": null,
+      "dense_first_rank": 3,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "1197",
+      "bm25_first_rank": null,
+      "dense_first_rank": 4,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "1199",
+      "bm25_first_rank": null,
+      "dense_first_rank": null,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "1200",
+      "bm25_first_rank": null,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 4
+    },
+    {
+      "query_id": "1202",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "1204",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "1207",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "1213",
+      "bm25_first_rank": null,
+      "dense_first_rank": null,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "1216",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "1221",
+      "bm25_first_rank": null,
+      "dense_first_rank": 2,
+      "hybrid_first_rank": 5
+    },
+    {
+      "query_id": "1225",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "1226",
+      "bm25_first_rank": null,
+      "dense_first_rank": null,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "1232",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "124",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "1241",
+      "bm25_first_rank": null,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "1245",
+      "bm25_first_rank": null,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "1259",
+      "bm25_first_rank": 2,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "1262",
+      "bm25_first_rank": 2,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "1266",
+      "bm25_first_rank": 3,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "127",
+      "bm25_first_rank": 3,
+      "dense_first_rank": 3,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "1270",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "1271",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "1272",
+      "bm25_first_rank": null,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 3
+    },
+    {
+      "query_id": "1273",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "1274",
+      "bm25_first_rank": 2,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 2
+    },
+    {
+      "query_id": "1278",
+      "bm25_first_rank": null,
+      "dense_first_rank": null,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "1279",
+      "bm25_first_rank": null,
+      "dense_first_rank": null,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "128",
+      "bm25_first_rank": 3,
+      "dense_first_rank": null,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "1280",
+      "bm25_first_rank": null,
+      "dense_first_rank": 5,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "1281",
+      "bm25_first_rank": null,
+      "dense_first_rank": null,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "1282",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "129",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "1290",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "1292",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "1298",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "13",
+      "bm25_first_rank": null,
+      "dense_first_rank": null,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "130",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "1303",
+      "bm25_first_rank": null,
+      "dense_first_rank": 2,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "1316",
+      "bm25_first_rank": null,
+      "dense_first_rank": null,
+      "hybrid_first_rank": 3
+    },
+    {
+      "query_id": "1319",
+      "bm25_first_rank": 5,
+      "dense_first_rank": 2,
+      "hybrid_first_rank": 2
+    },
+    {
+      "query_id": "132",
+      "bm25_first_rank": null,
+      "dense_first_rank": null,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "1320",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 4,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "133",
+      "bm25_first_rank": null,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "1332",
+      "bm25_first_rank": null,
+      "dense_first_rank": null,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "1335",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "1336",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 2,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "1337",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "1339",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "1344",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 2,
+      "hybrid_first_rank": 2
+    },
+    {
+      "query_id": "1352",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "1359",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "1362",
+      "bm25_first_rank": 3,
+      "dense_first_rank": null,
+      "hybrid_first_rank": 5
+    },
+    {
+      "query_id": "1363",
+      "bm25_first_rank": 1,
+      "dense_first_rank": null,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "1368",
+      "bm25_first_rank": null,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "137",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "1370",
+      "bm25_first_rank": 5,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 3
+    },
+    {
+      "query_id": "1379",
+      "bm25_first_rank": 3,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 2
+    },
+    {
+      "query_id": "1382",
+      "bm25_first_rank": null,
+      "dense_first_rank": 2,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "1385",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "1389",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "1395",
+      "bm25_first_rank": null,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 4
+    },
+    {
+      "query_id": "141",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "142",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "143",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "146",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "148",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 2,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "163",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "171",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "179",
+      "bm25_first_rank": 3,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "180",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "183",
+      "bm25_first_rank": null,
+      "dense_first_rank": 2,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "185",
+      "bm25_first_rank": 2,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "198",
+      "bm25_first_rank": 2,
+      "dense_first_rank": null,
+      "hybrid_first_rank": 4
+    },
+    {
+      "query_id": "208",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "212",
+      "bm25_first_rank": 2,
+      "dense_first_rank": 5,
+      "hybrid_first_rank": 2
+    },
+    {
+      "query_id": "213",
+      "bm25_first_rank": null,
+      "dense_first_rank": 5,
+      "hybrid_first_rank": 3
+    },
+    {
+      "query_id": "216",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "217",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "218",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "219",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "230",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "232",
+      "bm25_first_rank": 2,
+      "dense_first_rank": 3,
+      "hybrid_first_rank": 2
+    },
+    {
+      "query_id": "233",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "236",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "237",
+      "bm25_first_rank": 2,
+      "dense_first_rank": 2,
+      "hybrid_first_rank": 3
+    },
+    {
+      "query_id": "238",
+      "bm25_first_rank": null,
+      "dense_first_rank": null,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "239",
+      "bm25_first_rank": null,
+      "dense_first_rank": null,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "248",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "249",
+      "bm25_first_rank": 2,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "261",
+      "bm25_first_rank": null,
+      "dense_first_rank": 2,
+      "hybrid_first_rank": 5
+    },
+    {
+      "query_id": "268",
+      "bm25_first_rank": 2,
+      "dense_first_rank": 5,
+      "hybrid_first_rank": 2
+    },
+    {
+      "query_id": "269",
+      "bm25_first_rank": 2,
+      "dense_first_rank": 4,
+      "hybrid_first_rank": 2
+    },
+    {
+      "query_id": "274",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "275",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "279",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "294",
+      "bm25_first_rank": 1,
+      "dense_first_rank": null,
+      "hybrid_first_rank": 4
+    },
+    {
+      "query_id": "295",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 2,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "298",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "3",
+      "bm25_first_rank": 2,
+      "dense_first_rank": 3,
+      "hybrid_first_rank": 2
+    },
+    {
+      "query_id": "300",
+      "bm25_first_rank": 4,
+      "dense_first_rank": null,
+      "hybrid_first_rank": 3
+    },
+    {
+      "query_id": "303",
+      "bm25_first_rank": 2,
+      "dense_first_rank": null,
+      "hybrid_first_rank": 5
+    },
+    {
+      "query_id": "312",
+      "bm25_first_rank": null,
+      "dense_first_rank": null,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "314",
+      "bm25_first_rank": 2,
+      "dense_first_rank": 4,
+      "hybrid_first_rank": 3
+    },
+    {
+      "query_id": "324",
+      "bm25_first_rank": 4,
+      "dense_first_rank": null,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "327",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "338",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "343",
+      "bm25_first_rank": 3,
+      "dense_first_rank": 2,
+      "hybrid_first_rank": 3
+    },
+    {
+      "query_id": "350",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "354",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "36",
+      "bm25_first_rank": null,
+      "dense_first_rank": null,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "362",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 2,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "380",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "384",
+      "bm25_first_rank": null,
+      "dense_first_rank": null,
+      "hybrid_first_rank": 5
+    },
+    {
+      "query_id": "385",
+      "bm25_first_rank": 3,
+      "dense_first_rank": 2,
+      "hybrid_first_rank": 2
+    },
+    {
+      "query_id": "386",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "388",
+      "bm25_first_rank": 3,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 2
+    },
+    {
+      "query_id": "399",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "410",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "411",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "415",
+      "bm25_first_rank": 5,
+      "dense_first_rank": 4,
+      "hybrid_first_rank": 5
+    },
+    {
+      "query_id": "42",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "421",
+      "bm25_first_rank": null,
+      "dense_first_rank": null,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "431",
+      "bm25_first_rank": null,
+      "dense_first_rank": null,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "436",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "437",
+      "bm25_first_rank": null,
+      "dense_first_rank": null,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "439",
+      "bm25_first_rank": null,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "440",
+      "bm25_first_rank": null,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "443",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "452",
+      "bm25_first_rank": null,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 4
+    },
+    {
+      "query_id": "475",
+      "bm25_first_rank": null,
+      "dense_first_rank": null,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "478",
+      "bm25_first_rank": null,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 2
+    },
+    {
+      "query_id": "48",
+      "bm25_first_rank": 2,
+      "dense_first_rank": 3,
+      "hybrid_first_rank": 2
+    },
+    {
+      "query_id": "49",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "491",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "5",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "50",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "501",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "502",
+      "bm25_first_rank": null,
+      "dense_first_rank": null,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "507",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 2,
+      "hybrid_first_rank": 2
+    },
+    {
+      "query_id": "508",
+      "bm25_first_rank": null,
+      "dense_first_rank": null,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "51",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "513",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 2,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "514",
+      "bm25_first_rank": null,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "516",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "517",
+      "bm25_first_rank": null,
+      "dense_first_rank": 5,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "521",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "525",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "527",
+      "bm25_first_rank": 2,
+      "dense_first_rank": 3,
+      "hybrid_first_rank": 2
+    },
+    {
+      "query_id": "528",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "53",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "532",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 2,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "533",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 3,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "535",
+      "bm25_first_rank": null,
+      "dense_first_rank": 5,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "536",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "539",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "54",
+      "bm25_first_rank": 4,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "540",
+      "bm25_first_rank": null,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 2
+    },
+    {
+      "query_id": "544",
+      "bm25_first_rank": null,
+      "dense_first_rank": 3,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "549",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 2,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "551",
+      "bm25_first_rank": null,
+      "dense_first_rank": null,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "552",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "554",
+      "bm25_first_rank": null,
+      "dense_first_rank": null,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "56",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "560",
+      "bm25_first_rank": null,
+      "dense_first_rank": null,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "569",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 5,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "57",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "575",
+      "bm25_first_rank": null,
+      "dense_first_rank": 3,
+      "hybrid_first_rank": 4
+    },
+    {
+      "query_id": "577",
+      "bm25_first_rank": null,
+      "dense_first_rank": 2,
+      "hybrid_first_rank": 5
+    },
+    {
+      "query_id": "578",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "587",
+      "bm25_first_rank": 3,
+      "dense_first_rank": 2,
+      "hybrid_first_rank": 2
+    },
+    {
+      "query_id": "589",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "593",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "597",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "598",
+      "bm25_first_rank": 4,
+      "dense_first_rank": 3,
+      "hybrid_first_rank": 3
+    },
+    {
+      "query_id": "613",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "619",
+      "bm25_first_rank": 5,
+      "dense_first_rank": 4,
+      "hybrid_first_rank": 2
+    },
+    {
+      "query_id": "623",
+      "bm25_first_rank": null,
+      "dense_first_rank": 2,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "628",
+      "bm25_first_rank": null,
+      "dense_first_rank": 2,
+      "hybrid_first_rank": 2
+    },
+    {
+      "query_id": "636",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "637",
+      "bm25_first_rank": null,
+      "dense_first_rank": 2,
+      "hybrid_first_rank": 2
+    },
+    {
+      "query_id": "641",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "644",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 2,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "649",
+      "bm25_first_rank": null,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 2
+    },
+    {
+      "query_id": "659",
+      "bm25_first_rank": 1,
+      "dense_first_rank": null,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "660",
+      "bm25_first_rank": 1,
+      "dense_first_rank": null,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "674",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 3,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "684",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 2,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "690",
+      "bm25_first_rank": null,
+      "dense_first_rank": null,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "691",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 2,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "692",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "693",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "70",
+      "bm25_first_rank": 1,
+      "dense_first_rank": null,
+      "hybrid_first_rank": 3
+    },
+    {
+      "query_id": "700",
+      "bm25_first_rank": 2,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "702",
+      "bm25_first_rank": 3,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 2
+    },
+    {
+      "query_id": "715",
+      "bm25_first_rank": null,
+      "dense_first_rank": null,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "716",
+      "bm25_first_rank": null,
+      "dense_first_rank": null,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "718",
+      "bm25_first_rank": 2,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "72",
+      "bm25_first_rank": 2,
+      "dense_first_rank": 3,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "721",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "723",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "727",
+      "bm25_first_rank": 4,
+      "dense_first_rank": 3,
+      "hybrid_first_rank": 3
+    },
+    {
+      "query_id": "728",
+      "bm25_first_rank": 4,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 3
+    },
+    {
+      "query_id": "729",
+      "bm25_first_rank": 2,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "742",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 2,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "743",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 2,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "744",
+      "bm25_first_rank": 2,
+      "dense_first_rank": 3,
+      "hybrid_first_rank": 2
+    },
+    {
+      "query_id": "75",
+      "bm25_first_rank": 2,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "756",
+      "bm25_first_rank": null,
+      "dense_first_rank": 2,
+      "hybrid_first_rank": 3
+    },
+    {
+      "query_id": "759",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "768",
+      "bm25_first_rank": null,
+      "dense_first_rank": null,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "770",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "775",
+      "bm25_first_rank": null,
+      "dense_first_rank": null,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "781",
+      "bm25_first_rank": 2,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 2
+    },
+    {
+      "query_id": "783",
+      "bm25_first_rank": null,
+      "dense_first_rank": null,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "784",
+      "bm25_first_rank": 3,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "785",
+      "bm25_first_rank": 2,
+      "dense_first_rank": 2,
+      "hybrid_first_rank": 2
+    },
+    {
+      "query_id": "793",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 4,
+      "hybrid_first_rank": 2
+    },
+    {
+      "query_id": "800",
+      "bm25_first_rank": null,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "805",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "808",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "811",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "814",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "820",
+      "bm25_first_rank": null,
+      "dense_first_rank": null,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "821",
+      "bm25_first_rank": null,
+      "dense_first_rank": null,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "823",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "830",
+      "bm25_first_rank": null,
+      "dense_first_rank": 4,
+      "hybrid_first_rank": 4
+    },
+    {
+      "query_id": "831",
+      "bm25_first_rank": null,
+      "dense_first_rank": 5,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "832",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "834",
+      "bm25_first_rank": null,
+      "dense_first_rank": null,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "837",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "839",
+      "bm25_first_rank": 2,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "845",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "847",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "852",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 2,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "859",
+      "bm25_first_rank": 5,
+      "dense_first_rank": 2,
+      "hybrid_first_rank": 3
+    },
+    {
+      "query_id": "870",
+      "bm25_first_rank": null,
+      "dense_first_rank": null,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "873",
+      "bm25_first_rank": null,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 3
+    },
+    {
+      "query_id": "879",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "880",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "882",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "887",
+      "bm25_first_rank": null,
+      "dense_first_rank": null,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "903",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "904",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "907",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "911",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "913",
+      "bm25_first_rank": null,
+      "dense_first_rank": null,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "914",
+      "bm25_first_rank": null,
+      "dense_first_rank": null,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "921",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "922",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "936",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "94",
+      "bm25_first_rank": 1,
+      "dense_first_rank": null,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "956",
+      "bm25_first_rank": null,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 2
+    },
+    {
+      "query_id": "957",
+      "bm25_first_rank": 2,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "960",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "967",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "971",
+      "bm25_first_rank": 3,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "975",
+      "bm25_first_rank": null,
+      "dense_first_rank": null,
+      "hybrid_first_rank": null
+    },
+    {
+      "query_id": "982",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "985",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 1,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "99",
+      "bm25_first_rank": 1,
+      "dense_first_rank": 2,
+      "hybrid_first_rank": 1
+    },
+    {
+      "query_id": "993",
+      "bm25_first_rank": 3,
+      "dense_first_rank": 2,
+      "hybrid_first_rank": 2
+    }
+  ]
+}
