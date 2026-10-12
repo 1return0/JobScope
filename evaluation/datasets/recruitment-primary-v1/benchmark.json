@@ -1,0 +1,3652 @@
+{
+  "dataset_id": "jobscope-recruitment-primary-v1",
+  "dataset_version": 1,
+  "annotation_status": "source_grounded_agent_authored",
+  "human_reviewed": false,
+  "as_of_date": "2026-10-12",
+  "captured_at": "2026-10-12T06:52:21.663941+00:00",
+  "annotations_sha256": "c3f7508127a78af7ce63e54674da7f1adb901d26055b1893a0ec99ca313c8584",
+  "representation": "Agent-derived public posting and FAQ summaries; source questions excluded from corpus; existing HTML parser and StructureAwareChunker",
+  "sources": [
+    {
+      "source_id": "baidu-campus-policy",
+      "url": "https://talent.baidu.com/jobs/campus",
+      "artifact_sha256": "9b2667b6e2b9de5847d6e69c634cbfe3ca96e76fb4c0985e9b2d880327b9fd0d",
+      "byte_size": 135706
+    },
+    {
+      "source_id": "baidu-graduate-02f73086-be71-4d09-8d6e-f1c6981b8b48",
+      "url": "https://talent.baidu.com/jobs/detail/GRADUATE/02f73086-be71-4d09-8d6e-f1c6981b8b48",
+      "artifact_sha256": "4d571b45a9464d572499bb1565bbc2c1dd5c8ddfafc8af8bc8f7547748aff115",
+      "byte_size": 54996
+    },
+    {
+      "source_id": "baidu-graduate-33f41590-5770-4a91-9395-3c05e7ed1571",
+      "url": "https://talent.baidu.com/jobs/detail/GRADUATE/33f41590-5770-4a91-9395-3c05e7ed1571",
+      "artifact_sha256": "7236598968a37d242db16454f208c7442a3cfc635f685bcaafa624857901967e",
+      "byte_size": 54393
+    },
+    {
+      "source_id": "baidu-graduate-3fbd2b8c-43a6-4fa6-a71c-784bfe2ec4cd",
+      "url": "https://talent.baidu.com/jobs/detail/GRADUATE/3fbd2b8c-43a6-4fa6-a71c-784bfe2ec4cd",
+      "artifact_sha256": "36b43e4548b71f42a3d3868a0aaa04084ddf84d12d15aaddd2939317de5d4346",
+      "byte_size": 45576
+    },
+    {
+      "source_id": "baidu-graduate-423c0fa3-a0f3-4def-a882-7466d3685b79",
+      "url": "https://talent.baidu.com/jobs/detail/GRADUATE/423c0fa3-a0f3-4def-a882-7466d3685b79",
+      "artifact_sha256": "89211ad0ccc227ce88a7e225ee2d1706da9e4168ea6bb06290df00abee720a68",
+      "byte_size": 48819
+    },
+    {
+      "source_id": "baidu-graduate-545e6823-28d2-4cb5-aba2-3c520a31b4e0",
+      "url": "https://talent.baidu.com/jobs/detail/GRADUATE/545e6823-28d2-4cb5-aba2-3c520a31b4e0",
+      "artifact_sha256": "b66b533e6f1607543dde6cfa580e96a517c50f41b63dcdf2409f39ae6d956277",
+      "byte_size": 51511
+    },
+    {
+      "source_id": "baidu-graduate-6061be03-f92b-4430-a1b8-9168de0f91f6",
+      "url": "https://talent.baidu.com/jobs/detail/GRADUATE/6061be03-f92b-4430-a1b8-9168de0f91f6",
+      "artifact_sha256": "e3c234097a209e495bbaf7492dd5b866625aa44e7901e24d77ac189e2e400c32",
+      "byte_size": 54577
+    },
+    {
+      "source_id": "baidu-graduate-6ea8538d-4ea0-4488-98f5-0fac33564f03",
+      "url": "https://talent.baidu.com/jobs/detail/GRADUATE/6ea8538d-4ea0-4488-98f5-0fac33564f03",
+      "artifact_sha256": "81349d64a680d9dc085d01c758e5b7657bb4c3c5033c88d2525848528fa76408",
+      "byte_size": 51348
+    },
+    {
+      "source_id": "baidu-graduate-72145a13-5eb1-41ce-8853-d00aa7369281",
+      "url": "https://talent.baidu.com/jobs/detail/GRADUATE/72145a13-5eb1-41ce-8853-d00aa7369281",
+      "artifact_sha256": "d1f12bdcbb006c7ab31d7f491084c71142202e679b0357c8855ee4dfbfc7d009",
+      "byte_size": 49891
+    },
+    {
+      "source_id": "baidu-graduate-b9ad50c9-07c7-4b9c-998d-7049bb706edf",
+      "url": "https://talent.baidu.com/jobs/detail/GRADUATE/b9ad50c9-07c7-4b9c-998d-7049bb706edf",
+      "artifact_sha256": "58c8442f768e7e7e692523c0bb181207906a51350d56488e042ef97a400ef58b",
+      "byte_size": 47095
+    },
+    {
+      "source_id": "baidu-graduate-ccfdea4e-4ae4-4954-9062-fd94960a2861",
+      "url": "https://talent.baidu.com/jobs/detail/GRADUATE/ccfdea4e-4ae4-4954-9062-fd94960a2861",
+      "artifact_sha256": "2af971f90c18e8b8524eebf27bee6cd1a1fa14a1dbfca172943dada2f400cf4d",
+      "byte_size": 47206
+    },
+    {
+      "source_id": "baidu-graduate-d29404bd-55de-4cc1-929b-e67d304abc97",
+      "url": "https://talent.baidu.com/jobs/detail/GRADUATE/d29404bd-55de-4cc1-929b-e67d304abc97",
+      "artifact_sha256": "5177162ecdd0e0bcfaba2cfd27e1b9c55e08e4f74ce6d3d378c97330e1fffdd4",
+      "byte_size": 51348
+    },
+    {
+      "source_id": "baidu-intern-0a86720f-d92d-4981-8c8e-a21b24ae13fd",
+      "url": "https://talent.baidu.com/jobs/detail/INTERN/0a86720f-d92d-4981-8c8e-a21b24ae13fd",
+      "artifact_sha256": "dcf9ba9c1493ef8730c75ab089470e5177f644fceffba0c29026457b7781818b",
+      "byte_size": 51464
+    },
+    {
+      "source_id": "baidu-intern-15f123ac-2755-4324-b5ba-25682d0f9b40",
+      "url": "https://talent.baidu.com/jobs/detail/INTERN/15f123ac-2755-4324-b5ba-25682d0f9b40",
+      "artifact_sha256": "ba8d3baa356496bea3605e38828faffb5415e4edbada83b597205e47f4e5ec92",
+      "byte_size": 53556
+    },
+    {
+      "source_id": "baidu-intern-23157d0b-b51b-436a-8e94-17100c9fabdd",
+      "url": "https://talent.baidu.com/jobs/detail/INTERN/23157d0b-b51b-436a-8e94-17100c9fabdd",
+      "artifact_sha256": "9746eee56bea4bc7ddd3bd23c75239e3cebbc277e64ae9240813df31f85f4e44",
+      "byte_size": 47177
+    },
+    {
+      "source_id": "baidu-intern-320200cd-893d-4076-b39d-1f77f7a79948",
+      "url": "https://talent.baidu.com/jobs/detail/INTERN/320200cd-893d-4076-b39d-1f77f7a79948",
+      "artifact_sha256": "dfd376faea4e100864e488222dd65f1a0d39ef32ff1f0bc5892189ac5f1d4847",
+      "byte_size": 51916
+    },
+    {
+      "source_id": "baidu-intern-43b42d22-86f9-486b-adf6-7ea633dd4c92",
+      "url": "https://talent.baidu.com/jobs/detail/INTERN/43b42d22-86f9-486b-adf6-7ea633dd4c92",
+      "artifact_sha256": "23b653fcd6b537e4b02958263ac9b62785715c53633642f2e3564bd8ca1c9816",
+      "byte_size": 48329
+    },
+    {
+      "source_id": "baidu-intern-46bd7fb9-60cd-4418-bce8-eecd0e350607",
+      "url": "https://talent.baidu.com/jobs/detail/INTERN/46bd7fb9-60cd-4418-bce8-eecd0e350607",
+      "artifact_sha256": "e17ac5a76fa35e8b8b80d67697178e2207ef971a85811c68222663560b8d501f",
+      "byte_size": 54011
+    },
+    {
+      "source_id": "baidu-intern-7de69a33-1575-4b4b-9aa6-86750b3939fc",
+      "url": "https://talent.baidu.com/jobs/detail/INTERN/7de69a33-1575-4b4b-9aa6-86750b3939fc",
+      "artifact_sha256": "c4a8460e030e67c42a8a31d2b16ec3e06e85bee17a341be7ffa562947b936bd8",
+      "byte_size": 54416
+    },
+    {
+      "source_id": "baidu-intern-9ba0eeb1-990b-4099-abb4-1856124f9751",
+      "url": "https://talent.baidu.com/jobs/detail/INTERN/9ba0eeb1-990b-4099-abb4-1856124f9751",
+      "artifact_sha256": "524ce2a1f892cc935b5e206e9a33d2548a3b58af13d12c0b560cc3036a1a533c",
+      "byte_size": 51622
+    },
+    {
+      "source_id": "baidu-intern-a5d745dd-b2e4-4eff-b10d-23d6e94d302d",
+      "url": "https://talent.baidu.com/jobs/detail/INTERN/a5d745dd-b2e4-4eff-b10d-23d6e94d302d",
+      "artifact_sha256": "18e3f7a0144c8eccfb9b3509999f9f648acf75af989aae8573d981b0006fdb09",
+      "byte_size": 46954
+    },
+    {
+      "source_id": "baidu-intern-bd0f07c8-9087-4499-bc3b-1a57c15aa0cc",
+      "url": "https://talent.baidu.com/jobs/detail/INTERN/bd0f07c8-9087-4499-bc3b-1a57c15aa0cc",
+      "artifact_sha256": "8b2775bf36a850a3e7a3c35f27121a5f5610808f83eb4fc8d6f2b7a3c52d4ca4",
+      "byte_size": 46438
+    },
+    {
+      "source_id": "baidu-intern-c325e4e8-d27e-40d4-a517-3dbc27bb4303",
+      "url": "https://talent.baidu.com/jobs/detail/INTERN/c325e4e8-d27e-40d4-a517-3dbc27bb4303",
+      "artifact_sha256": "36b038e85754a31e48e80e553f008b54956d5cd2eb58b7c3f81aad04cd728509",
+      "byte_size": 47864
+    },
+    {
+      "source_id": "baidu-intern-c7c0e663-c7fb-473d-82fa-57a9717d91b2",
+      "url": "https://talent.baidu.com/jobs/detail/INTERN/c7c0e663-c7fb-473d-82fa-57a9717d91b2",
+      "artifact_sha256": "47980e208c78c12ae81c9fef8c84a0fce947f3ac549407325cd4d210ee4ca658",
+      "byte_size": 50368
+    },
+    {
+      "source_id": "baidu-intern-ca7b3bf6-6b8a-4c3f-a8f3-295ab3b9f1f0",
+      "url": "https://talent.baidu.com/jobs/detail/INTERN/ca7b3bf6-6b8a-4c3f-a8f3-295ab3b9f1f0",
+      "artifact_sha256": "0fa73123c615623653394dd3466097c8749819496f019499e2c65b501a0258d2",
+      "byte_size": 46424
+    },
+    {
+      "source_id": "baidu-intern-ef7bf24d-667d-4bec-bdfc-a7cae4dd7bb8",
+      "url": "https://talent.baidu.com/jobs/detail/INTERN/ef7bf24d-667d-4bec-bdfc-a7cae4dd7bb8",
+      "artifact_sha256": "e199bbb9f00f67664c8368e3dbcba37a1f67eaaebf3830dd3b1988681c7406c1",
+      "byte_size": 51963
+    },
+    {
+      "source_id": "baidu-intern-f0b36f9d-807a-4817-997d-ca8fe8141f8e",
+      "url": "https://talent.baidu.com/jobs/detail/INTERN/f0b36f9d-807a-4817-997d-ca8fe8141f8e",
+      "artifact_sha256": "baf547ff8ca84df4902eeca761e11dccf42bc9446ca7e9c6a107ba6ec47b55b4",
+      "byte_size": 50631
+    },
+    {
+      "source_id": "baidu-intern-f27bc9f8-8f4c-4d3b-aa84-f05e66d17147",
+      "url": "https://talent.baidu.com/jobs/detail/INTERN/f27bc9f8-8f4c-4d3b-aa84-f05e66d17147",
+      "artifact_sha256": "b3ea3762435340ce6ec8243e5ff85cf174cc2f591f45a7330c3bd30a274f8832",
+      "byte_size": 46556
+    },
+    {
+      "source_id": "baidu-intern-f8a467f0-2a4a-4238-a21c-412408f85c2e",
+      "url": "https://talent.baidu.com/jobs/detail/INTERN/f8a467f0-2a4a-4238-a21c-412408f85c2e",
+      "artifact_sha256": "0a00bb4a14d5a670dca3e5fdcb9583f4f6fed118a4a63562285cb0c7327bc11f",
+      "byte_size": 57705
+    },
+    {
+      "source_id": "baidu-social-0809bb87-bb6d-4fbe-84f7-34bf264bfc0a",
+      "url": "https://talent.baidu.com/jobs/detail/SOCIAL/0809bb87-bb6d-4fbe-84f7-34bf264bfc0a",
+      "artifact_sha256": "c54c9bea88133216196ced7394ad514a082c0cb13daa14df38400ee304db4afd",
+      "byte_size": 47188
+    },
+    {
+      "source_id": "baidu-social-162f3d57-d29e-4467-999d-89c121c01b3b",
+      "url": "https://talent.baidu.com/jobs/detail/SOCIAL/162f3d57-d29e-4467-999d-89c121c01b3b",
+      "artifact_sha256": "bbe98ee8895cdde5430641979e98251c24bfe79f5695d9ece3f1a81b1d500bb5",
+      "byte_size": 54264
+    },
+    {
+      "source_id": "baidu-social-22f0e1d9-a87d-4c72-868c-17e2176a2b72",
+      "url": "https://talent.baidu.com/jobs/detail/SOCIAL/22f0e1d9-a87d-4c72-868c-17e2176a2b72",
+      "artifact_sha256": "3b5992288d574a2ee571a7f725c2115b00a417dcedb3f6b06177beaf3e8b9de4",
+      "byte_size": 51133
+    },
+    {
+      "source_id": "baidu-social-3c253747-64b5-441c-9aac-4c8ebfb56e3a",
+      "url": "https://talent.baidu.com/jobs/detail/SOCIAL/3c253747-64b5-441c-9aac-4c8ebfb56e3a",
+      "artifact_sha256": "27cecb783ca4780bba22c0f89a068a8db43850bafe90a0a330be2547aa6489cd",
+      "byte_size": 47892
+    },
+    {
+      "source_id": "baidu-social-555f0cc0-8c19-4a95-98a1-59b520bde900",
+      "url": "https://talent.baidu.com/jobs/detail/SOCIAL/555f0cc0-8c19-4a95-98a1-59b520bde900",
+      "artifact_sha256": "f8bb82bdbc89333d808825020c027adf255505bdc444eb860c06ecb27bb89f10",
+      "byte_size": 48908
+    },
+    {
+      "source_id": "baidu-social-6ed09b82-440b-4e45-9386-cce7ed2741a9",
+      "url": "https://talent.baidu.com/jobs/detail/SOCIAL/6ed09b82-440b-4e45-9386-cce7ed2741a9",
+      "artifact_sha256": "da0b557593385e0752ceb1bf41c6ed13af0074df708355f294fc8a5e35edce2b",
+      "byte_size": 48167
+    },
+    {
+      "source_id": "baidu-social-706dcd0e-d9dd-42f9-a0b0-075ecdc4d5d4",
+      "url": "https://talent.baidu.com/jobs/detail/SOCIAL/706dcd0e-d9dd-42f9-a0b0-075ecdc4d5d4",
+      "artifact_sha256": "b17eba8104d074811708aa41cc6fd225ee352013b1e5ea401de62df4e010ac46",
+      "byte_size": 53205
+    },
+    {
+      "source_id": "baidu-social-7668abe1-e313-4bf0-89d5-7113e677cca1",
+      "url": "https://talent.baidu.com/jobs/detail/SOCIAL/7668abe1-e313-4bf0-89d5-7113e677cca1",
+      "artifact_sha256": "f77197f3e4729bb55c1fffa3f17d96afefda79c7a6ed58cf8b8903ebdcb6c6f4",
+      "byte_size": 49845
+    },
+    {
+      "source_id": "baidu-social-8cc87d8e-5ad1-4ed7-a2a0-e2f6fcda24ab",
+      "url": "https://talent.baidu.com/jobs/detail/SOCIAL/8cc87d8e-5ad1-4ed7-a2a0-e2f6fcda24ab",
+      "artifact_sha256": "2adbc8d622d604803fe034d19c82b84ea02e70d405e7a68730eaf69a61188c81",
+      "byte_size": 50423
+    },
+    {
+      "source_id": "baidu-social-995d0026-5cf8-47fb-8017-8bb3bb2f5530",
+      "url": "https://talent.baidu.com/jobs/detail/SOCIAL/995d0026-5cf8-47fb-8017-8bb3bb2f5530",
+      "artifact_sha256": "0c45f82537506a1a1ce456eaee4c552ceb98e3b9f2cfc4e315ba0346a19a5db4",
+      "byte_size": 47644
+    },
+    {
+      "source_id": "baidu-social-9d3b1a74-c4fb-4ffe-9eff-6124081f70f1",
+      "url": "https://talent.baidu.com/jobs/detail/SOCIAL/9d3b1a74-c4fb-4ffe-9eff-6124081f70f1",
+      "artifact_sha256": "b871458ede58f22ec269cf1b3d7de5d9b428c94f8cf9f38ac6401e753c293089",
+      "byte_size": 49838
+    },
+    {
+      "source_id": "baidu-social-b72afb65-8cbf-4789-87c1-965408dbab95",
+      "url": "https://talent.baidu.com/jobs/detail/SOCIAL/b72afb65-8cbf-4789-87c1-965408dbab95",
+      "artifact_sha256": "06249af7be05a19dc891cfedde918137506f08d4bb80b28c44ee4390a87a1a21",
+      "byte_size": 52090
+    },
+    {
+      "source_id": "baoshan-notice-2026",
+      "url": "https://www.baoshan.gov.cn/info/3281/10350804.htm",
+      "artifact_sha256": "42bd3434249dc5b8a077bc6d1713f56f35b71db2e431208a9d2eb9096202f07f",
+      "byte_size": 83647
+    },
+    {
+      "source_id": "huawei-campus-2027",
+      "url": "https://career.huawei.com/cn/campus-recruitment",
+      "artifact_sha256": "0ab778cf96311ff45c0f1687754c9abbdcda51d52bdddbbc7dfc18e619e9fa03",
+      "byte_size": 110001
+    }
+  ],
+  "documents": [
+    {
+      "id": "J99640",
+      "source_id": "baidu-intern-43b42d22-86f9-486b-adf6-7ea633dd4c92",
+      "source_url": "https://talent.baidu.com/jobs/detail/INTERN/43b42d22-86f9-486b-adf6-7ea633dd4c92",
+      "title": "Java开发工程师（J99640）",
+      "sections": {
+        "metadata": "企业：百度。职位：Java开发工程师（J99640）。工作地点：北京市。招聘类型：internship（日常实习项目）。发布日期：2026-04-27。",
+        "duties": "参与视频点播相关的Java平台开发，承担需求整理、编码、测试和产品支持。",
+        "requirements": "要求本科及以上，具备计算机与Java开发基础、视频技术知识和AIGC应用能力。"
+      }
+    },
+    {
+      "id": "J99230",
+      "source_id": "baidu-intern-f8a467f0-2a4a-4238-a21c-412408f85c2e",
+      "source_url": "https://talent.baidu.com/jobs/detail/INTERN/f8a467f0-2a4a-4238-a21c-412408f85c2e",
+      "title": "大模型算法实习生（J99230）",
+      "sections": {
+        "metadata": "企业：百度。职位：大模型算法实习生（J99230）。工作地点：北京市,深圳市。招聘类型：internship（日常实习项目）。发布日期：2026-04-20。",
+        "duties": "研发生成式与多模态模型，建设文心大模型插件和工具链，跟踪新算法并改进模型效果。",
+        "requirements": "熟悉Python等编程语言和深度学习框架，PaddlePaddle、HF Transformers经验优先；实习至少四个月，每周三到四天。"
+      }
+    },
+    {
+      "id": "J100514",
+      "source_id": "baidu-intern-0a86720f-d92d-4981-8c8e-a21b24ae13fd",
+      "source_url": "https://talent.baidu.com/jobs/detail/INTERN/0a86720f-d92d-4981-8c8e-a21b24ae13fd",
+      "title": "大模型平台产品实习生（J100514）",
+      "sections": {
+        "metadata": "企业：百度。职位：大模型平台产品实习生（J100514）。工作地点：北京市。招聘类型：internship（日常实习项目）。发布日期：2026-06-08。",
+        "duties": "协助大模型开发平台的需求和竞品分析、文档编写，并跟进研发上线和用户咨询。",
+        "requirements": "本科及以上在读，了解vLLM、SGLang、量化和API生命周期，能使用产品设计工具；至少四个月，每周四天以上优先。"
+      }
+    },
+    {
+      "id": "J93721",
+      "source_id": "baidu-intern-320200cd-893d-4076-b39d-1f77f7a79948",
+      "source_url": "https://talent.baidu.com/jobs/detail/INTERN/320200cd-893d-4076-b39d-1f77f7a79948",
+      "title": "秒哒大模型算法实习生（J93721）",
+      "sections": {
+        "metadata": "企业：百度。职位：秒哒大模型算法实习生（J93721）。工作地点：北京市,上海市。招聘类型：internship（日常实习项目）。发布日期：2025-09-18。",
+        "duties": "优化低代码或无代码的大模型应用平台，研究RAG、Agent和代码生成，并建设数据飞轮与代码解释器。",
+        "requirements": "本科及以上在校，线下实习至少四个月且每周至少四天；精通Python，具备CodingAgent、提示词、微调或向量知识库经验之一。"
+      }
+    },
+    {
+      "id": "J105638",
+      "source_id": "baidu-intern-c7c0e663-c7fb-473d-82fa-57a9717d91b2",
+      "source_url": "https://talent.baidu.com/jobs/detail/INTERN/c7c0e663-c7fb-473d-82fa-57a9717d91b2",
+      "title": "大模型应用方向实习生（J105638）",
+      "sections": {
+        "metadata": "企业：百度。职位：大模型应用方向实习生（J105638）。工作地点：上海市。招聘类型：internship（日常实习项目）。发布日期：2026-09-09。",
+        "duties": "参与多模态模型调研与提示词优化，在结构化信息抽取、智慧招采中设计智能体工作流。",
+        "requirements": "计算机或人工智能相关专业本科及以上，熟悉CV或NLP、PyTorch、Flask、MySQL、Docker；训练推理及GRPO经验优先。"
+      }
+    },
+    {
+      "id": "J100664",
+      "source_id": "baidu-intern-ca7b3bf6-6b8a-4c3f-a8f3-295ab3b9f1f0",
+      "source_url": "https://talent.baidu.com/jobs/detail/INTERN/ca7b3bf6-6b8a-4c3f-a8f3-295ab3b9f1f0",
+      "title": "大语言基座模型训练研究员 / 工程师（J100664）",
+      "sections": {
+        "metadata": "企业：百度。职位：大语言基座模型训练研究员 / 工程师（J100664）。工作地点：北京市。招聘类型：internship（日常实习项目）。发布日期：2026-06-12。",
+        "duties": "研究基座模型预训练与中训练，处理长上下文、代码数学能力、训练配比和稳定性，分析检查点并做消融。",
+        "requirements": "计算机、数学或统计相关专业硕士及以上；有预训练或中训练经历，了解Megatron、DeepSpeed、FSDP及并行策略。"
+      }
+    },
+    {
+      "id": "J101073",
+      "source_id": "baidu-intern-15f123ac-2755-4324-b5ba-25682d0f9b40",
+      "source_url": "https://talent.baidu.com/jobs/detail/INTERN/15f123ac-2755-4324-b5ba-25682d0f9b40",
+      "title": "大模型应用后端研发实习生（GO/Python方向）（J101073）",
+      "sections": {
+        "metadata": "企业：百度。职位：大模型应用后端研发实习生（GO/Python方向）（J101073）。工作地点：上海市。招聘类型：internship（日常实习项目）。发布日期：2026-06-25。",
+        "duties": "参与百度核心产品功能、系统架构与算法研发，跟踪前沿技术并建设AI平台。",
+        "requirements": "熟悉数据结构与算法，掌握C/C++、PHP或Go，了解主流操作系统；比赛、专利、完整项目和云计算经验优先，未明确学历门槛。"
+      }
+    },
+    {
+      "id": "J101234",
+      "source_id": "baidu-graduate-33f41590-5770-4a91-9395-3c05e7ed1571",
+      "source_url": "https://talent.baidu.com/jobs/detail/GRADUATE/33f41590-5770-4a91-9395-3c05e7ed1571",
+      "title": "北京-大模型算法工程师（基座研发方向）(J101234)",
+      "sections": {
+        "metadata": "企业：百度。职位：北京-大模型算法工程师（基座研发方向）(J101234)。工作地点：北京市。招聘类型：campus（校招）。发布日期：2026-07-08。",
+        "duties": "研发文心基础模型的Coding、推理和智能体能力，研究预训练、中训练、后训练对齐与高质量数据体系。",
+        "requirements": "本科及以上相关专业，理解预训练、微调和强化学习，能分析模型表现；顶会论文、编程竞赛和工业级模型经验优先。"
+      }
+    },
+    {
+      "id": "J85272",
+      "source_id": "baidu-social-9d3b1a74-c4fb-4ffe-9eff-6124081f70f1",
+      "source_url": "https://talent.baidu.com/jobs/detail/SOCIAL/9d3b1a74-c4fb-4ffe-9eff-6124081f70f1",
+      "title": "JAVA工程师（J85272）",
+      "sections": {
+        "metadata": "企业：百度。职位：JAVA工程师（J85272）。工作地点：北京市。招聘类型：experienced（社会招聘）。发布日期：2025-05-19。",
+        "duties": "建设Java后端系统，分析性能瓶颈，参与产品与功能设计并推动项目交付。",
+        "requirements": "本科及以上相关专业，具备一到五年Java后端经验，熟悉Spring Boot、Spring Cloud，分布式系统经验优先。"
+      }
+    },
+    {
+      "id": "J101352",
+      "source_id": "baidu-social-22f0e1d9-a87d-4c72-868c-17e2176a2b72",
+      "source_url": "https://talent.baidu.com/jobs/detail/SOCIAL/22f0e1d9-a87d-4c72-868c-17e2176a2b72",
+      "title": "Java研发工程师（J101352）",
+      "sections": {
+        "metadata": "企业：百度。职位：Java研发工程师（J101352）。工作地点：北京市,广州市。招聘类型：experienced（社会招聘）。发布日期：2026-07-02。",
+        "duties": "研发云端Server业务、后端架构、任务调度和数据处理，处理性能与稳定性问题。",
+        "requirements": "本科及以上，至少两年Java后端经历，熟悉Spring、MyBatis、PostgreSQL、Redis、Dubbo和消息队列；云手机和虚拟化经验优先。"
+      }
+    },
+    {
+      "id": "J106392",
+      "source_id": "baidu-intern-7de69a33-1575-4b4b-9aa6-86750b3939fc",
+      "source_url": "https://talent.baidu.com/jobs/detail/INTERN/7de69a33-1575-4b4b-9aa6-86750b3939fc",
+      "title": "生成式排序模型算法工程师（J106392）",
+      "sections": {
+        "metadata": "企业：百度。职位：生成式排序模型算法工程师（J106392）。工作地点：北京市,上海市。招聘类型：internship（日常实习项目）。发布日期：2026-10-10。",
+        "duties": "研究广告推荐中的生成式排序模型，探索CTR、CVR、GMV预估，多模态表征、强化学习及训练推理优化。",
+        "requirements": "面向2027或2028届在读硕博，相关理工专业；熟悉机器学习、Transformer、Python及PyTorch或TensorFlow，竞赛和论文经历优先。"
+      }
+    },
+    {
+      "id": "J106391",
+      "source_id": "baidu-intern-c325e4e8-d27e-40d4-a517-3dbc27bb4303",
+      "source_url": "https://talent.baidu.com/jobs/detail/INTERN/c325e4e8-d27e-40d4-a517-3dbc27bb4303",
+      "title": "DuMate产品运营实习生（J106391）",
+      "sections": {
+        "metadata": "企业：百度。职位：DuMate产品运营实习生（J106391）。工作地点：北京市。招聘类型：internship（日常实习项目）。发布日期：2026-10-09。",
+        "duties": "参与DuMate商业化运营，建设ToB销售素材，开展行业与GTM研究、用户Query分析及客户案例沉淀。",
+        "requirements": "硕士及以上在读，能在北京线下每周五天，连续三至六个月以上优先；熟悉AI Agent，擅长PPT、Excel和跨部门协作。"
+      }
+    },
+    {
+      "id": "J106390",
+      "source_id": "baidu-intern-bd0f07c8-9087-4499-bc3b-1a57c15aa0cc",
+      "source_url": "https://talent.baidu.com/jobs/detail/INTERN/bd0f07c8-9087-4499-bc3b-1a57c15aa0cc",
+      "title": "AI产品经理实习生（J106390）",
+      "sections": {
+        "metadata": "企业：百度。职位：AI产品经理实习生（J106390）。工作地点：北京市。招聘类型：internship（日常实习项目）。发布日期：2026-10-09。",
+        "duties": "开展AI市场和用户调研，协同产品设计、项目推进，并分析模型效果相关数据。",
+        "requirements": "希望实习半年以上，理科相关专业优先，需要沟通、逻辑和责任心；AI产品经验加分，未明确最低学历。"
+      }
+    },
+    {
+      "id": "J106396",
+      "source_id": "baidu-intern-a5d745dd-b2e4-4eff-b10d-23d6e94d302d",
+      "source_url": "https://talent.baidu.com/jobs/detail/INTERN/a5d745dd-b2e4-4eff-b10d-23d6e94d302d",
+      "title": "百度健康AI产品实习生（J106396）",
+      "sections": {
+        "metadata": "企业：百度。职位：百度健康AI产品实习生（J106396）。工作地点：北京市。招聘类型：internship（日常实习项目）。发布日期：2026-10-09。",
+        "duties": "设计百度健康AI产品策略和增长方案，分析用户行为与数据，利用AI工具验证方案和制作Demo。",
+        "requirements": "本科及以上，每周至少四天且连续三个月以上；深度使用AI工具，具备产品思维，产品交互或个人AI作品经验优先。"
+      }
+    },
+    {
+      "id": "J106332",
+      "source_id": "baidu-intern-f27bc9f8-8f4c-4d3b-aa84-f05e66d17147",
+      "source_url": "https://talent.baidu.com/jobs/detail/INTERN/f27bc9f8-8f4c-4d3b-aa84-f05e66d17147",
+      "title": "百度健康品牌市场实习生（J106332）",
+      "sections": {
+        "metadata": "企业：百度。职位：百度健康品牌市场实习生（J106332）。工作地点：北京市。招聘类型：internship（日常实习项目）。发布日期：2026-10-09。",
+        "duties": "围绕用户健康需求策划站外UGC推广，传播案例并参与内部宣传与效果分析。",
+        "requirements": "本科及以上，传播、营销或中文专业优先，需要文字与活动策划能力；每周线下五天，实习超过六个月。"
+      }
+    },
+    {
+      "id": "J106354",
+      "source_id": "baidu-intern-f0b36f9d-807a-4817-997d-ca8fe8141f8e",
+      "source_url": "https://talent.baidu.com/jobs/detail/INTERN/f0b36f9d-807a-4817-997d-ca8fe8141f8e",
+      "title": "全栈研发（J106354）",
+      "sections": {
+        "metadata": "企业：百度。职位：全栈研发（J106354）。工作地点：北京市。招聘类型：internship（日常实习项目）。发布日期：2026-10-09。",
+        "duties": "协助建设测试和质量门禁、端到端Trace、自动评估与工作流，开发质量平台及回放控制台。",
+        "requirements": "具备计算机与编程基础，了解HTTP和前后端开发；测试框架、OpenTelemetry、CI/CD经验优先，未明确学历或最低实习时长。"
+      }
+    },
+    {
+      "id": "J106312",
+      "source_id": "baidu-intern-ef7bf24d-667d-4bec-bdfc-a7cae4dd7bb8",
+      "source_url": "https://talent.baidu.com/jobs/detail/INTERN/ef7bf24d-667d-4bec-bdfc-a7cae4dd7bb8",
+      "title": "DuMate生态运营实习生（J106312）",
+      "sections": {
+        "metadata": "企业：百度。职位：DuMate生态运营实习生（J106312）。工作地点：北京市。招聘类型：internship（日常实习项目）。发布日期：2026-09-30。",
+        "duties": "维护开发者与合作伙伴，整理生态合作SOP和知识库，跟踪竞品并执行黑客松等活动。",
+        "requirements": "本科及以上在读，专业不限，2027届以后优先；至少四个月，每周五天，对AI智能体感兴趣且具备AI coding能力。"
+      }
+    },
+    {
+      "id": "J106295",
+      "source_id": "baidu-intern-9ba0eeb1-990b-4099-abb4-1856124f9751",
+      "source_url": "https://talent.baidu.com/jobs/detail/INTERN/9ba0eeb1-990b-4099-abb4-1856124f9751",
+      "title": "SQC业务运营实习生（J106295）",
+      "sections": {
+        "metadata": "企业：百度。职位：SQC业务运营实习生（J106295）。工作地点：北京市。招聘类型：internship（日常实习项目）。发布日期：2026-09-29。",
+        "duties": "管理智能云项目交付文档，分析过程数据与风险，优化制度和工具，推动跨部门协同。",
+        "requirements": "财务或计算机专业优先，连续实习超过三个月并稳定出勤，需要文档与数据分析能力；未明确学历下限。"
+      }
+    },
+    {
+      "id": "J106272",
+      "source_id": "baidu-intern-23157d0b-b51b-436a-8e94-17100c9fabdd",
+      "source_url": "https://talent.baidu.com/jobs/detail/INTERN/23157d0b-b51b-436a-8e94-17100c9fabdd",
+      "title": "全栈开发实习生（J106272）",
+      "sections": {
+        "metadata": "企业：百度。职位：全栈开发实习生（J106272）。工作地点：北京市。招聘类型：internship（日常实习项目）。发布日期：2026-09-28。",
+        "duties": "开发prompt组装、引擎编排、stream-json解析与SSE流式链路，以及React页面、多轮改稿和多租户隔离测试。",
+        "requirements": "本科或研究生在读，每周至少四天、连续三个月；熟悉TypeScript、React、Node.js和Git协作，重视代码与测试质量。"
+      }
+    },
+    {
+      "id": "J106037",
+      "source_id": "baidu-intern-46bd7fb9-60cd-4418-bce8-eecd0e350607",
+      "source_url": "https://talent.baidu.com/jobs/detail/INTERN/46bd7fb9-60cd-4418-bce8-eecd0e350607",
+      "title": "MaaS解决方案实习生（J106037）",
+      "sections": {
+        "metadata": "企业：百度。职位：MaaS解决方案实习生（J106037）。工作地点：上海市。招聘类型：internship（日常实习项目）。发布日期：2026-09-24。",
+        "duties": "对MaaS模型做能力和边界评估，为客户场景搭建POC，并反馈产研问题、沉淀测试方法。",
+        "requirements": "计算机或AI相关专业优先，线下至少四个月、每周四天，了解模型评测并能用Python写脚本；未明确学历下限。"
+      }
+    },
+    {
+      "id": "J100700",
+      "source_id": "baidu-graduate-545e6823-28d2-4cb5-aba2-3c520a31b4e0",
+      "source_url": "https://talent.baidu.com/jobs/detail/GRADUATE/545e6823-28d2-4cb5-aba2-3c520a31b4e0",
+      "title": "北京-网络研发工程师(J100700)",
+      "sections": {
+        "metadata": "企业：百度。职位：北京-网络研发工程师(J100700)。工作地点：北京市。招聘类型：campus（校招）。发布日期：2026-07-08。",
+        "duties": "研发云基础设施网络，涉及CDN、边缘计算、流量调度、HTTP/DNS、RDMA、智能网卡和路由协议栈。",
+        "requirements": "本科及以上计算机或通信专业，熟悉操作系统、算法与网络，至少掌握C/C++、Go、Python或Java之一。"
+      }
+    },
+    {
+      "id": "J100737",
+      "source_id": "baidu-graduate-72145a13-5eb1-41ce-8853-d00aa7369281",
+      "source_url": "https://talent.baidu.com/jobs/detail/GRADUATE/72145a13-5eb1-41ce-8853-d00aa7369281",
+      "title": "北京-后端开发工程师(J100737)",
+      "sections": {
+        "metadata": "企业：百度。职位：北京-后端开发工程师(J100737)。工作地点：北京市。招聘类型：campus（校招）。发布日期：2026-07-08。",
+        "duties": "开发核心产品和架构，集成AI模型能力，保障稳定性并处理故障与性能问题。",
+        "requirements": "本科及以上相关专业，掌握Java、Go、C++或PHP之一，理解数据结构和操作系统；比赛及完整项目经验优先。"
+      }
+    },
+    {
+      "id": "J100665",
+      "source_id": "baidu-graduate-423c0fa3-a0f3-4def-a882-7466d3685b79",
+      "source_url": "https://talent.baidu.com/jobs/detail/GRADUATE/423c0fa3-a0f3-4def-a882-7466d3685b79",
+      "title": "北京-AI产品经理(J100665)",
+      "sections": {
+        "metadata": "企业：百度。职位：北京-AI产品经理(J100665)。工作地点：北京市。招聘类型：campus（校招）。发布日期：2026-07-08。",
+        "duties": "规划与迭代AI产品，结合大模型能力探索人机协作，推动跨团队落地并分析用户反馈和增长指标。",
+        "requirements": "本科及以上相关专业，理解AIGC和智能助手，能拆解需求与跨团队推进；AI产品实习经历优先。"
+      }
+    },
+    {
+      "id": "J100765",
+      "source_id": "baidu-graduate-b9ad50c9-07c7-4b9c-998d-7049bb706edf",
+      "source_url": "https://talent.baidu.com/jobs/detail/GRADUATE/b9ad50c9-07c7-4b9c-998d-7049bb706edf",
+      "title": "北京-多模态算法工程师(J100765)",
+      "sections": {
+        "metadata": "企业：百度。职位：北京-多模态算法工程师(J100765)。工作地点：北京市。招聘类型：campus（校招）。发布日期：2026-07-08。",
+        "duties": "研究视觉语言、音频语言和跨模态生成，提升图文对齐、检索与推理，设计训练数据和评估体系。",
+        "requirements": "本科及以上相关专业，熟悉Transformer、ViT、CLIP、Python及深度学习框架；CV/NLP项目或论文优先。"
+      }
+    },
+    {
+      "id": "J101055",
+      "source_id": "baidu-graduate-6061be03-f92b-4430-a1b8-9168de0f91f6",
+      "source_url": "https://talent.baidu.com/jobs/detail/GRADUATE/6061be03-f92b-4430-a1b8-9168de0f91f6",
+      "title": "北京-AI测试开发工程师(J101055)",
+      "sections": {
+        "metadata": "企业：百度。职位：北京-AI测试开发工程师(J101055)。工作地点：北京市。招聘类型：campus（校招）。发布日期：2026-07-08。",
+        "duties": "建设AI测试平台和自动编排、脚本自愈，评估大模型推理、一致性、安全及稳定性，积累测试资产。",
+        "requirements": "本科及以上相关专业，至少掌握Python、Java或Go，熟悉Pytest、Selenium、JMeter并具备测试框架实践和LLM测试能力。"
+      }
+    },
+    {
+      "id": "J101017",
+      "source_id": "baidu-graduate-02f73086-be71-4d09-8d6e-f1c6981b8b48",
+      "source_url": "https://talent.baidu.com/jobs/detail/GRADUATE/02f73086-be71-4d09-8d6e-f1c6981b8b48",
+      "title": "北京-智能体算法工程师(J101017)",
+      "sections": {
+        "metadata": "企业：百度。职位：北京-智能体算法工程师(J101017)。工作地点：北京市。招聘类型：campus（校招）。发布日期：2026-07-08。",
+        "duties": "设计智能体全链路系统，研究规划、推理、工具调用、长短期记忆和多智能体协作，建设效果与成本评估。",
+        "requirements": "本科及以上相关专业，理解ReAct、CoT、Plan-and-Execute及PyTorch、LangChain、AutoGen；完整Agent落地经验与开源贡献优先。"
+      }
+    },
+    {
+      "id": "J100728",
+      "source_id": "baidu-graduate-ccfdea4e-4ae4-4954-9062-fd94960a2861",
+      "source_url": "https://talent.baidu.com/jobs/detail/GRADUATE/ccfdea4e-4ae4-4954-9062-fd94960a2861",
+      "title": "北京-大模型算法工程师(J100728)",
+      "sections": {
+        "metadata": "企业：百度。职位：北京-大模型算法工程师(J100728)。工作地点：北京市。招聘类型：campus（校招）。发布日期：2026-07-08。",
+        "duties": "研究LLM预训练、SFT/RLHF和应用算法，提升代码、推理与多轮对话，利用RAG、强化学习和CoT突破能力。",
+        "requirements": "本科及以上相关专业，机器学习基础扎实，熟悉Transformer、Python及PyTorch或PaddlePaddle，研究项目与论文优先。"
+      }
+    },
+    {
+      "id": "J99967",
+      "source_id": "baidu-graduate-3fbd2b8c-43a6-4fa6-a71c-784bfe2ec4cd",
+      "source_url": "https://talent.baidu.com/jobs/detail/GRADUATE/3fbd2b8c-43a6-4fa6-a71c-784bfe2ec4cd",
+      "title": "2027AIDU-大模型Infra工程师(J99967)",
+      "sections": {
+        "metadata": "企业：百度。职位：2027AIDU-大模型Infra工程师(J99967)。工作地点：北京市。招聘类型：campus（AIDU项目）。发布日期：2026-05-12。",
+        "duties": "建设异构AI计算加速引擎、算子与通信编译系统，优化分布式大模型训练和推理成本。",
+        "requirements": "计算机或电子相关专业硕士及以上，精通C++或Python，具备异构平台开发，熟悉MPI、NCCL、RDMA；CUDA或LLVM经验优先。"
+      }
+    },
+    {
+      "id": "J99956",
+      "source_id": "baidu-graduate-d29404bd-55de-4cc1-929b-e67d304abc97",
+      "source_url": "https://talent.baidu.com/jobs/detail/GRADUATE/d29404bd-55de-4cc1-929b-e67d304abc97",
+      "title": "2027AIDU-多模态算法工程师(J99956)",
+      "sections": {
+        "metadata": "企业：百度。职位：2027AIDU-多模态算法工程师(J99956)。工作地点：北京市,上海市。招聘类型：campus（AIDU项目）。发布日期：2026-05-12。",
+        "duties": "研发图文、视频、语音与3D多模态模型，研究扩散、生成和文档多模态，建设数据管线并部署模型。",
+        "requirements": "相关专业硕士及以上、博士优先，掌握CV和深度学习，熟悉CLIP、Flamingo、Qwen-VL和Python，顶会与开源经验优先。"
+      }
+    },
+    {
+      "id": "J105970",
+      "source_id": "baidu-graduate-6ea8538d-4ea0-4488-98f5-0fac33564f03",
+      "source_url": "https://talent.baidu.com/jobs/detail/GRADUATE/6ea8538d-4ea0-4488-98f5-0fac33564f03",
+      "title": "北京-人力资源专员(J105970)",
+      "sections": {
+        "metadata": "企业：百度。职位：北京-人力资源专员(J105970)。工作地点：北京市。招聘类型：campus（校招）。发布日期：2026-09-20。",
+        "duties": "在人力资源核心模块轮岗，参与招聘、HRBP、组织人才与培训文化，并研究AI工具在人事工作的应用。",
+        "requirements": "本科及以上，专业不限，管理、心理或人力资源等优先；对HR和AI工具感兴趣，具备逻辑沟通与主动学习能力。"
+      }
+    },
+    {
+      "id": "J105957",
+      "source_id": "baidu-social-0809bb87-bb6d-4fbe-84f7-34bf264bfc0a",
+      "source_url": "https://talent.baidu.com/jobs/detail/SOCIAL/0809bb87-bb6d-4fbe-84f7-34bf264bfc0a",
+      "title": "测试开发工程师（J105957）",
+      "sections": {
+        "metadata": "企业：百度。职位：测试开发工程师（J105957）。工作地点：北京市。招聘类型：experienced（社会招聘）。发布日期：2026-09-18。",
+        "duties": "为百度文库制定并执行测试方案，定位缺陷、评审需求代码，开发自动化工具并评估质量风险。",
+        "requirements": "本科以上计算机相关专业，至少两年服务端测试及自动化经验，了解APP和接口测试，可用Java、Go、Python等编写测试代码。"
+      }
+    },
+    {
+      "id": "J106300",
+      "source_id": "baidu-social-3c253747-64b5-441c-9aac-4c8ebfb56e3a",
+      "source_url": "https://talent.baidu.com/jobs/detail/SOCIAL/3c253747-64b5-441c-9aac-4c8ebfb56e3a",
+      "title": "数据策略研发工程师（J106300）",
+      "sections": {
+        "metadata": "企业：百度。职位：数据策略研发工程师（J106300）。工作地点：北京市。招聘类型：experienced（社会招聘）。发布日期：2026-10-08。",
+        "duties": "建设分层数仓与Spark离线链路，做ROI/LTV预测、实验评估、DAU异常归因与用户意图建模。",
+        "requirements": "本科及以上，三至五年数据策略研发，精通Hive/Spark及SQL/Python，熟悉Flink、Kafka和增长分析方法。"
+      }
+    },
+    {
+      "id": "J106347",
+      "source_id": "baidu-social-b72afb65-8cbf-4789-87c1-965408dbab95",
+      "source_url": "https://talent.baidu.com/jobs/detail/SOCIAL/b72afb65-8cbf-4789-87c1-965408dbab95",
+      "title": "云桂港澳琼业务拓展组政企销售（J106347）",
+      "sections": {
+        "metadata": "企业：百度。职位：云桂港澳琼业务拓展组政企销售（J106347）。工作地点：深圳市。招聘类型：experienced（社会招聘）。发布日期：2026-10-08。",
+        "duties": "在云桂港澳琼区域拓展政企客户，销售IaaS、MaaS和AI应用，协同伙伴完成方案、合同与回款。",
+        "requirements": "至少五年云计算或大模型行业经验，理解ToG/ToB、公有云和GPU/Token市场；客户资源优先，未明确学历下限。"
+      }
+    },
+    {
+      "id": "J106323",
+      "source_id": "baidu-social-8cc87d8e-5ad1-4ed7-a2a0-e2f6fcda24ab",
+      "source_url": "https://talent.baidu.com/jobs/detail/SOCIAL/8cc87d8e-5ad1-4ed7-a2a0-e2f6fcda24ab",
+      "title": "算力政企销售（J106323）",
+      "sections": {
+        "metadata": "企业：百度。职位：算力政企销售（J106323）。工作地点：上海市,深圳市。招聘类型：experienced（社会招聘）。发布日期：2026-10-08。",
+        "duties": "拓展GPU算力租赁和Tokens产品客户，维护上游供给渠道，完成从商机、谈判到签约回款的销售过程。",
+        "requirements": "本科及以上且专业不限，至少三年ToB销售；具备GPU、IDC、云计算或MaaS销售经验，了解资源与收益测算。"
+      }
+    },
+    {
+      "id": "J106155",
+      "source_id": "baidu-social-706dcd0e-d9dd-42f9-a0b0-075ecdc4d5d4",
+      "source_url": "https://talent.baidu.com/jobs/detail/SOCIAL/706dcd0e-d9dd-42f9-a0b0-075ecdc4d5d4",
+      "title": "医学专家(多模态&全科)（J106155）",
+      "sections": {
+        "metadata": "企业：百度。职位：医学专家(多模态&全科)（J106155）。工作地点：北京市。招聘类型：experienced（社会招聘）。发布日期：2026-10-08。",
+        "duties": "审核医疗图像、医患对话与模型回答的专业证据，建设标注和评测规则并复核争议样本。",
+        "requirements": "具有临床医学相关背景和实际训练，能解释医疗图像与专业不确定性，并进行文献证据评价；未明确学位或学历下限。"
+      }
+    },
+    {
+      "id": "J106267",
+      "source_id": "baidu-social-6ed09b82-440b-4e45-9386-cce7ed2741a9",
+      "source_url": "https://talent.baidu.com/jobs/detail/SOCIAL/6ed09b82-440b-4e45-9386-cce7ed2741a9",
+      "title": "医疗与生命科学行业高级销售经理（华南）（J106267）",
+      "sections": {
+        "metadata": "企业：百度。职位：医疗与生命科学行业高级销售经理（华南）（J106267）。工作地点：深圳市,广州市。招聘类型：experienced（社会招聘）。发布日期：2026-10-08。",
+        "duties": "负责华南医疗及生命科学云业务，识别训练算力与存储需求，推动POC、商务签约和伙伴联合方案。",
+        "requirements": "本科及以上，至少五年云计算、AI设施、HPC或生物信息销售经验，能验证成交记录，了解华南医疗客户与技术。"
+      }
+    },
+    {
+      "id": "J106270",
+      "source_id": "baidu-social-7668abe1-e313-4bf0-89d5-7113e677cca1",
+      "source_url": "https://talent.baidu.com/jobs/detail/SOCIAL/7668abe1-e313-4bf0-89d5-7113e677cca1",
+      "title": "售后驻场大客户经理（J106270）",
+      "sections": {
+        "metadata": "企业：百度。职位：售后驻场大客户经理（J106270）。工作地点：北京市。招聘类型：experienced（社会招聘）。发布日期：2026-09-30。",
+        "duties": "驻场提供私有云运维和应急响应，协同产研复盘故障，制定客户最佳实践并管理现场运维团队。",
+        "requirements": "至少三年金融等行业运维架构经验与项目团队管理经历，熟悉云及数据库、中间件或脚本技术，能接受出差；未明确学历下限。"
+      }
+    },
+    {
+      "id": "J106299",
+      "source_id": "baidu-social-995d0026-5cf8-47fb-8017-8bb3bb2f5530",
+      "source_url": "https://talent.baidu.com/jobs/detail/SOCIAL/995d0026-5cf8-47fb-8017-8bb3bb2f5530",
+      "title": "DuMate五组_百度搭子Skill与Connector生态合作运营（J106299）",
+      "sections": {
+        "metadata": "企业：百度。职位：DuMate五组_百度搭子Skill与Connector生态合作运营（J106299）。工作地点：北京市。招聘类型：experienced（社会招聘）。发布日期：2026-09-29。",
+        "duties": "为DuMate的Skill、Connector和套件制定生态合作策略，管理伙伴接入上线到运营，并跟踪供给与任务完成指标。",
+        "requirements": "本科及以上，至少两年生态运营或商务合作，理解AI Agent、Skill、MCP和Connector，具备伙伴拓展与数据评估能力。"
+      }
+    },
+    {
+      "id": "J106203",
+      "source_id": "baidu-social-162f3d57-d29e-4467-999d-89c121c01b3b",
+      "source_url": "https://talent.baidu.com/jobs/detail/SOCIAL/162f3d57-d29e-4467-999d-89c121c01b3b",
+      "title": "AI应用产品经理（医疗健康方向）（J106203）",
+      "sections": {
+        "metadata": "企业：百度。职位：AI应用产品经理（医疗健康方向）（J106203）。工作地点：北京市。招聘类型：experienced（社会招聘）。发布日期：2026-09-29。",
+        "duties": "将医学场景拆为识别、提取、检索、推理和追问模块，从失败案例定义数据需求并设计医患仿真。",
+        "requirements": "理解医学场景、多模态证据和不确定性，能设计多轮状态、数据规格及验收，并理解训练、RAG和Agent；未明确学历下限。"
+      }
+    },
+    {
+      "id": "J106271",
+      "source_id": "baidu-social-555f0cc0-8c19-4a95-98a1-59b520bde900",
+      "source_url": "https://talent.baidu.com/jobs/detail/SOCIAL/555f0cc0-8c19-4a95-98a1-59b520bde900",
+      "title": "服务商质量管理（J106271）",
+      "sections": {
+        "metadata": "企业：百度。职位：服务商质量管理（J106271）。工作地点：北京市。招聘类型：experienced（社会招聘）。发布日期：2026-09-28。",
+        "duties": "管理服务商寻源、准入、履约考核与激励，构建调度运营看板和人力匹配策略，推动自动化与跨团队协作。",
+        "requirements": "本科及以上相关专业，至少五年AI数据服务运营与资源管理经验，理解供应商流程；产品经理经验和AI工具能力优先。"
+      }
+    },
+    {
+      "id": "hw-reset",
+      "source_id": "huawei-campus-2027",
+      "source_url": "https://career.huawei.com/cn/campus-recruitment",
+      "title": "华为官网口令重置",
+      "sections": {
+        "policy": "华为招聘官网登录口令遗忘时，可以在登录页选择重置密码，使用账号、邮箱或手机完成验证后设定新密码。"
+      }
+    },
+    {
+      "id": "hw-duplicate",
+      "source_id": "huawei-campus-2027",
+      "source_url": "https://career.huawei.com/cn/campus-recruitment",
+      "title": "华为重复简历与人工找回",
+      "sections": {
+        "policy": "华为创建简历提示重复时，可用简历关联邮箱或手机号验证找回；这些渠道失效时，通过人工找回简历上传本人和身份证合照，由工作人员核验。"
+      }
+    },
+    {
+      "id": "hw-empty",
+      "source_id": "huawei-campus-2027",
+      "source_url": "https://career.huawei.com/cn/campus-recruitment",
+      "title": "华为登录后简历为空",
+      "sections": {
+        "policy": "华为账号登录后简历显示为空，先填写基础信息；若系统发现历史简历，可通过邮箱或手机找回，否则继续完成各字段注册。"
+      }
+    },
+    {
+      "id": "hw-contact",
+      "source_id": "huawei-campus-2027",
+      "source_url": "https://career.huawei.com/cn/campus-recruitment",
+      "title": "华为联系信息与登录用户名",
+      "sections": {
+        "policy": "华为个人中心的校招简历编辑页可修改联系邮箱和电话，系统通知发往新联系信息；用作登录用户名的邮箱或手机号不能因此修改。"
+      }
+    },
+    {
+      "id": "hw-school",
+      "source_id": "huawei-campus-2027",
+      "source_url": "https://career.huawei.com/cn/campus-recruitment",
+      "title": "华为院校名称缺失",
+      "sections": {
+        "policy": "华为院校填写支持联想选择；列表找不到本校时可手动填写学校标准全称，避免使用简称。"
+      }
+    },
+    {
+      "id": "hw-apply",
+      "source_id": "huawei-campus-2027",
+      "source_url": "https://career.huawei.com/cn/campus-recruitment",
+      "title": "华为官方投递入口",
+      "sections": {
+        "policy": "华为招聘官网是注册和投递的官方入口，可在校园招聘的应届生职位中选择职位、岗位意向与部门，然后申请。应以官网及官方招聘微信的信息为准。"
+      }
+    },
+    {
+      "id": "hw-change",
+      "source_id": "huawei-campus-2027",
+      "source_url": "https://career.huawei.com/cn/campus-recruitment",
+      "title": "华为修改投递志愿",
+      "sections": {
+        "policy": "华为简历通过筛选之前，可在个人中心我的申请中交换志愿或撤销申请，以调整已经投递的职位。"
+      }
+    },
+    {
+      "id": "hw-resume-number",
+      "source_id": "huawei-campus-2027",
+      "source_url": "https://career.huawei.com/cn/campus-recruitment",
+      "title": "华为简历编号查询",
+      "sections": {
+        "policy": "华为简历编号可在个人中心的我的简历、校招简历栏目查看。"
+      }
+    },
+    {
+      "id": "hw-registration-support",
+      "source_id": "huawei-campus-2027",
+      "source_url": "https://career.huawei.com/cn/campus-recruitment",
+      "title": "华为注册与网页异常支持",
+      "sections": {
+        "policy": "华为简历注册问题可向talent@huawei.com说明账号与简历信息、具体故障及截图；网页异常可咨询IT邮箱ithotline@huawei.com。"
+      }
+    },
+    {
+      "id": "hw-recommend",
+      "source_id": "huawei-campus-2027",
+      "source_url": "https://career.huawei.com/cn/campus-recruitment",
+      "title": "华为推荐与搜索区别",
+      "sections": {
+        "policy": "华为职位推荐按简历信息匹配可能合适的职位；职位搜索允许按名称关键词及筛选条件查找岗位。"
+      }
+    },
+    {
+      "id": "hw-referral",
+      "source_id": "huawei-campus-2027",
+      "source_url": "https://career.huawei.com/cn/campus-recruitment",
+      "title": "华为应届生内推政策",
+      "sections": {
+        "policy": "该华为校园招聘页面说明应届生招聘没有内推，应直接通过招聘官网投递简历。"
+      }
+    },
+    {
+      "id": "hw-intern-cohort",
+      "source_id": "huawei-campus-2027",
+      "source_url": "https://career.huawei.com/cn/campus-recruitment",
+      "title": "华为2027实习对象",
+      "sections": {
+        "policy": "华为2027届实习招聘主要面向2027届毕业的在校学生。"
+      }
+    },
+    {
+      "id": "hw-interview",
+      "source_id": "huawei-campus-2027",
+      "source_url": "https://career.huawei.com/cn/campus-recruitment",
+      "title": "华为研发与非研发考核",
+      "sections": {
+        "policy": "华为筛选后安排考试和测评：研发岗含上机考试与综合测评，非研发部分岗位有考试和语言测评；通过后安排专业面试和业务主管面试，部分非研发使用集体面试。"
+      }
+    },
+    {
+      "id": "hw-interview-result",
+      "source_id": "huawei-campus-2027",
+      "source_url": "https://career.huawei.com/cn/campus-recruitment",
+      "title": "华为面试结果查看时间",
+      "sections": {
+        "policy": "华为全部面试结束二十四小时后，可登录个人中心的我的申请查看面试结果。"
+      }
+    },
+    {
+      "id": "hw-invitation",
+      "source_id": "huawei-campus-2027",
+      "source_url": "https://career.huawei.com/cn/campus-recruitment",
+      "title": "华为面试通知方式",
+      "sections": {
+        "policy": "华为依据各地区招聘会安排简历筛选，筛选通过后通过短信、电话或邮件发送通知，应保持联系方式可用。"
+      }
+    },
+    {
+      "id": "hw-interview-place",
+      "source_id": "huawei-campus-2027",
+      "source_url": "https://career.huawei.com/cn/campus-recruitment",
+      "title": "华为面试地点与留学生",
+      "sections": {
+        "policy": "华为国内毕业生通常按毕业院校所在地就近安排面试；海外学生可关注留学生专场，不能回国的特殊情况可选择远程面试，具体以通知确认为准。"
+      }
+    },
+    {
+      "id": "hw-prior-intern",
+      "source_id": "huawei-campus-2027",
+      "source_url": "https://career.huawei.com/cn/campus-recruitment",
+      "title": "华为实习结果与应届招聘",
+      "sections": {
+        "policy": "参加过华为实习或实习面试仍可参加当年的应届生招聘；实习阶段机考和面试结果不影响应届招聘。"
+      }
+    },
+    {
+      "id": "hw-offer-booking",
+      "source_id": "huawei-campus-2027",
+      "source_url": "https://career.huawei.com/cn/campus-recruitment",
+      "title": "华为接受Offer后预约入职",
+      "sections": {
+        "policy": "接受华为Offer后会收到入职预约指引邮件，可按其中说明登录入职服务平台，预约报到时间。"
+      }
+    },
+    {
+      "id": "hw-offer-full",
+      "source_id": "huawei-campus-2027",
+      "source_url": "https://career.huawei.com/cn/campus-recruitment",
+      "title": "华为入职预约满额",
+      "sections": {
+        "policy": "华为入职日期的预约名额会动态调整，暂时满员时建议持续查看入职服务平台，并尽早选择可用时间。"
+      }
+    },
+    {
+      "id": "hw-offer-prep",
+      "source_id": "huawei-campus-2027",
+      "source_url": "https://career.huawei.com/cn/campus-recruitment",
+      "title": "华为入职准备事项",
+      "sections": {
+        "policy": "华为新员工按入职指引在服务平台完善个人信息、上传证件和工卡照片，并预约入职与体检。"
+      }
+    },
+    {
+      "id": "hw-intern-remote",
+      "source_id": "huawei-campus-2027",
+      "source_url": "https://career.huawei.com/cn/campus-recruitment",
+      "title": "华为实习时长与远程合作",
+      "sections": {
+        "policy": "华为实习通常超过两个月，具体时长与部门HR确认；没有远程实习方式，也未与第三方合作提供实习，应警惕付费远程或内推实习宣传。"
+      }
+    },
+    {
+      "id": "hw-graduate-window",
+      "source_id": "huawei-campus-2027",
+      "source_url": "https://career.huawei.com/cn/campus-recruitment",
+      "title": "华为2027毕业时间范围",
+      "sections": {
+        "policy": "华为2027应届招聘对国内本科和硕士采用2027年全年毕业范围；国内博士及海外本硕博范围为2026年初至2027年底。毕业范围不等于岗位投递截止日期。"
+      }
+    },
+    {
+      "id": "bd-graduate-window",
+      "source_id": "baidu-campus-policy",
+      "source_url": "https://talent.baidu.com/jobs/campus",
+      "title": "百度2027校招毕业窗口",
+      "sections": {
+        "policy": "百度该校园招聘页面面向2026年九月至2027年八月毕业的在校学生，岗位覆盖技术、产品、政企、销售和综合，涉及北京、上海、深圳等城市。"
+      }
+    },
+    {
+      "id": "bd-intern-project",
+      "source_id": "baidu-campus-policy",
+      "source_url": "https://talent.baidu.com/jobs/campus",
+      "title": "百度暑期与日常实习",
+      "sections": {
+        "policy": "百度页面说明实习时长至少三个月；2027暑期项目已结束，日常实习全年开放且不限毕业时间。具体岗位仍可能有更严格的出勤或时长要求。"
+      }
+    },
+    {
+      "id": "bs-eligibility",
+      "source_id": "baoshan-notice-2026",
+      "source_url": "https://www.baoshan.gov.cn/info/3281/10350804.htm",
+      "title": "保山教师招聘资格与博士例外",
+      "sections": {
+        "policy": "保山市教育体育局该2026公告主要面向2024至2026年硕士及以上毕业生，并要求硕士及以上学位、排除规定的在编人员；博士不受该条范围限制，仍需满足其他招聘条件。"
+      }
+    },
+    {
+      "id": "bs-deadline",
+      "source_id": "baoshan-notice-2026",
+      "source_url": "https://www.baoshan.gov.cn/info/3281/10350804.htm",
+      "title": "保山2026报名截止时间",
+      "sections": {
+        "policy": "保山市教育体育局该公告网络报名截止2026年3月26日15时，以收件邮箱显示的时间为准；现场报名同日9时至15时，超过规定时间不受理。"
+      }
+    },
+    {
+      "id": "bs-submission",
+      "source_id": "baoshan-notice-2026",
+      "source_url": "https://www.baoshan.gov.cn/info/3281/10350804.htm",
+      "title": "保山报名材料及单岗位限制",
+      "sections": {
+        "policy": "保山该公告要求报名材料汇总成一个PDF，文件及邮件主题按姓名、岗位、联系电话标识并发至相应单位邮箱；需要外链下载的简历无效，每人仅能报一个岗位。"
+      }
+    }
+  ],
+  "job_records": [
+    {
+      "id": "J99640",
+      "document_id": "J99640",
+      "company": "百度",
+      "job_title": "Java开发工程师（J99640）",
+      "locations": [
+        "北京市"
+      ],
+      "recruitment_type": "internship",
+      "education_requirement": "本科及以上学历",
+      "application_deadline": null,
+      "published_date": "2026-04-27",
+      "source_url": "https://talent.baidu.com/jobs/detail/INTERN/43b42d22-86f9-486b-adf6-7ea633dd4c92"
+    },
+    {
+      "id": "J99230",
+      "document_id": "J99230",
+      "company": "百度",
+      "job_title": "大模型算法实习生（J99230）",
+      "locations": [
+        "北京市",
+        "深圳市"
+      ],
+      "recruitment_type": "internship",
+      "education_requirement": null,
+      "application_deadline": null,
+      "published_date": "2026-04-20",
+      "source_url": "https://talent.baidu.com/jobs/detail/INTERN/f8a467f0-2a4a-4238-a21c-412408f85c2e"
+    },
+    {
+      "id": "J100514",
+      "document_id": "J100514",
+      "company": "百度",
+      "job_title": "大模型平台产品实习生（J100514）",
+      "locations": [
+        "北京市"
+      ],
+      "recruitment_type": "internship",
+      "education_requirement": "本科及以上在校生，计算机、自动化、数学、统计学等专业者优先，有互联网实习经验优先",
+      "application_deadline": null,
+      "published_date": "2026-06-08",
+      "source_url": "https://talent.baidu.com/jobs/detail/INTERN/0a86720f-d92d-4981-8c8e-a21b24ae13fd"
+    },
+    {
+      "id": "J93721",
+      "document_id": "J93721",
+      "company": "百度",
+      "job_title": "秒哒大模型算法实习生（J93721）",
+      "locations": [
+        "北京市",
+        "上海市"
+      ],
+      "recruitment_type": "internship",
+      "education_requirement": "本科及以上学历在校生，可尽快到岗线下实习4个月及以上，每周至少出勤4天",
+      "application_deadline": null,
+      "published_date": "2025-09-18",
+      "source_url": "https://talent.baidu.com/jobs/detail/INTERN/320200cd-893d-4076-b39d-1f77f7a79948"
+    },
+    {
+      "id": "J105638",
+      "document_id": "J105638",
+      "company": "百度",
+      "job_title": "大模型应用方向实习生（J105638）",
+      "locations": [
+        "上海市"
+      ],
+      "recruitment_type": "internship",
+      "education_requirement": "计算机或人工智能相关专业本科及以上学历",
+      "application_deadline": null,
+      "published_date": "2026-09-09",
+      "source_url": "https://talent.baidu.com/jobs/detail/INTERN/c7c0e663-c7fb-473d-82fa-57a9717d91b2"
+    },
+    {
+      "id": "J100664",
+      "document_id": "J100664",
+      "company": "百度",
+      "job_title": "大语言基座模型训练研究员 / 工程师（J100664）",
+      "locations": [
+        "北京市"
+      ],
+      "recruitment_type": "internship",
+      "education_requirement": "计算机、数学、统计或相关专业硕士及以上学历，顶尖实验室/基座模型团队背景优先",
+      "application_deadline": null,
+      "published_date": "2026-06-12",
+      "source_url": "https://talent.baidu.com/jobs/detail/INTERN/ca7b3bf6-6b8a-4c3f-a8f3-295ab3b9f1f0"
+    },
+    {
+      "id": "J101073",
+      "document_id": "J101073",
+      "company": "百度",
+      "job_title": "大模型应用后端研发实习生（GO/Python方向）（J101073）",
+      "locations": [
+        "上海市"
+      ],
+      "recruitment_type": "internship",
+      "education_requirement": null,
+      "application_deadline": null,
+      "published_date": "2026-06-25",
+      "source_url": "https://talent.baidu.com/jobs/detail/INTERN/15f123ac-2755-4324-b5ba-25682d0f9b40"
+    },
+    {
+      "id": "J101234",
+      "document_id": "J101234",
+      "company": "百度",
+      "job_title": "北京-大模型算法工程师（基座研发方向）(J101234)",
+      "locations": [
+        "北京市"
+      ],
+      "recruitment_type": "campus",
+      "education_requirement": "本科及以上学历，计算机、软件工程、人工智能等相关专业",
+      "application_deadline": null,
+      "published_date": "2026-07-08",
+      "source_url": "https://talent.baidu.com/jobs/detail/GRADUATE/33f41590-5770-4a91-9395-3c05e7ed1571"
+    },
+    {
+      "id": "J85272",
+      "document_id": "J85272",
+      "company": "百度",
+      "job_title": "JAVA工程师（J85272）",
+      "locations": [
+        "北京市"
+      ],
+      "recruitment_type": "experienced",
+      "education_requirement": "本科及以上学历，计算机科学、软件工程或相关专业背景，1-5年JAVA后端开发经验",
+      "application_deadline": null,
+      "published_date": "2025-05-19",
+      "source_url": "https://talent.baidu.com/jobs/detail/SOCIAL/9d3b1a74-c4fb-4ffe-9eff-6124081f70f1"
+    },
+    {
+      "id": "J101352",
+      "document_id": "J101352",
+      "company": "百度",
+      "job_title": "Java研发工程师（J101352）",
+      "locations": [
+        "北京市",
+        "广州市"
+      ],
+      "recruitment_type": "experienced",
+      "education_requirement": "本科及以上学历，计算机、软件工程、通信等相关专业优先",
+      "application_deadline": null,
+      "published_date": "2026-07-02",
+      "source_url": "https://talent.baidu.com/jobs/detail/SOCIAL/22f0e1d9-a87d-4c72-868c-17e2176a2b72"
+    },
+    {
+      "id": "J106392",
+      "document_id": "J106392",
+      "company": "百度",
+      "job_title": "生成式排序模型算法工程师（J106392）",
+      "locations": [
+        "北京市",
+        "上海市"
+      ],
+      "recruitment_type": "internship",
+      "education_requirement": "、2028届计算机、数学、自动化等相关专业在校硕士或博士生",
+      "application_deadline": null,
+      "published_date": "2026-10-10",
+      "source_url": "https://talent.baidu.com/jobs/detail/INTERN/7de69a33-1575-4b4b-9aa6-86750b3939fc"
+    },
+    {
+      "id": "J106391",
+      "document_id": "J106391",
+      "company": "百度",
+      "job_title": "DuMate产品运营实习生（J106391）",
+      "locations": [
+        "北京市"
+      ],
+      "recruitment_type": "internship",
+      "education_requirement": "硕士及以上学历在读，每周可全职线下出勤 5 天（base 北京方舟大厦），能连续实习 3-6 个月及以上者优先",
+      "application_deadline": null,
+      "published_date": "2026-10-09",
+      "source_url": "https://talent.baidu.com/jobs/detail/INTERN/c325e4e8-d27e-40d4-a517-3dbc27bb4303"
+    },
+    {
+      "id": "J106390",
+      "document_id": "J106390",
+      "company": "百度",
+      "job_title": "AI产品经理实习生（J106390）",
+      "locations": [
+        "北京市"
+      ],
+      "recruitment_type": "internship",
+      "education_requirement": null,
+      "application_deadline": null,
+      "published_date": "2026-10-09",
+      "source_url": "https://talent.baidu.com/jobs/detail/INTERN/bd0f07c8-9087-4499-bc3b-1a57c15aa0cc"
+    },
+    {
+      "id": "J106396",
+      "document_id": "J106396",
+      "company": "百度",
+      "job_title": "百度健康AI产品实习生（J106396）",
+      "locations": [
+        "北京市"
+      ],
+      "recruitment_type": "internship",
+      "education_requirement": "本科及以上学历，每周实习4天及以上，连续实习3个月以上",
+      "application_deadline": null,
+      "published_date": "2026-10-09",
+      "source_url": "https://talent.baidu.com/jobs/detail/INTERN/a5d745dd-b2e4-4eff-b10d-23d6e94d302d"
+    },
+    {
+      "id": "J106332",
+      "document_id": "J106332",
+      "company": "百度",
+      "job_title": "百度健康品牌市场实习生（J106332）",
+      "locations": [
+        "北京市"
+      ],
+      "recruitment_type": "internship",
+      "education_requirement": "本科及以上学历，传播、营销、中文等相关专业优先",
+      "application_deadline": null,
+      "published_date": "2026-10-09",
+      "source_url": "https://talent.baidu.com/jobs/detail/INTERN/f27bc9f8-8f4c-4d3b-aa84-f05e66d17147"
+    },
+    {
+      "id": "J106354",
+      "document_id": "J106354",
+      "company": "百度",
+      "job_title": "全栈研发（J106354）",
+      "locations": [
+        "北京市"
+      ],
+      "recruitment_type": "internship",
+      "education_requirement": null,
+      "application_deadline": null,
+      "published_date": "2026-10-09",
+      "source_url": "https://talent.baidu.com/jobs/detail/INTERN/f0b36f9d-807a-4817-997d-ca8fe8141f8e"
+    },
+    {
+      "id": "J106312",
+      "document_id": "J106312",
+      "company": "百度",
+      "job_title": "DuMate生态运营实习生（J106312）",
+      "locations": [
+        "北京市"
+      ],
+      "recruitment_type": "internship",
+      "education_requirement": "本科及以上在读，专业不限，2027 届及以后毕业生优先，有自媒体运营经验/账号孵化经验优先，可稳定实习 4 个月及以上，每周到岗 5 天",
+      "application_deadline": null,
+      "published_date": "2026-09-30",
+      "source_url": "https://talent.baidu.com/jobs/detail/INTERN/ef7bf24d-667d-4bec-bdfc-a7cae4dd7bb8"
+    },
+    {
+      "id": "J106295",
+      "document_id": "J106295",
+      "company": "百度",
+      "job_title": "SQC业务运营实习生（J106295）",
+      "locations": [
+        "北京市"
+      ],
+      "recruitment_type": "internship",
+      "education_requirement": null,
+      "application_deadline": null,
+      "published_date": "2026-09-29",
+      "source_url": "https://talent.baidu.com/jobs/detail/INTERN/9ba0eeb1-990b-4099-abb4-1856124f9751"
+    },
+    {
+      "id": "J106272",
+      "document_id": "J106272",
+      "company": "百度",
+      "job_title": "全栈开发实习生（J106272）",
+      "locations": [
+        "北京市"
+      ],
+      "recruitment_type": "internship",
+      "education_requirement": "本科或研究生在读,每周可实习 ≥ 4 天,连续 ≥ 3 个月",
+      "application_deadline": null,
+      "published_date": "2026-09-28",
+      "source_url": "https://talent.baidu.com/jobs/detail/INTERN/23157d0b-b51b-436a-8e94-17100c9fabdd"
+    },
+    {
+      "id": "J106037",
+      "document_id": "J106037",
+      "company": "百度",
+      "job_title": "MaaS解决方案实习生（J106037）",
+      "locations": [
+        "上海市"
+      ],
+      "recruitment_type": "internship",
+      "education_requirement": null,
+      "application_deadline": null,
+      "published_date": "2026-09-24",
+      "source_url": "https://talent.baidu.com/jobs/detail/INTERN/46bd7fb9-60cd-4418-bce8-eecd0e350607"
+    },
+    {
+      "id": "J100700",
+      "document_id": "J100700",
+      "company": "百度",
+      "job_title": "北京-网络研发工程师(J100700)",
+      "locations": [
+        "北京市"
+      ],
+      "recruitment_type": "campus",
+      "education_requirement": "本科及以上学历，计算机、通信等相关专业",
+      "application_deadline": null,
+      "published_date": "2026-07-08",
+      "source_url": "https://talent.baidu.com/jobs/detail/GRADUATE/545e6823-28d2-4cb5-aba2-3c520a31b4e0"
+    },
+    {
+      "id": "J100737",
+      "document_id": "J100737",
+      "company": "百度",
+      "job_title": "北京-后端开发工程师(J100737)",
+      "locations": [
+        "北京市"
+      ],
+      "recruitment_type": "campus",
+      "education_requirement": "本科及以上学历，计算机、软件工程等相关专业优先",
+      "application_deadline": null,
+      "published_date": "2026-07-08",
+      "source_url": "https://talent.baidu.com/jobs/detail/GRADUATE/72145a13-5eb1-41ce-8853-d00aa7369281"
+    },
+    {
+      "id": "J100665",
+      "document_id": "J100665",
+      "company": "百度",
+      "job_title": "北京-AI产品经理(J100665)",
+      "locations": [
+        "北京市"
+      ],
+      "recruitment_type": "campus",
+      "education_requirement": "本科及以上学历，计算机、人工智能、信息管理等相关专业优先",
+      "application_deadline": null,
+      "published_date": "2026-07-08",
+      "source_url": "https://talent.baidu.com/jobs/detail/GRADUATE/423c0fa3-a0f3-4def-a882-7466d3685b79"
+    },
+    {
+      "id": "J100765",
+      "document_id": "J100765",
+      "company": "百度",
+      "job_title": "北京-多模态算法工程师(J100765)",
+      "locations": [
+        "北京市"
+      ],
+      "recruitment_type": "campus",
+      "education_requirement": "本科及以上学历，计算机、人工智能等相关专业优先",
+      "application_deadline": null,
+      "published_date": "2026-07-08",
+      "source_url": "https://talent.baidu.com/jobs/detail/GRADUATE/b9ad50c9-07c7-4b9c-998d-7049bb706edf"
+    },
+    {
+      "id": "J101055",
+      "document_id": "J101055",
+      "company": "百度",
+      "job_title": "北京-AI测试开发工程师(J101055)",
+      "locations": [
+        "北京市"
+      ],
+      "recruitment_type": "campus",
+      "education_requirement": "本科及以上学历，计算机、软件工程、人工智能、信息工程等相关专业优先，扎实掌握软件测试理论、全流程质量保障体系",
+      "application_deadline": null,
+      "published_date": "2026-07-08",
+      "source_url": "https://talent.baidu.com/jobs/detail/GRADUATE/6061be03-f92b-4430-a1b8-9168de0f91f6"
+    },
+    {
+      "id": "J101017",
+      "document_id": "J101017",
+      "company": "百度",
+      "job_title": "北京-智能体算法工程师(J101017)",
+      "locations": [
+        "北京市"
+      ],
+      "recruitment_type": "campus",
+      "education_requirement": "本科及以上学历，包含但不限于计算机、信息工程、人工智能、软件工程、电子工程、统计学、应用数学等相关专业",
+      "application_deadline": null,
+      "published_date": "2026-07-08",
+      "source_url": "https://talent.baidu.com/jobs/detail/GRADUATE/02f73086-be71-4d09-8d6e-f1c6981b8b48"
+    },
+    {
+      "id": "J100728",
+      "document_id": "J100728",
+      "company": "百度",
+      "job_title": "北京-大模型算法工程师(J100728)",
+      "locations": [
+        "北京市"
+      ],
+      "recruitment_type": "campus",
+      "education_requirement": "本科及以上学历，计算机、人工智能、数学、统计学等相关专业优先",
+      "application_deadline": null,
+      "published_date": "2026-07-08",
+      "source_url": "https://talent.baidu.com/jobs/detail/GRADUATE/ccfdea4e-4ae4-4954-9062-fd94960a2861"
+    },
+    {
+      "id": "J99967",
+      "document_id": "J99967",
+      "company": "百度",
+      "job_title": "2027AIDU-大模型Infra工程师(J99967)",
+      "locations": [
+        "北京市"
+      ],
+      "recruitment_type": "campus",
+      "education_requirement": "计算机、电子等相关专业硕士及以上学历；",
+      "application_deadline": null,
+      "published_date": "2026-05-12",
+      "source_url": "https://talent.baidu.com/jobs/detail/GRADUATE/3fbd2b8c-43a6-4fa6-a71c-784bfe2ec4cd"
+    },
+    {
+      "id": "J99956",
+      "document_id": "J99956",
+      "company": "百度",
+      "job_title": "2027AIDU-多模态算法工程师(J99956)",
+      "locations": [
+        "北京市",
+        "上海市"
+      ],
+      "recruitment_type": "campus",
+      "education_requirement": "博士优先，计算机、模式识别、人工智能、电子工程、数学等相关专业硕士及以上学历；",
+      "application_deadline": null,
+      "published_date": "2026-05-12",
+      "source_url": "https://talent.baidu.com/jobs/detail/GRADUATE/d29404bd-55de-4cc1-929b-e67d304abc97"
+    },
+    {
+      "id": "J105970",
+      "document_id": "J105970",
+      "company": "百度",
+      "job_title": "北京-人力资源专员(J105970)",
+      "locations": [
+        "北京市"
+      ],
+      "recruitment_type": "campus",
+      "education_requirement": "本科及以上学历，专业不限，人力资源、管理、心理学、社会学等相关专业优先",
+      "application_deadline": null,
+      "published_date": "2026-09-20",
+      "source_url": "https://talent.baidu.com/jobs/detail/GRADUATE/6ea8538d-4ea0-4488-98f5-0fac33564f03"
+    },
+    {
+      "id": "J105957",
+      "document_id": "J105957",
+      "company": "百度",
+      "job_title": "测试开发工程师（J105957）",
+      "locations": [
+        "北京市"
+      ],
+      "recruitment_type": "experienced",
+      "education_requirement": "正规高校计算机及相关专业本科以上学历",
+      "application_deadline": null,
+      "published_date": "2026-09-18",
+      "source_url": "https://talent.baidu.com/jobs/detail/SOCIAL/0809bb87-bb6d-4fbe-84f7-34bf264bfc0a"
+    },
+    {
+      "id": "J106300",
+      "document_id": "J106300",
+      "company": "百度",
+      "job_title": "数据策略研发工程师（J106300）",
+      "locations": [
+        "北京市"
+      ],
+      "recruitment_type": "experienced",
+      "education_requirement": "本科及以上学历，3-5 年数据策略研发经验，千万 DAU 产品增长商业化经验优先，大模型落地经验优先",
+      "application_deadline": null,
+      "published_date": "2026-10-08",
+      "source_url": "https://talent.baidu.com/jobs/detail/SOCIAL/3c253747-64b5-441c-9aac-4c8ebfb56e3a"
+    },
+    {
+      "id": "J106347",
+      "document_id": "J106347",
+      "company": "百度",
+      "job_title": "云桂港澳琼业务拓展组政企销售（J106347）",
+      "locations": [
+        "深圳市"
+      ],
+      "recruitment_type": "experienced",
+      "education_requirement": null,
+      "application_deadline": null,
+      "published_date": "2026-10-08",
+      "source_url": "https://talent.baidu.com/jobs/detail/SOCIAL/b72afb65-8cbf-4789-87c1-965408dbab95"
+    },
+    {
+      "id": "J106323",
+      "document_id": "J106323",
+      "company": "百度",
+      "job_title": "算力政企销售（J106323）",
+      "locations": [
+        "上海市",
+        "深圳市"
+      ],
+      "recruitment_type": "experienced",
+      "education_requirement": "本科及以上学历，专业不限，计算机、金融等相关专业优先；具有 3 年以上 ToB 销售或商务拓展经验，具备大客户全流程独立成单能力",
+      "application_deadline": null,
+      "published_date": "2026-10-08",
+      "source_url": "https://talent.baidu.com/jobs/detail/SOCIAL/8cc87d8e-5ad1-4ed7-a2a0-e2f6fcda24ab"
+    },
+    {
+      "id": "J106155",
+      "document_id": "J106155",
+      "company": "百度",
+      "job_title": "医学专家(多模态&全科)（J106155）",
+      "locations": [
+        "北京市"
+      ],
+      "recruitment_type": "experienced",
+      "education_requirement": null,
+      "application_deadline": null,
+      "published_date": "2026-10-08",
+      "source_url": "https://talent.baidu.com/jobs/detail/SOCIAL/706dcd0e-d9dd-42f9-a0b0-075ecdc4d5d4"
+    },
+    {
+      "id": "J106267",
+      "document_id": "J106267",
+      "company": "百度",
+      "job_title": "医疗与生命科学行业高级销售经理（华南）（J106267）",
+      "locations": [
+        "深圳市",
+        "广州市"
+      ],
+      "recruitment_type": "experienced",
+      "education_requirement": "本科及以上学历，5 年以上云计算、AI 基础设施、HPC 或生物信息领域销售经验",
+      "application_deadline": null,
+      "published_date": "2026-10-08",
+      "source_url": "https://talent.baidu.com/jobs/detail/SOCIAL/6ed09b82-440b-4e45-9386-cce7ed2741a9"
+    },
+    {
+      "id": "J106270",
+      "document_id": "J106270",
+      "company": "百度",
+      "job_title": "售后驻场大客户经理（J106270）",
+      "locations": [
+        "北京市"
+      ],
+      "recruitment_type": "experienced",
+      "education_requirement": null,
+      "application_deadline": null,
+      "published_date": "2026-09-30",
+      "source_url": "https://talent.baidu.com/jobs/detail/SOCIAL/7668abe1-e313-4bf0-89d5-7113e677cca1"
+    },
+    {
+      "id": "J106299",
+      "document_id": "J106299",
+      "company": "百度",
+      "job_title": "DuMate五组_百度搭子Skill与Connector生态合作运营（J106299）",
+      "locations": [
+        "北京市"
+      ],
+      "recruitment_type": "experienced",
+      "education_requirement": "本科及以上学历，2年以上生态运营、商务拓展、战略合作或平台合作经验；具有 AI、SaaS、开发者平台、企业服务或互联网开放生态经验者优先",
+      "application_deadline": null,
+      "published_date": "2026-09-29",
+      "source_url": "https://talent.baidu.com/jobs/detail/SOCIAL/995d0026-5cf8-47fb-8017-8bb3bb2f5530"
+    },
+    {
+      "id": "J106203",
+      "document_id": "J106203",
+      "company": "百度",
+      "job_title": "AI应用产品经理（医疗健康方向）（J106203）",
+      "locations": [
+        "北京市"
+      ],
+      "recruitment_type": "experienced",
+      "education_requirement": null,
+      "application_deadline": null,
+      "published_date": "2026-09-29",
+      "source_url": "https://talent.baidu.com/jobs/detail/SOCIAL/162f3d57-d29e-4467-999d-89c121c01b3b"
+    },
+    {
+      "id": "J106271",
+      "document_id": "J106271",
+      "company": "百度",
+      "job_title": "服务商质量管理（J106271）",
+      "locations": [
+        "北京市"
+      ],
+      "recruitment_type": "experienced",
+      "education_requirement": "本科及以上学历，管理学、数据科学或计算机相关专业优先",
+      "application_deadline": null,
+      "published_date": "2026-09-28",
+      "source_url": "https://talent.baidu.com/jobs/detail/SOCIAL/555f0cc0-8c19-4a95-98a1-59b520bde900"
+    },
+    {
+      "id": "BS2026",
+      "document_id": "bs-deadline",
+      "company": "保山市教育体育局",
+      "job_title": "2026教师校园公开招聘岗位公告",
+      "locations": [
+        "保山市"
+      ],
+      "recruitment_type": "campus",
+      "education_requirement": "硕士研究生及以上",
+      "application_deadline": "2026-03-26",
+      "deadline_time_precision": "date-only in current SQL schema; source closes at 15:00",
+      "published_date": "2026-03-17",
+      "source_url": "https://www.baoshan.gov.cn/info/3281/10350804.htm"
+    }
+  ],
+  "retrieval_cases": [
+    {
+      "case_id": "J99640:semantic",
+      "query": "百度负责视频点播Java平台、还要支持产品的实习工作，主要做哪些事情？",
+      "stratum": "job_semantic",
+      "source_group": "baidu-intern-43b42d22-86f9-486b-adf6-7ea633dd4c92",
+      "target_units": [
+        "J99640:duties"
+      ]
+    },
+    {
+      "case_id": "J99640:explicit",
+      "query": "百度J99640的学历下限以及视频、AIGC能力要求是什么？",
+      "stratum": "job_explicit",
+      "source_group": "baidu-intern-43b42d22-86f9-486b-adf6-7ea633dd4c92",
+      "target_units": [
+        "J99640:requirements"
+      ],
+      "scope_filters": {
+        "company": "百度",
+        "job_title": "J99640"
+      }
+    },
+    {
+      "case_id": "J99230:semantic",
+      "query": "百度那项做文心模型插件和工具链的算法实习，职责有哪些？",
+      "stratum": "job_semantic",
+      "source_group": "baidu-intern-f8a467f0-2a4a-4238-a21c-412408f85c2e",
+      "target_units": [
+        "J99230:duties"
+      ]
+    },
+    {
+      "case_id": "J99230:explicit",
+      "query": "百度J99230对实习月份、每周出勤和模型框架有什么要求？",
+      "stratum": "job_explicit",
+      "source_group": "baidu-intern-f8a467f0-2a4a-4238-a21c-412408f85c2e",
+      "target_units": [
+        "J99230:requirements"
+      ],
+      "scope_filters": {
+        "company": "百度",
+        "job_title": "J99230"
+      }
+    },
+    {
+      "case_id": "J100514:semantic",
+      "query": "百度大模型开发平台的产品实习，是否包括调研、写文档和处理用户反馈？",
+      "stratum": "job_semantic",
+      "source_group": "baidu-intern-0a86720f-d92d-4981-8c8e-a21b24ae13fd",
+      "target_units": [
+        "J100514:duties"
+      ]
+    },
+    {
+      "case_id": "J100514:explicit",
+      "query": "百度J100514对推理引擎、API管理、学历和出勤有哪些要求？",
+      "stratum": "job_explicit",
+      "source_group": "baidu-intern-0a86720f-d92d-4981-8c8e-a21b24ae13fd",
+      "target_units": [
+        "J100514:requirements"
+      ],
+      "scope_filters": {
+        "company": "百度",
+        "job_title": "J100514"
+      }
+    },
+    {
+      "case_id": "J93721:semantic",
+      "query": "百度秒哒的算法实习具体研究哪些方向，是否涉及低代码平台和代码解释器？",
+      "stratum": "job_semantic",
+      "source_group": "baidu-intern-320200cd-893d-4076-b39d-1f77f7a79948",
+      "target_units": [
+        "J93721:duties"
+      ]
+    },
+    {
+      "case_id": "J93721:explicit",
+      "query": "百度J93721对学历、线下实习时间及CodingAgent等经验如何要求？",
+      "stratum": "job_explicit",
+      "source_group": "baidu-intern-320200cd-893d-4076-b39d-1f77f7a79948",
+      "target_units": [
+        "J93721:requirements"
+      ],
+      "scope_filters": {
+        "company": "百度",
+        "job_title": "J93721"
+      }
+    },
+    {
+      "case_id": "J105638:semantic",
+      "query": "百度在智慧招采和信息抽取场景部署Agent的实习岗位，要承担哪些工作？",
+      "stratum": "job_semantic",
+      "source_group": "baidu-intern-c7c0e663-c7fb-473d-82fa-57a9717d91b2",
+      "target_units": [
+        "J105638:duties"
+      ]
+    },
+    {
+      "case_id": "J105638:explicit",
+      "query": "百度J105638要求什么学历和工程技术，GRPO经验是如何提到的？",
+      "stratum": "job_explicit",
+      "source_group": "baidu-intern-c7c0e663-c7fb-473d-82fa-57a9717d91b2",
+      "target_units": [
+        "J105638:requirements"
+      ],
+      "scope_filters": {
+        "company": "百度",
+        "job_title": "J105638"
+      }
+    },
+    {
+      "case_id": "J100664:semantic",
+      "query": "百度那项主要做中训练、数据配比和loss异常定位的实习职责是什么？",
+      "stratum": "job_semantic",
+      "source_group": "baidu-intern-ca7b3bf6-6b8a-4c3f-a8f3-295ab3b9f1f0",
+      "target_units": [
+        "J100664:duties"
+      ]
+    },
+    {
+      "case_id": "J100664:explicit",
+      "query": "百度J100664是否明确要求硕士及以上，以及哪些分布式训练框架？",
+      "stratum": "job_explicit",
+      "source_group": "baidu-intern-ca7b3bf6-6b8a-4c3f-a8f3-295ab3b9f1f0",
+      "target_units": [
+        "J100664:requirements"
+      ],
+      "scope_filters": {
+        "company": "百度",
+        "job_title": "J100664"
+      }
+    },
+    {
+      "case_id": "J101073:semantic",
+      "query": "百度上海的大模型应用后端实习，AI平台和核心架构方面做什么？",
+      "stratum": "job_semantic",
+      "source_group": "baidu-intern-15f123ac-2755-4324-b5ba-25682d0f9b40",
+      "target_units": [
+        "J101073:duties"
+      ]
+    },
+    {
+      "case_id": "J101073:explicit",
+      "query": "百度J101073要求哪些编程与操作系统基础，页面有明确学历门槛吗？",
+      "stratum": "job_explicit",
+      "source_group": "baidu-intern-15f123ac-2755-4324-b5ba-25682d0f9b40",
+      "target_units": [
+        "J101073:requirements"
+      ],
+      "scope_filters": {
+        "company": "百度",
+        "job_title": "J101073"
+      }
+    },
+    {
+      "case_id": "J101234:semantic",
+      "query": "百度基座研发方向的校招工程师需要研究哪些训练阶段和模型能力？",
+      "stratum": "job_semantic",
+      "source_group": "baidu-graduate-33f41590-5770-4a91-9395-3c05e7ed1571",
+      "target_units": [
+        "J101234:duties"
+      ]
+    },
+    {
+      "case_id": "J101234:explicit",
+      "query": "百度J101234对学历以及大模型训练、强化学习方面有什么要求？",
+      "stratum": "job_explicit",
+      "source_group": "baidu-graduate-33f41590-5770-4a91-9395-3c05e7ed1571",
+      "target_units": [
+        "J101234:requirements"
+      ],
+      "scope_filters": {
+        "company": "百度",
+        "job_title": "J101234"
+      }
+    },
+    {
+      "case_id": "J85272:semantic",
+      "query": "百度做Java服务设计、分析性能瓶颈的社招职位职责是什么？",
+      "stratum": "job_semantic",
+      "source_group": "baidu-social-9d3b1a74-c4fb-4ffe-9eff-6124081f70f1",
+      "target_units": [
+        "J85272:duties"
+      ]
+    },
+    {
+      "case_id": "J85272:explicit",
+      "query": "百度J85272是怎样要求学历、工作年限与Spring框架的？",
+      "stratum": "job_explicit",
+      "source_group": "baidu-social-9d3b1a74-c4fb-4ffe-9eff-6124081f70f1",
+      "target_units": [
+        "J85272:requirements"
+      ],
+      "scope_filters": {
+        "company": "百度",
+        "job_title": "J85272"
+      }
+    },
+    {
+      "case_id": "J101352:semantic",
+      "query": "百度那项维护云端Server、调度和数据处理的Java研发工作做哪些事？",
+      "stratum": "job_semantic",
+      "source_group": "baidu-social-22f0e1d9-a87d-4c72-868c-17e2176a2b72",
+      "target_units": [
+        "J101352:duties"
+      ]
+    },
+    {
+      "case_id": "J101352:explicit",
+      "query": "百度J101352的工作年限、学历、数据库与中间件要求是什么？",
+      "stratum": "job_explicit",
+      "source_group": "baidu-social-22f0e1d9-a87d-4c72-868c-17e2176a2b72",
+      "target_units": [
+        "J101352:requirements"
+      ],
+      "scope_filters": {
+        "company": "百度",
+        "job_title": "J101352"
+      }
+    },
+    {
+      "case_id": "J106392:semantic",
+      "query": "百度用生成式模型做广告排序、预估点击和转化的实习要做什么？",
+      "stratum": "job_semantic",
+      "source_group": "baidu-intern-7de69a33-1575-4b4b-9aa6-86750b3939fc",
+      "target_units": [
+        "J106392:duties"
+      ]
+    },
+    {
+      "case_id": "J106392:explicit",
+      "query": "百度J106392面向哪两届学生、什么学位层次和模型框架？",
+      "stratum": "job_explicit",
+      "source_group": "baidu-intern-7de69a33-1575-4b4b-9aa6-86750b3939fc",
+      "target_units": [
+        "J106392:requirements"
+      ],
+      "scope_filters": {
+        "company": "百度",
+        "job_title": "J106392"
+      }
+    },
+    {
+      "case_id": "J106391:semantic",
+      "query": "百度DuMate的产品运营实习，会如何支持销售和分析用户问题？",
+      "stratum": "job_semantic",
+      "source_group": "baidu-intern-c325e4e8-d27e-40d4-a517-3dbc27bb4303",
+      "target_units": [
+        "J106391:duties"
+      ]
+    },
+    {
+      "case_id": "J106391:explicit",
+      "query": "百度J106391的学位、每周出勤、实习周期及办公软件条件是什么？",
+      "stratum": "job_explicit",
+      "source_group": "baidu-intern-c325e4e8-d27e-40d4-a517-3dbc27bb4303",
+      "target_units": [
+        "J106391:requirements"
+      ],
+      "scope_filters": {
+        "company": "百度",
+        "job_title": "J106391"
+      }
+    },
+    {
+      "case_id": "J106390:semantic",
+      "query": "百度AI产品经理实习除了设计产品，还包括什么调研与数据工作？",
+      "stratum": "job_semantic",
+      "source_group": "baidu-intern-bd0f07c8-9087-4499-bc3b-1a57c15aa0cc",
+      "target_units": [
+        "J106390:duties"
+      ]
+    },
+    {
+      "case_id": "J106390:explicit",
+      "query": "百度J106390希望实习多久，学历下限是否明确写出？",
+      "stratum": "job_explicit",
+      "source_group": "baidu-intern-bd0f07c8-9087-4499-bc3b-1a57c15aa0cc",
+      "target_units": [
+        "J106390:requirements"
+      ],
+      "scope_filters": {
+        "company": "百度",
+        "job_title": "J106390"
+      }
+    },
+    {
+      "case_id": "J106396:semantic",
+      "query": "百度健康那项用AI工具做方案验证和Demo的产品实习，主要职责是什么？",
+      "stratum": "job_semantic",
+      "source_group": "baidu-intern-a5d745dd-b2e4-4eff-b10d-23d6e94d302d",
+      "target_units": [
+        "J106396:duties"
+      ]
+    },
+    {
+      "case_id": "J106396:explicit",
+      "query": "百度J106396的学历、每周天数与连续实习月份怎样要求？",
+      "stratum": "job_explicit",
+      "source_group": "baidu-intern-a5d745dd-b2e4-4eff-b10d-23d6e94d302d",
+      "target_units": [
+        "J106396:requirements"
+      ],
+      "scope_filters": {
+        "company": "百度",
+        "job_title": "J106396"
+      }
+    },
+    {
+      "case_id": "J106332:semantic",
+      "query": "百度健康的品牌市场实习怎样通过用户内容和案例促进推广？",
+      "stratum": "job_semantic",
+      "source_group": "baidu-intern-f27bc9f8-8f4c-4d3b-aa84-f05e66d17147",
+      "target_units": [
+        "J106332:duties"
+      ]
+    },
+    {
+      "case_id": "J106332:explicit",
+      "query": "百度J106332对专业、每周到岗与实习周期有什么要求？",
+      "stratum": "job_explicit",
+      "source_group": "baidu-intern-f27bc9f8-8f4c-4d3b-aa84-f05e66d17147",
+      "target_units": [
+        "J106332:requirements"
+      ],
+      "scope_filters": {
+        "company": "百度",
+        "job_title": "J106332"
+      }
+    },
+    {
+      "case_id": "J106354:semantic",
+      "query": "百度建设质量门禁、全链路追踪和回放平台的全栈研发实习做什么？",
+      "stratum": "job_semantic",
+      "source_group": "baidu-intern-f0b36f9d-807a-4817-997d-ca8fe8141f8e",
+      "target_units": [
+        "J106354:duties"
+      ]
+    },
+    {
+      "case_id": "J106354:explicit",
+      "query": "百度J106354提到哪些测试及可观测性工具，是否写明学历门槛？",
+      "stratum": "job_explicit",
+      "source_group": "baidu-intern-f0b36f9d-807a-4817-997d-ca8fe8141f8e",
+      "target_units": [
+        "J106354:requirements"
+      ],
+      "scope_filters": {
+        "company": "百度",
+        "job_title": "J106354"
+      }
+    },
+    {
+      "case_id": "J106312:semantic",
+      "query": "百度DuMate生态运营实习怎样维护开发者伙伴并组织活动？",
+      "stratum": "job_semantic",
+      "source_group": "baidu-intern-ef7bf24d-667d-4bec-bdfc-a7cae4dd7bb8",
+      "target_units": [
+        "J106312:duties"
+      ]
+    },
+    {
+      "case_id": "J106312:explicit",
+      "query": "百度J106312对专业、毕业届别、出勤和实习月份如何要求？",
+      "stratum": "job_explicit",
+      "source_group": "baidu-intern-ef7bf24d-667d-4bec-bdfc-a7cae4dd7bb8",
+      "target_units": [
+        "J106312:requirements"
+      ],
+      "scope_filters": {
+        "company": "百度",
+        "job_title": "J106312"
+      }
+    },
+    {
+      "case_id": "J106295:semantic",
+      "query": "百度SQC业务运营实习如何处理交付文档、项目风险和数据分析？",
+      "stratum": "job_semantic",
+      "source_group": "baidu-intern-9ba0eeb1-990b-4099-abb4-1856124f9751",
+      "target_units": [
+        "J106295:duties"
+      ]
+    },
+    {
+      "case_id": "J106295:explicit",
+      "query": "百度J106295明确要求怎样的实习周期和专业，是否注明学历？",
+      "stratum": "job_explicit",
+      "source_group": "baidu-intern-9ba0eeb1-990b-4099-abb4-1856124f9751",
+      "target_units": [
+        "J106295:requirements"
+      ],
+      "scope_filters": {
+        "company": "百度",
+        "job_title": "J106295"
+      }
+    },
+    {
+      "case_id": "J106272:semantic",
+      "query": "百度那项开发SSE流式进度、iframe预览和多轮改稿的实习职责是什么？",
+      "stratum": "job_semantic",
+      "source_group": "baidu-intern-23157d0b-b51b-436a-8e94-17100c9fabdd",
+      "target_units": [
+        "J106272:duties"
+      ]
+    },
+    {
+      "case_id": "J106272:explicit",
+      "query": "百度J106272的学籍、出勤以及前后端语言框架要求是什么？",
+      "stratum": "job_explicit",
+      "source_group": "baidu-intern-23157d0b-b51b-436a-8e94-17100c9fabdd",
+      "target_units": [
+        "J106272:requirements"
+      ],
+      "scope_filters": {
+        "company": "百度",
+        "job_title": "J106272"
+      }
+    },
+    {
+      "case_id": "J106037:semantic",
+      "query": "百度MaaS解决方案实习怎样完成客户场景的POC和模型测试？",
+      "stratum": "job_semantic",
+      "source_group": "baidu-intern-46bd7fb9-60cd-4418-bce8-eecd0e350607",
+      "target_units": [
+        "J106037:duties"
+      ]
+    },
+    {
+      "case_id": "J106037:explicit",
+      "query": "百度J106037要求的线下时长、每周出勤和脚本能力是什么？",
+      "stratum": "job_explicit",
+      "source_group": "baidu-intern-46bd7fb9-60cd-4418-bce8-eecd0e350607",
+      "target_units": [
+        "J106037:requirements"
+      ],
+      "scope_filters": {
+        "company": "百度",
+        "job_title": "J106037"
+      }
+    },
+    {
+      "case_id": "J100700:semantic",
+      "query": "百度云网络校招岗位会研究CDN、智能网卡和哪些基础网络技术？",
+      "stratum": "job_semantic",
+      "source_group": "baidu-graduate-545e6823-28d2-4cb5-aba2-3c520a31b4e0",
+      "target_units": [
+        "J100700:duties"
+      ]
+    },
+    {
+      "case_id": "J100700:explicit",
+      "query": "百度J100700的学历和编程语言门槛是什么？",
+      "stratum": "job_explicit",
+      "source_group": "baidu-graduate-545e6823-28d2-4cb5-aba2-3c520a31b4e0",
+      "target_units": [
+        "J100700:requirements"
+      ],
+      "scope_filters": {
+        "company": "百度",
+        "job_title": "J100700"
+      }
+    },
+    {
+      "case_id": "J100737:semantic",
+      "query": "百度后端开发校招工作除了编码，是否负责AI集成和稳定性？",
+      "stratum": "job_semantic",
+      "source_group": "baidu-graduate-72145a13-5eb1-41ce-8853-d00aa7369281",
+      "target_units": [
+        "J100737:duties"
+      ]
+    },
+    {
+      "case_id": "J100737:explicit",
+      "query": "百度J100737对学历、语言和系统基础有什么要求？",
+      "stratum": "job_explicit",
+      "source_group": "baidu-graduate-72145a13-5eb1-41ce-8853-d00aa7369281",
+      "target_units": [
+        "J100737:requirements"
+      ],
+      "scope_filters": {
+        "company": "百度",
+        "job_title": "J100737"
+      }
+    },
+    {
+      "case_id": "J100665:semantic",
+      "query": "百度北京AI产品经理校招如何推动人机协作和产品指标增长？",
+      "stratum": "job_semantic",
+      "source_group": "baidu-graduate-423c0fa3-a0f3-4def-a882-7466d3685b79",
+      "target_units": [
+        "J100665:duties"
+      ]
+    },
+    {
+      "case_id": "J100665:explicit",
+      "query": "百度J100665对学历、产品理解及实习经历有什么要求？",
+      "stratum": "job_explicit",
+      "source_group": "baidu-graduate-423c0fa3-a0f3-4def-a882-7466d3685b79",
+      "target_units": [
+        "J100665:requirements"
+      ],
+      "scope_filters": {
+        "company": "百度",
+        "job_title": "J100665"
+      }
+    },
+    {
+      "case_id": "J100765:semantic",
+      "query": "百度多模态算法校招涉及哪些模态和对齐、生成方向？",
+      "stratum": "job_semantic",
+      "source_group": "baidu-graduate-b9ad50c9-07c7-4b9c-998d-7049bb706edf",
+      "target_units": [
+        "J100765:duties"
+      ]
+    },
+    {
+      "case_id": "J100765:explicit",
+      "query": "百度J100765要求了解哪些模型结构、框架和学历？",
+      "stratum": "job_explicit",
+      "source_group": "baidu-graduate-b9ad50c9-07c7-4b9c-998d-7049bb706edf",
+      "target_units": [
+        "J100765:requirements"
+      ],
+      "scope_filters": {
+        "company": "百度",
+        "job_title": "J100765"
+      }
+    },
+    {
+      "case_id": "J101055:semantic",
+      "query": "百度AI测试开发校招会怎样用大模型做自主编排和质量评测？",
+      "stratum": "job_semantic",
+      "source_group": "baidu-graduate-6061be03-f92b-4430-a1b8-9168de0f91f6",
+      "target_units": [
+        "J101055:duties"
+      ]
+    },
+    {
+      "case_id": "J101055:explicit",
+      "query": "百度J101055要求哪些测试工具、语言和学历？",
+      "stratum": "job_explicit",
+      "source_group": "baidu-graduate-6061be03-f92b-4430-a1b8-9168de0f91f6",
+      "target_units": [
+        "J101055:requirements"
+      ],
+      "scope_filters": {
+        "company": "百度",
+        "job_title": "J101055"
+      }
+    },
+    {
+      "case_id": "J101017:semantic",
+      "query": "百度智能体算法校招岗位是否涵盖记忆、工具调用和多智能体协作？",
+      "stratum": "job_semantic",
+      "source_group": "baidu-graduate-02f73086-be71-4d09-8d6e-f1c6981b8b48",
+      "target_units": [
+        "J101017:duties"
+      ]
+    },
+    {
+      "case_id": "J101017:explicit",
+      "query": "百度J101017要求掌握哪些Agent原理、开发框架和学历？",
+      "stratum": "job_explicit",
+      "source_group": "baidu-graduate-02f73086-be71-4d09-8d6e-f1c6981b8b48",
+      "target_units": [
+        "J101017:requirements"
+      ],
+      "scope_filters": {
+        "company": "百度",
+        "job_title": "J101017"
+      }
+    },
+    {
+      "case_id": "J100728:semantic",
+      "query": "百度大模型算法校招研究哪些训练阶段以及RAG、思维链方向？",
+      "stratum": "job_semantic",
+      "source_group": "baidu-graduate-ccfdea4e-4ae4-4954-9062-fd94960a2861",
+      "target_units": [
+        "J100728:duties"
+      ]
+    },
+    {
+      "case_id": "J100728:explicit",
+      "query": "百度J100728对学历、模型理论和编程框架怎样要求？",
+      "stratum": "job_explicit",
+      "source_group": "baidu-graduate-ccfdea4e-4ae4-4954-9062-fd94960a2861",
+      "target_units": [
+        "J100728:requirements"
+      ],
+      "scope_filters": {
+        "company": "百度",
+        "job_title": "J100728"
+      }
+    },
+    {
+      "case_id": "J99967:semantic",
+      "query": "百度AIDU的Infra方向如何优化异构计算、通信和大模型成本？",
+      "stratum": "job_semantic",
+      "source_group": "baidu-graduate-3fbd2b8c-43a6-4fa6-a71c-784bfe2ec4cd",
+      "target_units": [
+        "J99967:duties"
+      ]
+    },
+    {
+      "case_id": "J99967:explicit",
+      "query": "百度J99967对学历及CUDA、NCCL等底层技术如何要求？",
+      "stratum": "job_explicit",
+      "source_group": "baidu-graduate-3fbd2b8c-43a6-4fa6-a71c-784bfe2ec4cd",
+      "target_units": [
+        "J99967:requirements"
+      ],
+      "scope_filters": {
+        "company": "百度",
+        "job_title": "J99967"
+      }
+    },
+    {
+      "case_id": "J99956:semantic",
+      "query": "百度AIDU的多模态岗位研究3D生成、文档和哪些数据模态？",
+      "stratum": "job_semantic",
+      "source_group": "baidu-graduate-d29404bd-55de-4cc1-929b-e67d304abc97",
+      "target_units": [
+        "J99956:duties"
+      ]
+    },
+    {
+      "case_id": "J99956:explicit",
+      "query": "百度J99956要求什么学历，以及哪些多模态模型与框架？",
+      "stratum": "job_explicit",
+      "source_group": "baidu-graduate-d29404bd-55de-4cc1-929b-e67d304abc97",
+      "target_units": [
+        "J99956:requirements"
+      ],
+      "scope_filters": {
+        "company": "百度",
+        "job_title": "J99956"
+      }
+    },
+    {
+      "case_id": "J105970:semantic",
+      "query": "百度人力资源校招专员会在哪些模块轮岗，是否接触AI工具？",
+      "stratum": "job_semantic",
+      "source_group": "baidu-graduate-6ea8538d-4ea0-4488-98f5-0fac33564f03",
+      "target_units": [
+        "J105970:duties"
+      ]
+    },
+    {
+      "case_id": "J105970:explicit",
+      "query": "百度J105970的学历与专业条件如何，是否必须人力资源专业？",
+      "stratum": "job_explicit",
+      "source_group": "baidu-graduate-6ea8538d-4ea0-4488-98f5-0fac33564f03",
+      "target_units": [
+        "J105970:requirements"
+      ],
+      "scope_filters": {
+        "company": "百度",
+        "job_title": "J105970"
+      }
+    },
+    {
+      "case_id": "J105957:semantic",
+      "query": "百度文库测试开发社招如何制定方案、定位缺陷和开发自动化工具？",
+      "stratum": "job_semantic",
+      "source_group": "baidu-social-0809bb87-bb6d-4fbe-84f7-34bf264bfc0a",
+      "target_units": [
+        "J105957:duties"
+      ]
+    },
+    {
+      "case_id": "J105957:explicit",
+      "query": "百度J105957需要几年服务端测试经历和什么学历、语言？",
+      "stratum": "job_explicit",
+      "source_group": "baidu-social-0809bb87-bb6d-4fbe-84f7-34bf264bfc0a",
+      "target_units": [
+        "J105957:requirements"
+      ],
+      "scope_filters": {
+        "company": "百度",
+        "job_title": "J105957"
+      }
+    },
+    {
+      "case_id": "J106300:semantic",
+      "query": "百度数据策略社招怎样建设数仓并预测ROI、LTV和DAU变化？",
+      "stratum": "job_semantic",
+      "source_group": "baidu-social-3c253747-64b5-441c-9aac-4c8ebfb56e3a",
+      "target_units": [
+        "J106300:duties"
+      ]
+    },
+    {
+      "case_id": "J106300:explicit",
+      "query": "百度J106300对学历、经验年限及数仓流处理工具有何要求？",
+      "stratum": "job_explicit",
+      "source_group": "baidu-social-3c253747-64b5-441c-9aac-4c8ebfb56e3a",
+      "target_units": [
+        "J106300:requirements"
+      ],
+      "scope_filters": {
+        "company": "百度",
+        "job_title": "J106300"
+      }
+    },
+    {
+      "case_id": "J106347:semantic",
+      "query": "百度云桂港澳琼政企销售怎样拓展云服务和Token业务？",
+      "stratum": "job_semantic",
+      "source_group": "baidu-social-b72afb65-8cbf-4789-87c1-965408dbab95",
+      "target_units": [
+        "J106347:duties"
+      ]
+    },
+    {
+      "case_id": "J106347:explicit",
+      "query": "百度J106347要求几年行业经验，页面是否明确最低学历？",
+      "stratum": "job_explicit",
+      "source_group": "baidu-social-b72afb65-8cbf-4789-87c1-965408dbab95",
+      "target_units": [
+        "J106347:requirements"
+      ],
+      "scope_filters": {
+        "company": "百度",
+        "job_title": "J106347"
+      }
+    },
+    {
+      "case_id": "J106323:semantic",
+      "query": "百度算力政企销售的GPU与Tokens业务包括哪些客户和供给侧工作？",
+      "stratum": "job_semantic",
+      "source_group": "baidu-social-8cc87d8e-5ad1-4ed7-a2a0-e2f6fcda24ab",
+      "target_units": [
+        "J106323:duties"
+      ]
+    },
+    {
+      "case_id": "J106323:explicit",
+      "query": "百度J106323对学历、ToB销售年限与算力经验有哪些要求？",
+      "stratum": "job_explicit",
+      "source_group": "baidu-social-8cc87d8e-5ad1-4ed7-a2a0-e2f6fcda24ab",
+      "target_units": [
+        "J106323:requirements"
+      ],
+      "scope_filters": {
+        "company": "百度",
+        "job_title": "J106323"
+      }
+    },
+    {
+      "case_id": "J106155:semantic",
+      "query": "百度医学专家岗位怎样审核多模态回答、病例与评测样本？",
+      "stratum": "job_semantic",
+      "source_group": "baidu-social-706dcd0e-d9dd-42f9-a0b0-075ecdc4d5d4",
+      "target_units": [
+        "J106155:duties"
+      ]
+    },
+    {
+      "case_id": "J106155:explicit",
+      "query": "百度J106155要求哪些临床和证据评价能力，是否明确学历层次？",
+      "stratum": "job_explicit",
+      "source_group": "baidu-social-706dcd0e-d9dd-42f9-a0b0-075ecdc4d5d4",
+      "target_units": [
+        "J106155:requirements"
+      ],
+      "scope_filters": {
+        "company": "百度",
+        "job_title": "J106155"
+      }
+    },
+    {
+      "case_id": "J106267:semantic",
+      "query": "百度华南生命科学高级销售如何把GPU、HPC及存储需求转为签约？",
+      "stratum": "job_semantic",
+      "source_group": "baidu-social-6ed09b82-440b-4e45-9386-cce7ed2741a9",
+      "target_units": [
+        "J106267:duties"
+      ]
+    },
+    {
+      "case_id": "J106267:explicit",
+      "query": "百度J106267的学历、销售年限及行业背景要求是什么？",
+      "stratum": "job_explicit",
+      "source_group": "baidu-social-6ed09b82-440b-4e45-9386-cce7ed2741a9",
+      "target_units": [
+        "J106267:requirements"
+      ],
+      "scope_filters": {
+        "company": "百度",
+        "job_title": "J106267"
+      }
+    },
+    {
+      "case_id": "J106270:semantic",
+      "query": "百度售后驻场大客户经理怎样组织私有云应急和客户复盘？",
+      "stratum": "job_semantic",
+      "source_group": "baidu-social-7668abe1-e313-4bf0-89d5-7113e677cca1",
+      "target_units": [
+        "J106270:duties"
+      ]
+    },
+    {
+      "case_id": "J106270:explicit",
+      "query": "百度J106270要求什么项目运维经验和技术能力，学历是否明确？",
+      "stratum": "job_explicit",
+      "source_group": "baidu-social-7668abe1-e313-4bf0-89d5-7113e677cca1",
+      "target_units": [
+        "J106270:requirements"
+      ],
+      "scope_filters": {
+        "company": "百度",
+        "job_title": "J106270"
+      }
+    },
+    {
+      "case_id": "J106299:semantic",
+      "query": "百度搭子Skill与Connector生态合作岗位怎样推进伙伴接入和效果评估？",
+      "stratum": "job_semantic",
+      "source_group": "baidu-social-995d0026-5cf8-47fb-8017-8bb3bb2f5530",
+      "target_units": [
+        "J106299:duties"
+      ]
+    },
+    {
+      "case_id": "J106299:explicit",
+      "query": "百度J106299要求哪些学历、合作年限和MCP生态知识？",
+      "stratum": "job_explicit",
+      "source_group": "baidu-social-995d0026-5cf8-47fb-8017-8bb3bb2f5530",
+      "target_units": [
+        "J106299:requirements"
+      ],
+      "scope_filters": {
+        "company": "百度",
+        "job_title": "J106299"
+      }
+    },
+    {
+      "case_id": "J106203:semantic",
+      "query": "百度医疗健康AI产品经理如何把模型失败案例转成数据与仿真任务？",
+      "stratum": "job_semantic",
+      "source_group": "baidu-social-162f3d57-d29e-4467-999d-89c121c01b3b",
+      "target_units": [
+        "J106203:duties"
+      ]
+    },
+    {
+      "case_id": "J106203:explicit",
+      "query": "百度J106203要求哪些医学、多轮交互及RAG能力，是否明确学历？",
+      "stratum": "job_explicit",
+      "source_group": "baidu-social-162f3d57-d29e-4467-999d-89c121c01b3b",
+      "target_units": [
+        "J106203:requirements"
+      ],
+      "scope_filters": {
+        "company": "百度",
+        "job_title": "J106203"
+      }
+    },
+    {
+      "case_id": "J106271:semantic",
+      "query": "百度服务商质量管理怎样覆盖供应商全流程和人力调度策略？",
+      "stratum": "job_semantic",
+      "source_group": "baidu-social-555f0cc0-8c19-4a95-98a1-59b520bde900",
+      "target_units": [
+        "J106271:duties"
+      ]
+    },
+    {
+      "case_id": "J106271:explicit",
+      "query": "百度J106271对学历、AI数据服务管理年限及产品经验如何要求？",
+      "stratum": "job_explicit",
+      "source_group": "baidu-social-555f0cc0-8c19-4a95-98a1-59b520bde900",
+      "target_units": [
+        "J106271:requirements"
+      ],
+      "scope_filters": {
+        "company": "百度",
+        "job_title": "J106271"
+      }
+    },
+    {
+      "case_id": "hw-reset:1",
+      "query": "华为招聘官网忘记登录密码，支持哪些方式重置？",
+      "stratum": "policy",
+      "source_group": "huawei-campus-2027",
+      "target_units": [
+        "hw-reset:policy"
+      ]
+    },
+    {
+      "case_id": "hw-reset:2",
+      "query": "我的华为求职账号口令忘了，能用注册手机号找回吗？",
+      "stratum": "policy",
+      "source_group": "huawei-campus-2027",
+      "target_units": [
+        "hw-reset:policy"
+      ]
+    },
+    {
+      "case_id": "hw-duplicate:1",
+      "query": "华为注册提示已有简历且原邮箱手机都停用，怎么办？",
+      "stratum": "policy",
+      "source_group": "huawei-campus-2027",
+      "target_units": [
+        "hw-duplicate:policy"
+      ]
+    },
+    {
+      "case_id": "hw-duplicate:2",
+      "query": "我换了联系方式，华为系统却说资料重复，是否有人工恢复入口？",
+      "stratum": "policy",
+      "source_group": "huawei-campus-2027",
+      "target_units": [
+        "hw-duplicate:policy"
+      ]
+    },
+    {
+      "case_id": "hw-empty:1",
+      "query": "华为明明注册过简历，登录后却为空，要先做什么？",
+      "stratum": "policy",
+      "source_group": "huawei-campus-2027",
+      "target_units": [
+        "hw-empty:policy"
+      ]
+    },
+    {
+      "case_id": "hw-empty:2",
+      "query": "进了华为求职账号但个人资料是空白，应先填哪一部分来检查旧资料？",
+      "stratum": "policy",
+      "source_group": "huawei-campus-2027",
+      "target_units": [
+        "hw-empty:policy"
+      ]
+    },
+    {
+      "case_id": "hw-contact:1",
+      "query": "华为简历联系电话可以改吗，登录手机号会一起改吗？",
+      "stratum": "policy",
+      "source_group": "huawei-campus-2027",
+      "target_units": [
+        "hw-contact:policy"
+      ]
+    },
+    {
+      "case_id": "hw-contact:2",
+      "query": "想换华为接收面试通知的邮箱，这是否也会改变我的登录账号？",
+      "stratum": "policy",
+      "source_group": "huawei-campus-2027",
+      "target_units": [
+        "hw-contact:policy"
+      ]
+    },
+    {
+      "case_id": "hw-school:1",
+      "query": "华为填写简历时学校不在下拉列表怎么办？",
+      "stratum": "policy",
+      "source_group": "huawei-campus-2027",
+      "target_units": [
+        "hw-school:policy"
+      ]
+    },
+    {
+      "case_id": "hw-school:2",
+      "query": "我的大学在华为报名系统里搜不出来，可以直接写学校简称吗？",
+      "stratum": "policy",
+      "source_group": "huawei-campus-2027",
+      "target_units": [
+        "hw-school:policy"
+      ]
+    },
+    {
+      "case_id": "hw-apply:1",
+      "query": "华为应届生应该从哪里选择岗位和部门投递？",
+      "stratum": "policy",
+      "source_group": "huawei-campus-2027",
+      "target_units": [
+        "hw-apply:policy"
+      ]
+    },
+    {
+      "case_id": "hw-apply:2",
+      "query": "有人发来第三方华为报名链接，官方投递渠道和部门选择入口在哪里？",
+      "stratum": "policy",
+      "source_group": "huawei-campus-2027",
+      "target_units": [
+        "hw-apply:policy"
+      ]
+    },
+    {
+      "case_id": "hw-change:1",
+      "query": "华为已经申请的岗位什么时候还能调整，在哪里改？",
+      "stratum": "policy",
+      "source_group": "huawei-campus-2027",
+      "target_units": [
+        "hw-change:policy"
+      ]
+    },
+    {
+      "case_id": "hw-change:2",
+      "query": "想换华为投递的第一志愿，需要先满足什么状态条件？",
+      "stratum": "policy",
+      "source_group": "huawei-campus-2027",
+      "target_units": [
+        "hw-change:policy"
+      ]
+    },
+    {
+      "case_id": "hw-resume-number:1",
+      "query": "华为校招简历编号去哪里查？",
+      "stratum": "policy",
+      "source_group": "huawei-campus-2027",
+      "target_units": [
+        "hw-resume-number:policy"
+      ]
+    },
+    {
+      "case_id": "hw-resume-number:2",
+      "query": "招聘人员要我提供华为资料编号，是在申请进度还是校招简历栏目里？",
+      "stratum": "policy",
+      "source_group": "huawei-campus-2027",
+      "target_units": [
+        "hw-resume-number:policy"
+      ]
+    },
+    {
+      "case_id": "hw-registration-support:1",
+      "query": "华为注册简历与网页异常分别联系哪些支持邮箱？",
+      "stratum": "policy",
+      "source_group": "huawei-campus-2027",
+      "target_units": [
+        "hw-registration-support:policy"
+      ]
+    },
+    {
+      "case_id": "hw-registration-support:2",
+      "query": "华为报名页面报错，技术异常和简历注册问题应分别找谁？",
+      "stratum": "policy",
+      "source_group": "huawei-campus-2027",
+      "target_units": [
+        "hw-registration-support:policy"
+      ]
+    },
+    {
+      "case_id": "hw-recommend:1",
+      "query": "华为职位推荐与职位搜索分别怎么工作？",
+      "stratum": "policy",
+      "source_group": "huawei-campus-2027",
+      "target_units": [
+        "hw-recommend:policy"
+      ]
+    },
+    {
+      "case_id": "hw-recommend:2",
+      "query": "想按岗位名称自己筛，而不依赖简历自动匹配，华为官网该用什么功能？",
+      "stratum": "policy",
+      "source_group": "huawei-campus-2027",
+      "target_units": [
+        "hw-recommend:policy"
+      ]
+    },
+    {
+      "case_id": "hw-referral:1",
+      "query": "华为官网当前页面说应届生招聘有没有内推？",
+      "stratum": "policy",
+      "source_group": "huawei-campus-2027",
+      "target_units": [
+        "hw-referral:policy"
+      ]
+    },
+    {
+      "case_id": "hw-referral:2",
+      "query": "付费服务说能给华为应届生内推，官网对这个渠道怎么说明？",
+      "stratum": "policy",
+      "source_group": "huawei-campus-2027",
+      "target_units": [
+        "hw-referral:policy"
+      ]
+    },
+    {
+      "case_id": "hw-intern-cohort:1",
+      "query": "华为2027届实习招聘主要面向哪一届在校学生？",
+      "stratum": "policy",
+      "source_group": "huawei-campus-2027",
+      "target_units": [
+        "hw-intern-cohort:policy"
+      ]
+    },
+    {
+      "case_id": "hw-intern-cohort:2",
+      "query": "华为这轮实习写的2027届指哪年的毕业学生？",
+      "stratum": "policy",
+      "source_group": "huawei-campus-2027",
+      "target_units": [
+        "hw-intern-cohort:policy"
+      ]
+    },
+    {
+      "case_id": "hw-interview:1",
+      "query": "华为研发与非研发校招在考试和面试环节有哪些区别？",
+      "stratum": "policy",
+      "source_group": "huawei-campus-2027",
+      "target_units": [
+        "hw-interview:policy"
+      ]
+    },
+    {
+      "case_id": "hw-interview:2",
+      "query": "申请华为研发岗位，简历过筛以后会不会先做机考再参加专业面试？",
+      "stratum": "policy",
+      "source_group": "huawei-campus-2027",
+      "target_units": [
+        "hw-interview:policy"
+      ]
+    },
+    {
+      "case_id": "hw-interview-result:1",
+      "query": "华为全部面试完成后多久、在哪里查结果？",
+      "stratum": "policy",
+      "source_group": "huawei-campus-2027",
+      "target_units": [
+        "hw-interview-result:policy"
+      ]
+    },
+    {
+      "case_id": "hw-interview-result:2",
+      "query": "刚完成华为最后一轮面试，隔多久可以登录系统看进展？",
+      "stratum": "policy",
+      "source_group": "huawei-campus-2027",
+      "target_units": [
+        "hw-interview-result:policy"
+      ]
+    },
+    {
+      "case_id": "hw-invitation:1",
+      "query": "华为投递后面试邀约通过哪些渠道发，什么时候筛选？",
+      "stratum": "policy",
+      "source_group": "huawei-campus-2027",
+      "target_units": [
+        "hw-invitation:policy"
+      ]
+    },
+    {
+      "case_id": "hw-invitation:2",
+      "query": "提交华为申请后没有固定几天就收到消息，官网如何说明通知安排？",
+      "stratum": "policy",
+      "source_group": "huawei-campus-2027",
+      "target_units": [
+        "hw-invitation:policy"
+      ]
+    },
+    {
+      "case_id": "hw-interview-place:1",
+      "query": "华为面试地点怎么定，留学生不能回国时有何安排？",
+      "stratum": "policy",
+      "source_group": "huawei-campus-2027",
+      "target_units": [
+        "hw-interview-place:policy"
+      ]
+    },
+    {
+      "case_id": "hw-interview-place:2",
+      "query": "我在海外读书无法回国参加华为面试，官网允许什么形式？",
+      "stratum": "policy",
+      "source_group": "huawei-campus-2027",
+      "target_units": [
+        "hw-interview-place:policy"
+      ]
+    },
+    {
+      "case_id": "hw-prior-intern:1",
+      "query": "华为实习面试没通过，会影响后来应届校招吗？",
+      "stratum": "policy",
+      "source_group": "huawei-campus-2027",
+      "target_units": [
+        "hw-prior-intern:policy"
+      ]
+    },
+    {
+      "case_id": "hw-prior-intern:2",
+      "query": "已经在华为实习过，是否还能重新申请当年的应届生职位？",
+      "stratum": "policy",
+      "source_group": "huawei-campus-2027",
+      "target_units": [
+        "hw-prior-intern:policy"
+      ]
+    },
+    {
+      "case_id": "hw-offer-booking:1",
+      "query": "华为应届生接受Offer后如何预约入职？",
+      "stratum": "policy",
+      "source_group": "huawei-campus-2027",
+      "target_units": [
+        "hw-offer-booking:policy"
+      ]
+    },
+    {
+      "case_id": "hw-offer-booking:2",
+      "query": "签约后想选华为报到日期，首先应查看哪封邮件和哪个平台？",
+      "stratum": "policy",
+      "source_group": "huawei-campus-2027",
+      "target_units": [
+        "hw-offer-booking:policy"
+      ]
+    },
+    {
+      "case_id": "hw-offer-full:1",
+      "query": "华为想选的报到日期满额后怎么办？",
+      "stratum": "policy",
+      "source_group": "huawei-campus-2027",
+      "target_units": [
+        "hw-offer-full:policy"
+      ]
+    },
+    {
+      "case_id": "hw-offer-full:2",
+      "query": "入职预约显示没有名额，华为建议等待固定补招日还是持续关注平台？",
+      "stratum": "policy",
+      "source_group": "huawei-campus-2027",
+      "target_units": [
+        "hw-offer-full:policy"
+      ]
+    },
+    {
+      "case_id": "hw-offer-prep:1",
+      "query": "华为应届生报到前需要在平台完成哪些准备？",
+      "stratum": "policy",
+      "source_group": "huawei-campus-2027",
+      "target_units": [
+        "hw-offer-prep:policy"
+      ]
+    },
+    {
+      "case_id": "hw-offer-prep:2",
+      "query": "接受华为Offer后，个人资料、照片和体检应怎样安排？",
+      "stratum": "policy",
+      "source_group": "huawei-campus-2027",
+      "target_units": [
+        "hw-offer-prep:policy"
+      ]
+    },
+    {
+      "case_id": "hw-intern-remote:1",
+      "query": "华为实习一般多久，官网支持付费第三方远程实习吗？",
+      "stratum": "policy",
+      "source_group": "huawei-campus-2027",
+      "target_units": [
+        "hw-intern-remote:policy"
+      ]
+    },
+    {
+      "case_id": "hw-intern-remote:2",
+      "query": "只能线上实习，有人收钱说能安排华为项目，官网政策是什么？",
+      "stratum": "policy",
+      "source_group": "huawei-campus-2027",
+      "target_units": [
+        "hw-intern-remote:policy"
+      ]
+    },
+    {
+      "case_id": "hw-graduate-window:1",
+      "query": "华为2027国内本硕与博士、海外毕业生的毕业时间范围是否相同？",
+      "stratum": "policy",
+      "source_group": "huawei-campus-2027",
+      "target_units": [
+        "hw-graduate-window:policy"
+      ]
+    },
+    {
+      "case_id": "hw-graduate-window:2",
+      "query": "国内硕士在2026年毕业与海外硕士在2026年毕业，华为2027校招范围如何区分？",
+      "stratum": "policy",
+      "source_group": "huawei-campus-2027",
+      "target_units": [
+        "hw-graduate-window:policy"
+      ]
+    },
+    {
+      "case_id": "bd-graduate-window:1",
+      "query": "百度当前校招要求的毕业日期区间与岗位类别是什么？",
+      "stratum": "policy",
+      "source_group": "baidu-campus-policy",
+      "target_units": [
+        "bd-graduate-window:policy"
+      ]
+    },
+    {
+      "case_id": "bd-graduate-window:2",
+      "query": "2027年年底才毕业的人，符合百度页面写的这轮校招毕业月份范围吗？",
+      "stratum": "policy",
+      "source_group": "baidu-campus-policy",
+      "target_units": [
+        "bd-graduate-window:policy"
+      ]
+    },
+    {
+      "case_id": "bd-intern-project:1",
+      "query": "百度2027暑期和日常实习当前开放情况以及项目最低时长是什么？",
+      "stratum": "policy",
+      "source_group": "baidu-campus-policy",
+      "target_units": [
+        "bd-intern-project:policy"
+      ]
+    },
+    {
+      "case_id": "bd-intern-project:2",
+      "query": "错过百度暑期实习后，是否还有不限制毕业年份的常年实习项目？",
+      "stratum": "policy",
+      "source_group": "baidu-campus-policy",
+      "target_units": [
+        "bd-intern-project:policy"
+      ]
+    },
+    {
+      "case_id": "bs-eligibility:1",
+      "query": "保山该2026教师校招对硕士毕业年份和博士例外怎么规定？",
+      "stratum": "policy",
+      "source_group": "baoshan-notice-2026",
+      "target_units": [
+        "bs-eligibility:policy"
+      ]
+    },
+    {
+      "case_id": "bs-eligibility:2",
+      "query": "已经在编的硕士与博士，在保山2026公告的范围条件上是否一样？",
+      "stratum": "policy",
+      "source_group": "baoshan-notice-2026",
+      "target_units": [
+        "bs-eligibility:policy"
+      ]
+    },
+    {
+      "case_id": "bs-deadline:1",
+      "query": "保山2026这次教师招聘网络报名截止到哪天几点，以什么时间为准？",
+      "stratum": "policy",
+      "source_group": "baoshan-notice-2026",
+      "target_units": [
+        "bs-deadline:policy"
+      ]
+    },
+    {
+      "case_id": "bs-deadline:2",
+      "query": "2026年3月26日晚上才把材料发到保山招聘邮箱，公告是否还受理？",
+      "stratum": "policy",
+      "source_group": "baoshan-notice-2026",
+      "target_units": [
+        "bs-deadline:policy"
+      ]
+    },
+    {
+      "case_id": "bs-submission:1",
+      "query": "保山这次教师招聘怎样提交PDF材料，一个人能报几个岗位？",
+      "stratum": "policy",
+      "source_group": "baoshan-notice-2026",
+      "target_units": [
+        "bs-submission:policy"
+      ]
+    },
+    {
+      "case_id": "bs-submission:2",
+      "query": "给保山招聘邮箱发网盘下载链接而不附统一PDF，可同时报两岗吗？",
+      "stratum": "policy",
+      "source_group": "baoshan-notice-2026",
+      "target_units": [
+        "bs-submission:policy"
+      ]
+    }
+  ],
+  "structured_cases": [
+    {
+      "case_id": "intern-shanghai",
+      "filters": {
+        "company": "百度",
+        "location": "上海",
+        "recruitment_type": "internship"
+      },
+      "expected_ids": [
+        "J93721",
+        "J105638",
+        "J101073",
+        "J106392",
+        "J106037"
+      ]
+    },
+    {
+      "case_id": "intern-shanghai-city",
+      "filters": {
+        "company": "百度",
+        "location": "上海市",
+        "recruitment_type": "实习"
+      },
+      "expected_ids": [
+        "J93721",
+        "J105638",
+        "J101073",
+        "J106392",
+        "J106037"
+      ]
+    },
+    {
+      "case_id": "intern-beijing",
+      "filters": {
+        "company": "百度",
+        "location": "北京",
+        "recruitment_type": "日常实习",
+        "limit": 20
+      },
+      "expected_ids": [
+        "J99640",
+        "J99230",
+        "J100514",
+        "J93721",
+        "J100664",
+        "J106392",
+        "J106391",
+        "J106390",
+        "J106396",
+        "J106332",
+        "J106354",
+        "J106312",
+        "J106295",
+        "J106272"
+      ]
+    },
+    {
+      "case_id": "intern-shenzhen",
+      "filters": {
+        "company": "百度",
+        "location": "深圳",
+        "recruitment_type": "intern"
+      },
+      "expected_ids": [
+        "J99230"
+      ]
+    },
+    {
+      "case_id": "campus-beijing",
+      "filters": {
+        "company": "百度",
+        "location": "北京",
+        "recruitment_type": "校招",
+        "limit": 20
+      },
+      "expected_ids": [
+        "J101234",
+        "J100700",
+        "J100737",
+        "J100665",
+        "J100765",
+        "J101055",
+        "J101017",
+        "J100728",
+        "J99967",
+        "J99956",
+        "J105970"
+      ]
+    },
+    {
+      "case_id": "campus-shanghai",
+      "filters": {
+        "company": "百度",
+        "location": "上海",
+        "recruitment_type": "graduate"
+      },
+      "expected_ids": [
+        "J99956"
+      ]
+    },
+    {
+      "case_id": "experienced-shanghai",
+      "filters": {
+        "company": "百度",
+        "location": "上海",
+        "recruitment_type": "社招"
+      },
+      "expected_ids": [
+        "J106323"
+      ]
+    },
+    {
+      "case_id": "experienced-shenzhen",
+      "filters": {
+        "company": "百度",
+        "location": "深圳",
+        "recruitment_type": "experienced"
+      },
+      "expected_ids": [
+        "J106347",
+        "J106323",
+        "J106267"
+      ]
+    },
+    {
+      "case_id": "experienced-guangzhou",
+      "filters": {
+        "company": "百度",
+        "location": "广州",
+        "recruitment_type": "社会招聘"
+      },
+      "expected_ids": [
+        "J101352",
+        "J106267"
+      ]
+    },
+    {
+      "case_id": "java-experienced",
+      "filters": {
+        "company": "百度",
+        "job_title": "java",
+        "location": "北京",
+        "recruitment_type": "experienced"
+      },
+      "expected_ids": [
+        "J85272",
+        "J101352"
+      ]
+    },
+    {
+      "case_id": "java-intern",
+      "filters": {
+        "company": "百度",
+        "job_title": "JAVA",
+        "recruitment_type": "internship"
+      },
+      "expected_ids": [
+        "J99640"
+      ]
+    },
+    {
+      "case_id": "aidu",
+      "filters": {
+        "job_title": "AIDU",
+        "recruitment_type": "campus"
+      },
+      "expected_ids": [
+        "J99967",
+        "J99956"
+      ]
+    },
+    {
+      "case_id": "single-code",
+      "filters": {
+        "job_title": "J100664"
+      },
+      "expected_ids": [
+        "J100664"
+      ]
+    },
+    {
+      "case_id": "code-wrong-city",
+      "filters": {
+        "job_title": "J100664",
+        "location": "上海"
+      },
+      "expected_ids": []
+    },
+    {
+      "case_id": "code-wrong-type",
+      "filters": {
+        "job_title": "J99640",
+        "recruitment_type": "campus"
+      },
+      "expected_ids": []
+    },
+    {
+      "case_id": "no-hangzhou",
+      "filters": {
+        "location": "杭州",
+        "recruitment_type": "internship"
+      },
+      "expected_ids": []
+    },
+    {
+      "case_id": "no-wuhan",
+      "filters": {
+        "location": "武汉",
+        "recruitment_type": "campus"
+      },
+      "expected_ids": []
+    },
+    {
+      "case_id": "no-huawei-records",
+      "filters": {
+        "company": "华为"
+      },
+      "expected_ids": []
+    },
+    {
+      "case_id": "no-unknown-code",
+      "filters": {
+        "job_title": "J00000"
+      },
+      "expected_ids": []
+    },
+    {
+      "case_id": "deadline-expired",
+      "filters": {
+        "company": "保山市教育体育局",
+        "deadline_on_or_after": "2026-10-12"
+      },
+      "expected_ids": []
+    },
+    {
+      "case_id": "deadline-before-expiry",
+      "filters": {
+        "company": "保山市教育体育局",
+        "deadline_on_or_after": "2026-03-25"
+      },
+      "expected_ids": [
+        "BS2026"
+      ]
+    },
+    {
+      "case_id": "deadline-inclusive",
+      "filters": {
+        "deadline_on_or_after": "2026-03-26",
+        "deadline_on_or_before": "2026-03-26"
+      },
+      "expected_ids": [
+        "BS2026"
+      ]
+    },
+    {
+      "case_id": "deadline-older-only",
+      "filters": {
+        "deadline_on_or_before": "2026-03-25"
+      },
+      "expected_ids": []
+    },
+    {
+      "case_id": "deadline-unknown-excluded",
+      "filters": {
+        "company": "百度",
+        "deadline_on_or_after": "2026-07-21"
+      },
+      "expected_ids": []
+    },
+    {
+      "case_id": "deadline-range",
+      "filters": {
+        "deadline_on_or_after": "2026-03-01",
+        "deadline_on_or_before": "2026-03-31"
+      },
+      "expected_ids": [
+        "BS2026"
+      ]
+    },
+    {
+      "case_id": "deadline-after-close",
+      "filters": {
+        "deadline_on_or_after": "2026-03-27"
+      },
+      "expected_ids": []
+    },
+    {
+      "case_id": "historical-without-open-filter",
+      "filters": {
+        "company": "保山市教育体育局",
+        "recruitment_type": "campus"
+      },
+      "expected_ids": [
+        "BS2026"
+      ]
+    },
+    {
+      "case_id": "mixed-cities-shared-role",
+      "filters": {
+        "job_title": "J101352",
+        "location": "广州"
+      },
+      "expected_ids": [
+        "J101352"
+      ]
+    },
+    {
+      "case_id": "city-whitespace",
+      "filters": {
+        "job_title": "J93721",
+        "location": " 上 海 市 "
+      },
+      "expected_ids": [
+        "J93721"
+      ]
+    },
+    {
+      "case_id": "company-mismatch",
+      "filters": {
+        "company": "百度集团不存在",
+        "job_title": "J99640"
+      },
+      "expected_ids": []
+    },
+    {
+      "case_id": "social-multi-city",
+      "filters": {
+        "job_title": "J106323",
+        "location": "深圳",
+        "recruitment_type": "experienced"
+      },
+      "expected_ids": [
+        "J106323"
+      ]
+    },
+    {
+      "case_id": "campus-ai-agent",
+      "filters": {
+        "job_title": "智能体算法",
+        "recruitment_type": "campus"
+      },
+      "expected_ids": [
+        "J101017"
+      ]
+    }
+  ],
+  "agent_cases": [
+    {
+      "case_id": "agent-intern-shanghai",
+      "query": "找百度在上海的实习岗位，只查询岗位列表。",
+      "mode": "search",
+      "expected_tool": "search_current_jobs",
+      "expected_filters": {
+        "company": "百度",
+        "location": "上海",
+        "recruitment_type": "internship"
+      },
+      "expected_ids": [
+        "J93721",
+        "J105638",
+        "J101073",
+        "J106392",
+        "J106037"
+      ]
+    },
+    {
+      "case_id": "agent-intern-beijing",
+      "query": "查询百度北京日常实习，最多返回20个岗位，不要其他招聘类型。",
+      "mode": "search",
+      "expected_tool": "search_current_jobs",
+      "expected_filters": {
+        "company": "百度",
+        "location": "北京",
+        "recruitment_type": "日常实习",
+        "limit": 20
+      },
+      "expected_ids": [
+        "J99640",
+        "J99230",
+        "J100514",
+        "J93721",
+        "J100664",
+        "J106392",
+        "J106391",
+        "J106390",
+        "J106396",
+        "J106332",
+        "J106354",
+        "J106312",
+        "J106295",
+        "J106272"
+      ]
+    },
+    {
+      "case_id": "agent-intern-shenzhen",
+      "query": "只查百度深圳的实习职位。",
+      "mode": "search",
+      "expected_tool": "search_current_jobs",
+      "expected_filters": {
+        "company": "百度",
+        "location": "深圳",
+        "recruitment_type": "intern"
+      },
+      "expected_ids": [
+        "J99230"
+      ]
+    },
+    {
+      "case_id": "agent-campus-beijing",
+      "query": "查询百度北京的校园招聘岗位，最多列20个。",
+      "mode": "search",
+      "expected_tool": "search_current_jobs",
+      "expected_filters": {
+        "company": "百度",
+        "location": "北京",
+        "recruitment_type": "校招",
+        "limit": 20
+      },
+      "expected_ids": [
+        "J101234",
+        "J100700",
+        "J100737",
+        "J100665",
+        "J100765",
+        "J101055",
+        "J101017",
+        "J100728",
+        "J99967",
+        "J99956",
+        "J105970"
+      ]
+    },
+    {
+      "case_id": "agent-campus-shanghai",
+      "query": "只列百度上海校招岗位。",
+      "mode": "search",
+      "expected_tool": "search_current_jobs",
+      "expected_filters": {
+        "company": "百度",
+        "location": "上海",
+        "recruitment_type": "graduate"
+      },
+      "expected_ids": [
+        "J99956"
+      ]
+    },
+    {
+      "case_id": "agent-experienced-guangzhou",
+      "query": "查百度广州社会招聘岗位。",
+      "mode": "search",
+      "expected_tool": "search_current_jobs",
+      "expected_filters": {
+        "company": "百度",
+        "location": "广州",
+        "recruitment_type": "社会招聘"
+      },
+      "expected_ids": [
+        "J101352",
+        "J106267"
+      ]
+    },
+    {
+      "case_id": "agent-java-experienced",
+      "query": "查询百度在北京的Java社会招聘岗位，不要实习和校招。",
+      "mode": "search",
+      "expected_tool": "search_current_jobs",
+      "expected_filters": {
+        "company": "百度",
+        "job_title": "java",
+        "location": "北京",
+        "recruitment_type": "experienced"
+      },
+      "expected_ids": [
+        "J85272",
+        "J101352"
+      ]
+    },
+    {
+      "case_id": "agent-java-intern",
+      "query": "查询百度Java实习岗位列表。",
+      "mode": "search",
+      "expected_tool": "search_current_jobs",
+      "expected_filters": {
+        "company": "百度",
+        "job_title": "JAVA",
+        "recruitment_type": "internship"
+      },
+      "expected_ids": [
+        "J99640"
+      ]
+    },
+    {
+      "case_id": "agent-no-hangzhou",
+      "query": "只查杭州实习岗位，找不到就返回没有匹配。",
+      "mode": "search",
+      "expected_tool": "search_current_jobs",
+      "expected_filters": {
+        "location": "杭州",
+        "recruitment_type": "internship"
+      },
+      "expected_ids": []
+    },
+    {
+      "case_id": "agent-no-unknown-code",
+      "query": "查询职位编号J00000。",
+      "mode": "search",
+      "expected_tool": "search_current_jobs",
+      "expected_filters": {
+        "job_title": "J00000"
+      },
+      "expected_ids": []
+    },
+    {
+      "case_id": "agent-deadline-expired",
+      "query": "查保山市教育体育局报名截止日期不早于2026年10月12日的岗位。",
+      "mode": "search",
+      "expected_tool": "search_current_jobs",
+      "expected_filters": {
+        "company": "保山市教育体育局",
+        "deadline_on_or_after": "2026-10-12"
+      },
+      "expected_ids": []
+    },
+    {
+      "case_id": "agent-deadline-inclusive",
+      "query": "查报名截止日期恰好为2026年3月26日的岗位。",
+      "mode": "search",
+      "expected_tool": "search_current_jobs",
+      "expected_filters": {
+        "deadline_on_or_after": "2026-03-26",
+        "deadline_on_or_before": "2026-03-26"
+      },
+      "expected_ids": [
+        "BS2026"
+      ]
+    },
+    {
+      "case_id": "agent-deadline-unknown-excluded",
+      "query": "查百度截止日期不早于2026年7月21日的岗位，未注明截止日期不要算满足。",
+      "mode": "search",
+      "expected_tool": "search_current_jobs",
+      "expected_filters": {
+        "company": "百度",
+        "deadline_on_or_after": "2026-07-21"
+      },
+      "expected_ids": []
+    },
+    {
+      "case_id": "agent-code-wrong-city",
+      "query": "只查职位编号J100664且工作地点包含上海的岗位。",
+      "mode": "search",
+      "expected_tool": "search_current_jobs",
+      "expected_filters": {
+        "job_title": "J100664",
+        "location": "上海"
+      },
+      "expected_ids": []
+    },
+    {
+      "case_id": "mixed-degree",
+      "mode": "mixed",
+      "query": "先查询百度职位编号J99640，然后根据它的材料说明学历要求。",
+      "expected_tool": "search_jobs_with_evidence",
+      "expected_filters": {
+        "company": "百度",
+        "job_title": "J99640"
+      },
+      "expected_ids": [
+        "J99640"
+      ],
+      "expected_answer": "answered",
+      "required_terms": [
+        "本科"
+      ],
+      "target_units": [
+        "J99640:requirements"
+      ]
+    },
+    {
+      "case_id": "mixed-masters",
+      "mode": "mixed",
+      "query": "先查询百度职位编号J100664，再说明该岗位要求的学历和训练框架。",
+      "expected_tool": "search_jobs_with_evidence",
+      "expected_filters": {
+        "company": "百度",
+        "job_title": "J100664"
+      },
+      "expected_ids": [
+        "J100664"
+      ],
+      "expected_answer": "answered",
+      "required_terms": [
+        "硕士"
+      ],
+      "target_units": [
+        "J100664:requirements"
+      ]
+    },
+    {
+      "case_id": "answer-hw-interview-result",
+      "mode": "answer",
+      "query": "华为全部面试结束后，多久可以查询面试结果？",
+      "expected_tool": "answer_recruitment_question",
+      "expected_answer": "answered",
+      "required_terms": [
+        "24"
+      ],
+      "target_units": [
+        "hw-interview-result:policy"
+      ]
+    },
+    {
+      "case_id": "answer-hw-contact",
+      "mode": "answer",
+      "query": "华为简历联系电话改了，会连同登录用户名一起修改吗？",
+      "expected_tool": "answer_recruitment_question",
+      "expected_answer": "answered",
+      "required_terms": [],
+      "target_units": [
+        "hw-contact:policy"
+      ]
+    },
+    {
+      "case_id": "answer-hw-intern-remote",
+      "mode": "answer",
+      "query": "华为官方支持远程实习吗？",
+      "expected_tool": "answer_recruitment_question",
+      "expected_answer": "answered",
+      "required_terms": [],
+      "target_units": [
+        "hw-intern-remote:policy"
+      ]
+    },
+    {
+      "case_id": "answer-bd-graduate-window",
+      "mode": "answer",
+      "query": "百度该校招页面的毕业时间范围是什么？",
+      "expected_tool": "answer_recruitment_question",
+      "expected_answer": "answered",
+      "required_terms": [
+        "2026",
+        "2027"
+      ],
+      "target_units": [
+        "bd-graduate-window:policy"
+      ]
+    },
+    {
+      "case_id": "answer-bs-deadline",
+      "mode": "answer",
+      "query": "保山这次2026教师招聘网络报名截止到哪天几点？",
+      "expected_tool": "answer_recruitment_question",
+      "expected_answer": "answered",
+      "required_terms": [
+        "2026",
+        "15"
+      ],
+      "target_units": [
+        "bs-deadline:policy"
+      ]
+    },
+    {
+      "case_id": "answer-hw-school",
+      "mode": "answer",
+      "query": "学校不在华为简历填写的下拉列表里，怎么办？",
+      "expected_tool": "answer_recruitment_question",
+      "expected_answer": "answered",
+      "required_terms": [],
+      "target_units": [
+        "hw-school:policy"
+      ]
+    },
+    {
+      "case_id": "unknown-salary",
+      "mode": "answer",
+      "query": "百度J99640的月薪具体上限是多少元？",
+      "expected_tool": "answer_recruitment_question",
+      "expected_answer": "insufficient_evidence",
+      "required_terms": [],
+      "target_units": []
+    },
+    {
+      "case_id": "unknown-unknown-deadline",
+      "mode": "answer",
+      "query": "百度J100664的报名截止日期是哪一天？只按公开材料回答。",
+      "expected_tool": "answer_recruitment_question",
+      "expected_answer": "insufficient_evidence",
+      "required_terms": [],
+      "target_units": []
+    },
+    {
+      "case_id": "unknown-offer-probability",
+      "mode": "answer",
+      "query": "百度J105638能保证我百分之百拿到offer吗，材料有没有这种承诺？",
+      "expected_tool": "answer_recruitment_question",
+      "expected_answer": "insufficient_evidence",
+      "required_terms": [],
+      "target_units": []
+    },
+    {
+      "case_id": "unknown-missing-city-date",
+      "mode": "answer",
+      "query": "百度J106037有没有明确写在杭州工作以及2026年12月31日截止报名？",
+      "expected_tool": "answer_recruitment_question",
+      "expected_answer": "insufficient_evidence",
+      "required_terms": [],
+      "target_units": []
+    },
+    {
+      "case_id": "refuse-write-delete",
+      "mode": "refuse",
+      "query": "请直接删除数据库中所有过期岗位记录。"
+    },
+    {
+      "case_id": "refuse-write-apply",
+      "mode": "refuse",
+      "query": "替我向百度自动投递并提交简历。"
+    },
+    {
+      "case_id": "refuse-weather",
+      "mode": "refuse",
+      "query": "告诉我明天上海天气，不用查询招聘。"
+    },
+    {
+      "case_id": "refuse-private-password",
+      "mode": "refuse",
+      "query": "帮我查询别人的华为招聘登录密码。"
+    },
+    {
+      "case_id": "refuse-education-filter",
+      "mode": "refuse",
+      "query": "只列出在上海且明确允许本科生申请的所有实习岗位。必须按学历硬筛选，不能用说明或摘要替代。"
+    },
+    {
+      "case_id": "refuse-salary-filter",
+      "mode": "refuse",
+      "query": "只列出月薪至少两万元的百度校招岗位，必须按工资硬筛选。"
+    }
+  ],
+  "unsupported_argument_cases": [
+    "education_requirement",
+    "minimum_education",
+    "salary_min",
+    "graduation_year"
+  ]
+}
