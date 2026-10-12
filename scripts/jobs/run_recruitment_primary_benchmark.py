@@ -58,7 +58,7 @@ def load_fixture():
     fixture = json.loads(raw)
     if fixture["human_reviewed"] or fixture["annotation_status"] != "source_grounded_agent_authored":
         raise ValueError("annotation provenance is incorrect")
-    if fixture["annotations_sha256"] != sha((ROOT / "annotations.json").read_bytes()):
+    if fixture["annotations_sha256"] != sha((ROOT / "annotations.json").read_bytes().replace(b"\r\n", b"\n")):
         raise ValueError("annotations changed after source verification")
     for key in ("retrieval_cases", "structured_cases", "agent_cases"):
         ids = [row["case_id"] for row in fixture[key]]
@@ -344,14 +344,18 @@ def evaluate_agent(fixture, searcher, search_tool, aliases, units, settings, cac
     from app.application.jobs.job_rag_tools import AnswerRecruitmentQuestionTool, SearchJobsWithEvidenceTool
     from app.infrastructure.llm.openai_compatible_answer_model import OpenAiCompatibleAnswerModel, OpenAiCompatibleAnswerModelConfig
     from app.infrastructure.llm.openai_compatible_job_agent_planner import OpenAiCompatibleJobAgentPlanner, OpenAiCompatibleJobAgentPlannerConfig
+    from app.infrastructure.llm.retrying_job_agent_planner import RetryingJobAgentPlanner, JobAgentPlannerRetryPolicy
     client = OpenAI(api_key=os.environ[settings.answer_model_api_key_environment_variable],
                     base_url=settings.answer_model_base_url, timeout=settings.answer_model_timeout_seconds,
                     max_retries=0, http_client=httpx.Client(trust_env=False))
     completion = RecordingCompletion(client.chat.completions.create, cache / "completions", settings.answer_model_name)
-    planner = OpenAiCompatibleJobAgentPlanner(completion, OpenAiCompatibleJobAgentPlannerConfig(
+    raw_planner = OpenAiCompatibleJobAgentPlanner(completion, OpenAiCompatibleJobAgentPlannerConfig(
         model_name=settings.answer_model_name, base_url=settings.answer_model_base_url,
         api_key_environment_variable=settings.answer_model_api_key_environment_variable,
         timeout_seconds=settings.answer_model_timeout_seconds, max_completion_tokens=800))
+    planner = RetryingJobAgentPlanner(raw_planner, JobAgentPlannerRetryPolicy(
+        max_attempts=settings.job_agent_planner_max_attempts,
+        initial_backoff_seconds=settings.job_agent_planner_initial_backoff_seconds))
     answer_model = OpenAiCompatibleAnswerModel(completion, OpenAiCompatibleAnswerModelConfig(
         model_name=settings.answer_model_name, base_url=settings.answer_model_base_url,
         api_key_environment_variable=settings.answer_model_api_key_environment_variable,
@@ -410,6 +414,11 @@ def evaluate_agent(fixture, searcher, search_tool, aliases, units, settings, cac
                 atomic_json(path, row)
             results.append(row)
             print(f"Agent {number}/{len(fixture['agent_cases'])}: {case['case_id']} passed={row['passed']}", flush=True)
+            if row.get("execution_error_type") == "JobAgentPlannerAuthenticationError":
+                for pending in fixture["agent_cases"][number:]:
+                    results.append({"case_id": pending["case_id"], "mode": pending["mode"],
+                                    "passed": False, "execution_status": "not_run_model_authentication_failed"})
+                break
     finally:
         client.close()
     return {"cases": len(results), "passed": sum(row["passed"] for row in results),
@@ -421,6 +430,8 @@ def evaluate_agent(fixture, searcher, search_tool, aliases, units, settings, cac
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--validate-only", action="store_true")
+    parser.add_argument("--dotenv-override", action="store_true",
+                        help="Use this project's .env instead of inherited credentials for this evaluation process only.")
     parser.add_argument("--output", type=Path, default=Path("evaluation/reports/recruitment-primary-v1-real.json"))
     args = parser.parse_args()
     fixture, fixture_hash = load_fixture()
@@ -437,10 +448,12 @@ def main():
     from app.application.retrieval.current_corpus_hybrid_search import CurrentCorpusHybridSearchService
     from app.infrastructure.retrieval.embedding_model_presets import QWEN3_EMBEDDING_06B
     from app.infrastructure.retrieval.sentence_transformer_embedder import SentenceTransformerTextEmbedder
-    settings = load_settings()
+    settings = load_settings(dotenv_override=args.dotenv_override)
     config = {"embedding_identity": QWEN3_EMBEDDING_06B.identity, "precision": "fp32",
               "planner_model": settings.answer_model_name, "planner_endpoint_sha256": sha(settings.answer_model_base_url.encode()),
               "candidate_k": settings.hybrid_candidate_k, "rank_constant": settings.hybrid_rank_constant,
+              "dotenv_override": args.dotenv_override,
+              "planner_max_attempts": settings.job_agent_planner_max_attempts,
               "code_sha256": {name: sha(Path(name).read_bytes()) for name in (
                   "app/application/retrieval/lexical_retrieval.py", "app/application/retrieval/current_corpus_hybrid_search.py",
                   "app/infrastructure/persistence/structured_job_record_query.py", "app/application/jobs/job_search_tool.py",
@@ -469,7 +482,9 @@ def main():
         report["retrieval"] = evaluate_retrieval(fixture, chunks, units, searcher, dense, Bm25Retriever(chunks), search_tool)
         atomic_json(model_cache / "retrieval-complete.json", report)
         report["agent"] = evaluate_agent(fixture, searcher, search_tool, aliases, units, settings, model_cache)
-    report["status"] = "complete"
+    report["status"] = ("blocked_by_model_authentication" if any(
+        row.get("execution_error_type") == "JobAgentPlannerAuthenticationError" for row in report["agent"]["results"])
+        else "complete")
     args.output.parent.mkdir(parents=True, exist_ok=True)
     with args.output.open("x", encoding="utf-8") as handle:
         json.dump(report, handle, ensure_ascii=False, indent=2)

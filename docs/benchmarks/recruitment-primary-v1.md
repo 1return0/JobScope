@@ -28,9 +28,70 @@ MRR差值的95%区间按来源页面做配对cluster bootstrap（10,000次、种
 .venv/Scripts/python.exe -m scripts.jobs.run_recruitment_primary_benchmark --validate-only
 
 # 真实PostgreSQL、本地Embedding与配置的Planner/回答模型。
-.venv/Scripts/python.exe -m scripts.jobs.run_recruitment_primary_benchmark
+.venv/Scripts/python.exe -m scripts.jobs.run_recruitment_primary_benchmark --dotenv-override --output evaluation/reports/recruitment-primary-v1-real-run02.json
 ```
 
 PostgreSQL测试在本次随机创建的 `jobscope_benchmark_<uuid>` schema 内进行，完成后只清除此schema。在线Corpus、岗位表、会话Checkpoint和用户偏好数据不被修改。数据库记录由源文核验的固定fixture加载，因此SQL指标不代表模型字段抽取正确率。图评测使用每题新State，不评价多轮记忆或持久化恢复。
 
-源数据重采集及摘要构建分别由 `collect_recruitment_benchmark_sources.py` 和 `build_recruitment_primary_dataset.py` 执行；源页面会变化，完整冻结后的复现使用已提交的 [benchmark.json](../../evaluation/datasets/recruitment-primary-v1/benchmark.json)。完整报告保存为 `evaluation/reports/recruitment-primary-v1-real.json`，已完成报告禁止覆盖。
+源数据重采集及摘要构建分别由 `collect_recruitment_benchmark_sources.py` 和 `build_recruitment_primary_dataset.py` 执行；源页面会变化，完整冻结后的复现使用已提交的 [benchmark.json](../../evaluation/datasets/recruitment-primary-v1/benchmark.json)。完成的报告禁止覆盖，重复实验请指定新文件名。`--dotenv-override`仅覆盖本次进程的配置，用于显式选择项目的本地Key，避免继承过期凭据；不修改.env文件。
+
+## 实测结果（2026-10-12）
+
+输入在 commit `9ab7e34` 冻结后调用模型。主结果见 [完整机器可读报告](../../evaluation/reports/recruitment-primary-v1-real-run02.json)。Embedding为固定版本的本地Qwen3-Embedding-0.6B、FP32；Planner及回答为配置的真实 `qwen3.8-27b`，32项任务产生49次新HTTP模型调用。问题、答案标注和检索参数在跑分后均未修改。
+
+### 全库证据检索：134题
+
+| 策略 | Recall@5 | MRR@5 | nDCG@5 |
+| --- | ---: | ---: | ---: |
+| BM25 | 0.805970 | 0.572139 | 0.631053 |
+| Dense | 0.723881 | 0.586070 | 0.621163 |
+| Hybrid/RRF | 0.776119 | 0.592537 | 0.638860 |
+
+全局Hybrid的MRR点估计比BM25增加约0.0204，但来源分组95%区间为 `[-0.093704, +0.083333]`，不足以宣传稳定提升。Dense也不是全面优于BM25。这里有大量相近岗位共享技能词，职位编号往往在标题/元信息Chunk中，资格要求在另一Chunk中；只靠全库相似度检索容易找错岗位或只找到标题。
+
+| 问题类型 | BM25 MRR@5 | Dense MRR@5 | Hybrid MRR@5 |
+| --- | ---: | ---: | ---: |
+| 指定岗位资格要求（40题） | 0.404167 | 0.254167 | 0.321667 |
+| 岗位职责语义问法（40题） | 0.634167 | 0.520833 | 0.580000 |
+| 招聘政策/流程（54题） | 0.650617 | 0.880247 | 0.802469 |
+
+### SQL来源范围与检索联动：同一40题
+
+| 方法 | Recall@5 | MRR@5 | nDCG@5 |
+| --- | ---: | ---: | ---: |
+| 全库Hybrid | 0.450000 | 0.321667 | 0.353525 |
+| 实际SQL选定岗位来源 + 同一Hybrid | **0.975000** | **0.565000** | **0.666914** |
+
+Recall@5增加 **52.5个百分点**，MRR@5差值 `+0.243333`，配对95%区间 `[+0.143750, +0.345833]`。40项检索的来源范围检查均通过：返回Chunk均属于实际SQL选择的岗位源页面。该指标来自**指定岗位的40题子集**，不能冒充全134题结果，也不表示最终回答已经全部正确。
+
+这项收益衡量项目已有的SQL与RAG联动能力：用户明确岗位编号，工具先查当前记录再限制证据来源。不是将正确答案标签直接交给检索器，也不是在这轮评测中新增或调优检索算法。
+
+### 业务条件与真实Agent任务
+
+- 真实PostgreSQL筛选用例 **32/32通过**：公司、城市及多城市、岗位、招聘类型别名、日期边界、过期公告、未注明截止日期和无匹配查询。另4项不支持的工具参数均被拒绝。
+- 真实Agent严格任务判定 **26/32通过（81.25%）**：纯查询12/14、混合查询1/2、文档问答/无证据8/10、不支持请求拒绝5/6。完整输出、实际参数和失败条件均保留。
+- 全量自动化测试最终为 **438通过、5跳过**。两次真实数据库评测均已清理本次创建的临时schema，复查没有残留的 `jobscope_benchmark_*` schema。
+
+主要失败归因：
+
+| 用例 | 观测到的问题 |
+| --- | --- |
+| `agent-no-unknown-code`、`agent-code-wrong-city` | Planner认为schema没有专用job_id而拒绝请求；SQL层虽然可用job_title包含职位编号查询，这项能力没有在工具描述中清晰表达 |
+| `mixed-degree` | Planner没有将用户明确的J99640保留为查询条件，宽查百度前10条岗位，导致岗位集合不正确 |
+| `answer-hw-contact` | 招聘注册/联系信息FAQ被误判为与招聘无关，错误拒绝 |
+| `refuse-education-filter` | 用户要求学历硬筛选，但当前schema无此参数；Planner转为宽泛岗位查询加问答，没有满足硬筛选约束 |
+| `unknown-offer-probability` | 使用混合工具而非冻结的纯问答路径，并以answered返回缺乏承诺的说明；计作严格路由/状态契约不符，不将其直接认定为捏造录用承诺 |
+
+本轮为评测，未用结果回调提示词或更改标注。以上失败可以作为后续独立修复与保留集验证的依据。
+
+### 首次失败运行及复现注意事项
+
+[首次运行记录](../../evaluation/reports/recruitment-primary-v1-real.json)已保留：SQL与检索完成，但进程继承的旧 `DASHSCOPE_API_KEY` 覆盖本地有效Key，32项模型请求均认证失败。它属于配置不可用记录，不能解释成Agent语义答题准确率0%。第二次用显式 `--dotenv-override` 选择本地配置，使用相同数据、相同模型名和相同检索参数完成评测；主报告采用第二次结果。
+
+标注完整性哈希统一LF换行后计算，防止Git在Windows/Linux间转换行尾造成误报；原始网页SHA-256仍按实际字节计算。测试保持了标注内容变化时拒绝加载的行为。
+
+### 可用于简历的一句话
+
+> 构建134题招聘领域离线检索集及32项业务筛选用例，联动SQL岗位条件与RAG证据来源范围，在40题指定岗位评测中将Recall@5由45.0%提升至97.5%，真实PostgreSQL条件筛选用例32/32通过。
+
+简历可以选择这项已验证收益，同时保留“40题指定岗位子集”的口径。它不涉及SciFact，不声称全库Hybrid全面领先，也不声称岗位抽取、学历硬筛选或模型最终回答已全部正确。当前Agent简历文件按用户此前要求保持不变，仅提供候选文案。

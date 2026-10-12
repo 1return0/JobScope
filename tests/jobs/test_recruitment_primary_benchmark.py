@@ -2,6 +2,7 @@ import json
 from pathlib import Path
 from tempfile import TemporaryDirectory
 from unittest import TestCase
+from unittest.mock import patch
 
 from sqlalchemy import create_engine
 from sqlalchemy.pool import StaticPool
@@ -12,6 +13,21 @@ from scripts.jobs.run_recruitment_primary_benchmark import (
 
 
 class RecruitmentPrimaryBenchmarkTest(TestCase):
+    def test_git_line_endings_do_not_break_annotation_integrity_but_content_changes_do(self):
+        from scripts.jobs.run_recruitment_primary_benchmark import ROOT
+        benchmark = (ROOT / "benchmark.json").read_bytes()
+        annotations = (ROOT / "annotations.json").read_bytes().replace(b"\r\n", b"\n")
+        with TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "benchmark.json").write_bytes(benchmark)
+            (root / "annotations.json").write_bytes(annotations.replace(b"\n", b"\r\n"))
+            with patch("scripts.jobs.run_recruitment_primary_benchmark.ROOT", root):
+                fixture, _ = load_fixture()
+                self.assertEqual(134, len(fixture["retrieval_cases"]))
+                (root / "annotations.json").write_bytes(annotations.replace(b"J99640", b"J99999", 1))
+                with self.assertRaisesRegex(ValueError, "annotations changed"):
+                    load_fixture()
+
     def test_frozen_source_units_are_parsed_without_query_leakage(self):
         fixture, file_hash = load_fixture()
         with TemporaryDirectory() as directory:

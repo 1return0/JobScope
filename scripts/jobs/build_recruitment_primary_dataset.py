@@ -131,7 +131,7 @@ def main():
         "dataset_id": "jobscope-recruitment-primary-v1", "dataset_version": 1,
         "annotation_status": annotations["annotation_status"], "human_reviewed": False,
         "as_of_date": annotations["as_of_date"], "captured_at": collected["captured_at"],
-        "annotations_sha256": sha(annotations_raw),
+        "annotations_sha256": sha(annotations_raw.replace(b"\r\n", b"\n")),
         "representation": "Agent-derived public posting and FAQ summaries; source questions excluded from corpus; existing HTML parser and StructureAwareChunker",
         "sources": [pages[key] for key in sorted(used_sources)], "documents": documents, "job_records": records,
         "retrieval_cases": retrieval, "structured_cases": structured, "agent_cases": agent_cases(structured),

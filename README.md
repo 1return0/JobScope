@@ -7,7 +7,7 @@ JobScope turns public recruitment materials into versioned, evidence-backed job 
 - Imports and parses HTML, PDF, DOCX, XLSX, and PPTX recruitment materials while retaining source references, hashes, page or cell locations, and document snapshots.
 - Uses OCR as a PDF fallback for scanned pages, with a small golden dataset and CER/WER and critical-field evaluation tools.
 - Extracts structured job facts and validates their evidence against the source chunks before storing them for SQL-backed search.
-- Combines BM25 and dense retrieval with reciprocal-rank fusion and optional reranking; grounded answers retain citations and can refuse when evidence is insufficient.
+- Combines BM25 and dense retrieval with reciprocal-rank fusion; SQL-selected source scopes keep matched-job evidence together, and grounded answers retain citations or return an insufficient-evidence result.
 - Provides a LangGraph job-search workflow that calls structured search tools, plus a Vue interface for document preview, search, Agent queries, source review, and evaluation artifacts.
 
 ## Architecture
@@ -17,7 +17,7 @@ Recruitment files
   → Artifact / Parser / ParsedDocument
   → Article / Fragment / Chunk
   → versioned corpus and evidence-backed job facts
-  → SQL filters + BM25/Dense + RRF + optional reranker
+  → SQL filters + source scope + BM25/Dense + RRF
   → cited answer or an explicit insufficient-evidence result
 ```
 
@@ -55,4 +55,22 @@ Corpus manifest tools are in `scripts/corpus/`. They validate source metadata an
 
 ## Verification boundaries
 
-The project contains real model adapters and evaluation runners, but the checked-in smoke and evaluation datasets are small. Their results demonstrate that the configured paths run; they do not establish production accuracy, throughput, or reliability. Review each report's dataset and model identity before drawing comparisons.
+The primary recruitment-domain evaluation freezes 40 public official job postings,
+recruiting FAQs and a dated recruitment notice: 43 source pages, 337 parsed chunks,
+134 retrieval questions, 32 SQL filtering cases and 32 real Agent tasks.
+
+On the same 40 explicit-posting questions, SQL-selected source scoping raised
+Recall@5 from **45.0% to 97.5%** and MRR@5 from **0.322 to 0.565**, compared with
+unscoped Hybrid retrieval. Real PostgreSQL filtering passed **32/32** cases;
+the real Planner/Graph/tool task evaluation passed **26/32** under the frozen
+strict contract. The full 134-question BM25/Dense/RRF comparisons, source-group
+confidence intervals and failure cases are retained in the
+[primary evaluation report](docs/benchmarks/recruitment-primary-v1.md).
+
+The dataset is source-grounded and Agent-authored, without independent human
+annotation review; the corpus consists of derived summaries, not an exhaustive
+job-market crawl. SQL tests use fixed source-backed fixture facts and do not
+measure model extraction accuracy. These offline results do not establish
+production accuracy, throughput or reliability. The
+[BEIR SciFact report](docs/benchmarks/beir-scifact.md) remains a supplementary
+English scientific retrieval experiment, not a recruitment result.
