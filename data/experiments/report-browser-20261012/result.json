@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "application": "jobscope",
+  "checks": [
+    "generate",
+    "preview",
+    "confirm-version-2",
+    "reload-persistence",
+    "download-docx",
+    "delete"
+  ],
+  "page_errors": 0,
+  "boundary": "Real Vue/HTTP/PostgreSQL/export; Stub identity and generator, NOT real JWT/model or Docker isolation"
+}

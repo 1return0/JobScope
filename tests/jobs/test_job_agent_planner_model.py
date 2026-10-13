@@ -186,7 +186,7 @@ class JobAgentPlannerModelTest(unittest.TestCase):
             {"enable_thinking": False},
             captured["extra_body"],
         )
-        self.assertIn("prompt=job-agent-planner-v1", planner.identity)
+        self.assertIn("prompt=job-agent-planner-v3", planner.identity)
 
         observed = planner.plan_observed(
             user_query="Find Shanghai jobs",

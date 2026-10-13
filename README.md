@@ -74,3 +74,35 @@ measure model extraction accuracy. These offline results do not establish
 production accuracy, throughput or reliability. The
 [BEIR SciFact report](docs/benchmarks/beir-scifact.md) remains a supplementary
 English scientific retrieval experiment, not a recruitment result.
+
+## Vector database and evidence-document workspace
+
+An optional pgvector backend persists compatible vector snapshots and executes
+exact cosine ranking in PostgreSQL. The original in-process backend remains
+available; selecting pgvector never silently falls back on database failure.
+
+The evidence-document workspace generates source-backed reports from registered
+read-only Agent results. It supports title/section edits and explicitly marked
+user notes, modification previews, confirmed revisions, history, deletion and
+DOCX export. Browser identity is resolved from the existing server-issued cookie.
+
+Enable reports and choose the retrieval/export backend using `.env.example`.
+Provision the PostgreSQL `vector` extension before selecting pgvector. For Docker
+export on the VM, build from the repository root:
+
+```bash
+docker build -f deploy/report-export/Dockerfile -t agent-report-export:local .
+bash deploy/report-export/verify-isolation.sh
+```
+
+`local` export is a developer subprocess, not an OS sandbox. `docker` uses a
+local daemon; `ssh_docker` invokes the same fixed, non-root, network-disabled
+worker on the configured SSH host. SSH credentials and database/model keys must
+remain in private local configuration, never in Git. Neither backend executes
+model-generated code or accepts arbitrary shell/template paths.
+
+Selected real session/model/pgvector/report/SSH-Docker validation and its
+limitations are in [the final matrix](docs/agent-role-enhancement/Agent-岗位补强-最终验收矩阵.md).
+The three-day fast-track lessons, rules and cursor are also in that directory.
+This evidence does not certify production load, isolation escape resistance or
+universal semantic answer correctness.

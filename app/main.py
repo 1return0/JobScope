@@ -8,6 +8,7 @@ from pydantic import BaseModel, Field, HttpUrl
 from app.api.documents.document_api import build_document_router
 from app.api.evaluation.evaluation_api import build_evaluation_router
 from app.api.jobs.job_agent_api import build_job_agent_router
+from app.api.jobs.job_report_api import build_job_report_router
 from app.api.answering.answer_api import build_answer_router
 from app.api.retrieval.retrieval_api import build_retrieval_router
 from app.api.application_lifecycle import build_application_lifespan
@@ -105,6 +106,7 @@ app.include_router(
 app.include_router(build_retrieval_router())
 app.include_router(build_answer_router())
 app.include_router(build_job_agent_router())
+app.include_router(build_job_report_router(settings))
 app.include_router(build_evaluation_router())
 
 

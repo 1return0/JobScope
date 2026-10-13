@@ -229,6 +229,16 @@ def build_current_corpus_hybrid_search_service(
     repository = SqlAlchemyDocumentCorpusRepository(
         session_factory
     )
+    dense_factory = None
+    if settings.dense_index_backend == "pgvector":
+        from app.infrastructure.retrieval.pgvector_dense_retriever import PgvectorDenseRetriever
+        if not settings.dense_postgres_dsn:
+            raise ValueError("JOBSCOPE_DENSE_POSTGRES_DSN is required for pgvector")
+        dense_factory = lambda chunks, model: PgvectorDenseRetriever(
+            chunks, model, dsn=settings.dense_postgres_dsn
+        )
+    elif settings.dense_index_backend != "memory":
+        raise ValueError("unsupported JOBSCOPE_DENSE_INDEX_BACKEND")
     return CurrentCorpusHybridSearchService(
         repository,
         embedder,
@@ -237,6 +247,7 @@ def build_current_corpus_hybrid_search_service(
         rank_constant=rank_constant,
         max_concurrent_queries=max_concurrent_queries,
         bm25_config=bm25_config,
+        dense_factory=dense_factory,
     )
 
 

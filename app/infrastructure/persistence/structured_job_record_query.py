@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import re
+
 from sqlalchemy import case, func, select
 from sqlalchemy.orm import sessionmaker
 
@@ -49,6 +51,15 @@ class SqlAlchemyCurrentJobRecordQuery:
                     selected_filters.job_title.casefold()
                 )
             )
+        if selected_filters.job_code is not None:
+            # Coarse SQL selection, then exact token verification below before
+            # pagination. A code is NOT a canonical record_id and J123 must not
+            # match J1234. Historical records without a code are not fabricated.
+            statement = statement.where(
+                func.lower(StructuredJobRecordRow.job_title).contains(
+                    selected_filters.job_code.casefold(), autoescape=True
+                )
+            )
         if selected_filters.recruitment_type is not None:
             statement = statement.where(
                 func.lower(StructuredJobRecordRow.recruitment_type).in_(
@@ -91,6 +102,13 @@ class SqlAlchemyCurrentJobRecordQuery:
 
         with self._session_factory() as session:
             rows = session.execute(statement).all()
+
+        if selected_filters.job_code is not None:
+            code_pattern = re.compile(
+                r"(?<![A-Za-z0-9])" + re.escape(selected_filters.job_code)
+                + r"(?![A-Za-z0-9])", re.IGNORECASE
+            )
+            rows = [row for row in rows if code_pattern.search(row[0].job_title or "")]
 
         if selected_filters.location is not None:
             normalized_location = _location_match_key(

@@ -250,10 +250,13 @@ def build_openai_compatible_job_agent_planner(
             "install the generation dependency before using the planner"
         ) from error
 
+    import httpx
     client = OpenAI(
         api_key=api_key,
         base_url=config.base_url,
         timeout=config.timeout_seconds,
+        max_retries=0,
+        http_client=httpx.Client(trust_env=False, timeout=config.timeout_seconds),
     )
     return OpenAiCompatibleJobAgentPlanner(
         client.chat.completions.create,

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from datetime import date
+import re
 from typing import Protocol
 
 from app.domain.jobs.recruitment_type import (
@@ -19,6 +20,7 @@ class CurrentJobRecordFilters:
     deadline_on_or_after: date | None = None
     deadline_on_or_before: date | None = None
     limit: int = 50
+    job_code: str | None = None
 
     def __post_init__(self) -> None:
         for field_name in (
@@ -26,6 +28,7 @@ class CurrentJobRecordFilters:
             "job_title",
             "location",
             "recruitment_type",
+            "job_code",
         ):
             value = getattr(self, field_name)
             if value is not None:
@@ -33,6 +36,10 @@ class CurrentJobRecordFilters:
                 if not normalized:
                     raise ValueError(f"{field_name} must not be blank")
                 object.__setattr__(self, field_name, normalized)
+        if self.job_code is not None:
+            if re.fullmatch(r"J[0-9]{1,20}", self.job_code, re.IGNORECASE) is None:
+                raise ValueError("job_code must be a J-prefixed numeric posting code")
+            object.__setattr__(self, "job_code", self.job_code.upper())
         if self.recruitment_type is not None:
             object.__setattr__(
                 self,

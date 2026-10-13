@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "checks": [
+    "real-session",
+    "real-agent-pgvector-report-citations",
+    "postgres-version-confirmation",
+    "ssh-docker-docx"
+  ],
+  "export_backend": "ssh_docker",
+  "sections": 2,
+  "docx_bytes": 37143,
+  "boundary": "Real application in-process HTTP, real cookie identity/model/current corpus/pgvector/PG reports/SSH Docker. Not browser/load/production SLA.",
+  "cleanup": "own report, revisions, proposals, conversation and issued session removed"
+}

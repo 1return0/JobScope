@@ -166,10 +166,13 @@ def build_openai_compatible_answer_model(
             "install the generation dependency group before using the model"
         ) from error
 
+    import httpx
     client = OpenAI(
         api_key=api_key,
         base_url=config.base_url,
         timeout=config.timeout_seconds,
+        max_retries=0,
+        http_client=httpx.Client(trust_env=False, timeout=config.timeout_seconds),
     )
     return OpenAiCompatibleAnswerModel(
         client.chat.completions.create,

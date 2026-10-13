@@ -46,6 +46,21 @@ def _record() -> CurrentStructuredJobRecord:
 
 
 class SearchCurrentJobsToolTest(unittest.TestCase):
+    def test_posting_code_is_explicit_and_preserves_city(self) -> None:
+        reader = _Reader([])
+        output = SearchCurrentJobsTool(reader).invoke(
+            {"job_code": "j99640", "location": "Shanghai"}
+        )
+        self.assertEqual("J99640", reader.received_filters.job_code)
+        self.assertEqual("Shanghai", reader.received_filters.location)
+        self.assertEqual("no_matches", output.status)
+
+    def test_rejects_invalid_code_and_unsupported_hard_filters(self) -> None:
+        tool = SearchCurrentJobsTool(_Reader([]))
+        for arguments in ({"job_code": "J12%"}, {"education": "bachelor"}):
+            with self.subTest(arguments=arguments), self.assertRaises(ValidationError):
+                tool.invoke(arguments)
+
     def test_exposes_stable_name_description_and_json_schema(self) -> None:
         tool = SearchCurrentJobsTool(_Reader([]))
 

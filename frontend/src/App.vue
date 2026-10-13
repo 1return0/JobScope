@@ -7,6 +7,7 @@ const pageTitle = computed(() => String(route.meta.title ?? "JobScope"));
 const navigation = [
   { to: "/", label: "运行总览", short: "OV" },
   { to: "/documents", label: "文档工作台", short: "DOC" },
+  { to: "/reports", label: "证据报告", short: "RPT" },
   { to: "/knowledge", label: "检索与问答", short: "RAG" },
   { to: "/agent", label: "Job Agent", short: "AG" },
   { to: "/sources", label: "来源审核", short: "SRC" },

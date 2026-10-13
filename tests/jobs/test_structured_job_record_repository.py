@@ -66,6 +66,26 @@ class SqlAlchemyStructuredJobRecordRepositoryTest(unittest.TestCase):
     def tearDown(self) -> None:
         self.engine.dispose()
 
+    def test_posting_code_matches_exact_token_and_retains_city(self) -> None:
+        result = self._accepted_result(
+            snapshot_id=self.snapshot_id, evidence_id=self.evidence_id,
+        )
+        persisted = self.repository.persist_accepted(
+            result, deadline=ApplicationDeadlineNormalizer().normalize(
+                result.record.application_deadline
+            ),
+        )
+        self.repository.activate(
+            persisted.record_id, activated_at=datetime(2026, 10, 12, tzinfo=UTC),
+            activation_reference="posting-code-regression",
+        )
+        with self.session_factory.begin() as session:
+            session.get(StructuredJobRecordRow, persisted.record_id).job_title = "AI Agent (J1234)"
+        self.assertEqual([], self.query.list_current(CurrentJobRecordFilters(job_code="J123")))
+        self.assertEqual([], self.query.list_current(CurrentJobRecordFilters(job_code="J1234", location="Beijing")))
+        self.assertEqual([persisted.record_id], [row.record_id for row in
+            self.query.list_current(CurrentJobRecordFilters(job_code="j1234"))])
+
     def test_persists_accepted_record_and_citation_lineage(self) -> None:
         result = self._accepted_result(
             snapshot_id=self.snapshot_id,

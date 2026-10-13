@@ -2,12 +2,14 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from threading import BoundedSemaphore, Lock
+from typing import Callable, Protocol
 
 from app.application.retrieval.current_corpus_search import CurrentCorpusReader
 from app.application.retrieval.dense_retrieval import (
     DenseIndexBuilder,
     InMemoryDenseRetriever,
     TextEmbedder,
+    DenseSearchResult,
 )
 from app.application.retrieval.lexical_retrieval import Bm25Config, Bm25Retriever
 from app.application.retrieval.reciprocal_rank_fusion import (
@@ -43,10 +45,17 @@ class CurrentCorpusHybridSearchReport:
     results: tuple[HybridSearchResult, ...]
 
 
+class DenseRetriever(Protocol):
+    corpus_size: int
+    corpus_fingerprint: str
+
+    def search(self, query: str, *, top_k: int = 5) -> list[DenseSearchResult]: ...
+
+
 @dataclass(frozen=True, slots=True)
 class _PreparedHybridState:
     bm25: Bm25Retriever
-    dense: InMemoryDenseRetriever
+    dense: DenseRetriever
     chunks_by_id: dict[str, EvidenceChunk]
 
 
@@ -61,6 +70,7 @@ class CurrentCorpusHybridSearchService:
         rank_constant: int,
         max_concurrent_queries: int = 1,
         bm25_config: Bm25Config = Bm25Config(),
+        dense_factory: Callable[[list[EvidenceChunk], TextEmbedder], DenseRetriever] | None = None,
     ) -> None:
         normalized_version = chunker_version.strip()
         if not normalized_version:
@@ -77,6 +87,7 @@ class CurrentCorpusHybridSearchService:
         self._candidate_k = candidate_k
         self._rank_constant = rank_constant
         self._bm25_config = bm25_config
+        self._dense_factory = dense_factory
         self._query_slots = BoundedSemaphore(max_concurrent_queries)
         self._state: _PreparedHybridState | None = None
         self._prepare_lock = Lock()
@@ -94,13 +105,12 @@ class CurrentCorpusHybridSearchService:
             if not chunks:
                 raise ValueError("current corpus must not be empty")
             bm25 = Bm25Retriever(chunks, self._bm25_config)
-            dense_index = DenseIndexBuilder(self._embedder).build(chunks)
+            dense = (self._dense_factory(chunks, self._embedder)
+                if self._dense_factory is not None else InMemoryDenseRetriever(
+                    DenseIndexBuilder(self._embedder).build(chunks), self._embedder))
             new_state = _PreparedHybridState(
                 bm25=bm25,
-                dense=InMemoryDenseRetriever(
-                    dense_index,
-                    self._embedder,
-                ),
+                dense=dense,
                 chunks_by_id={
                     chunk.evidence_id: chunk for chunk in chunks
                 },

@@ -38,6 +38,12 @@ class Settings:
     database_user: str = "jobscope_app"
     database_password: str | None = field(default=None, repr=False)
     hybrid_retrieval_enabled: bool = False
+    dense_index_backend: str = "memory"
+    dense_postgres_dsn: str | None = field(default=None, repr=False)
+    document_reports_enabled: bool = False
+    document_reports_dsn: str | None = field(default=None, repr=False)
+    document_export_backend: str = "disabled"
+    document_export_ssh_config_file: str | None = None
     embedding_preset: str = "qwen3-embedding-0.6b"
     embedding_device: str = "cuda"
     embedding_batch_size: int = 8
@@ -76,6 +82,12 @@ def load_settings(*, dotenv_override: bool = False) -> Settings:
         if origin.strip()
     )
     return Settings(
+        document_reports_enabled=os.getenv("JOBSCOPE_DOCUMENT_REPORTS_ENABLED", "false").casefold() == "true",
+        document_reports_dsn=os.getenv("JOBSCOPE_DOCUMENT_REPORTS_DSN") or None,
+        document_export_backend=os.getenv("JOBSCOPE_DOCUMENT_EXPORT_BACKEND", "disabled"),
+        document_export_ssh_config_file=os.getenv("JOBSCOPE_DOCUMENT_EXPORT_SSH_CONFIG_FILE") or None,
+        dense_index_backend=os.getenv("JOBSCOPE_DENSE_INDEX_BACKEND", "memory").strip(),
+        dense_postgres_dsn=os.getenv("JOBSCOPE_DENSE_POSTGRES_DSN") or None,
         environment=os.getenv("JOBSCOPE_ENV", "development"),
         host=os.getenv("JOBSCOPE_HOST", "127.0.0.1"),
         port=int(os.getenv("JOBSCOPE_PORT", "8110")),

@@ -20,7 +20,12 @@ class SearchCurrentJobsArguments(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
     company: str | None = Field(default=None, min_length=1, max_length=500)
-    job_title: str | None = Field(default=None, min_length=1, max_length=500)
+    job_title: str | None = Field(default=None, min_length=1, max_length=500,
+        description="Title substring only, e.g. Java. Put internship/campus/experienced in recruitment_type, not in the title keyword.")
+    job_code: str | None = Field(
+        default=None, pattern=r"^[Jj][0-9]{1,20}$",
+        description="Explicit public posting code, e.g. J99640. Matched as a token in the stored title; preserve any city/company filters.",
+    )
     location: str | None = Field(default=None, min_length=1, max_length=200)
     recruitment_type: RecruitmentType | None = Field(
         default=None,
@@ -80,7 +85,11 @@ class SearchCurrentJobsTool:
     description = (
         "Search only activated job records whose source document snapshot "
         "is still current. Supports company, job title, location, "
-        "recruitment type and normalized application-deadline filters."
+        "recruitment type and normalized application-deadline filters. "
+        "Supports job_code such as J99640 when the public posting code is "
+        "present in the stored title. Unknown codes return no_matches. "
+        "Education/major hard filtering is NOT supported; never replace it "
+        "with a broader search or a RAG summary."
     )
 
     def __init__(self, reader: CurrentJobRecordReader) -> None:
@@ -98,6 +107,7 @@ class SearchCurrentJobsTool:
             CurrentJobRecordFilters(
                 company=arguments.company,
                 job_title=arguments.job_title,
+                job_code=arguments.job_code,
                 location=arguments.location,
                 recruitment_type=arguments.recruitment_type,
                 deadline_on_or_after=arguments.deadline_on_or_after,
